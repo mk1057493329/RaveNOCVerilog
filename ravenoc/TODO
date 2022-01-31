@@ -1,0 +1,3 @@
+- bring axi vip log to dut logs
+- add version to the header log
+- add workflow for linting
