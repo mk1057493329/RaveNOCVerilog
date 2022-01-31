@@ -7,7 +7,7 @@ ravenoc project changed from System Verilog to Verilog to  be  simulated in Xili
 
 sv2v converts SystemVerilog ([IEEE 1800-2017]) to Verilog ([IEEE 1364-2005]),
 with an emphasis on supporting synthesizable language constructs.
-[sv2v source]: https://github.com/r-shakoori/sv2v
+sv2v source: https://github.com/r-shakoori/sv2v
 
 #### Pre-built binaries
 
@@ -15,7 +15,7 @@ Binaries for Ubuntu, macOS, and Windows are available on the [releases page]. If
 your system is not covered, or you would like to build the latest commit, simple
 instructions for building from source are below.
 
-[releases page]: https://github.com/r-shakoori/sv2v/releases
+releases page: https://github.com/r-shakoori/sv2v/releases
 
 #### Building from source
 
@@ -90,7 +90,7 @@ for multiple files having same dependency you should delete the dependency .v fi
 
 ## 2.router_if.v interface problem
 
-router_if.v is defining an interface which is used in definition of router interfaces. as Verilog does not support interface despite SystemVerilog we should change the file ravenoc_router.v file with some resgisters suffixed by _req and _resp to make it work!
+`router_if.v` is defining an interface which is used in definition of router interfaces. as Verilog does not support interface despite SystemVerilog we should change the file `ravenoc_router.v` file with some resgisters suffixed by `_req` and `_resp` to make it work!
 
 ## 3. Synthesis
 ![alt text](top-level.png)
