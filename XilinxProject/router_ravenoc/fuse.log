@@ -1,0 +1,18 @@
+Running: I:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o I:/firsttrojan/router_ravenoc/router_ravenoc.v_isim_beh.exe -prj I:/firsttrojan/router_ravenoc/router_ravenoc.v_beh.prj work.router_ravenoc.v work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/fifo.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/high_prior_arbiter.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/input_datapath.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/input_module.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/input_router.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/output_module.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/ravenoc_pkg.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/router_if.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/rr_arbiter.v" into library work
+Analyzing Verilog file "C:/Users/KRAL/Desktop/ravenoc/src/router/vc_buffer.v" into library work
+Analyzing Verilog file "I:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+ERROR:Simulator:702 - Can not find design unit work.router_ravenoc.v in library work located at isim/work 

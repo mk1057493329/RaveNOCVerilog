@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "I:/firsttrojan/router_ravenoc/router_ravenoc.v_isim_beh.exe" -prj "I:/firsttrojan/router_ravenoc/router_ravenoc.v_beh.prj" "work.router_ravenoc.v" "work.glbl" 

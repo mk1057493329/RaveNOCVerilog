@@ -1,0 +1,20 @@
+
+
+
+// Instantiate the module
+router_ravenoc instance_name (
+    .clk(clk), 
+    .arst(arst), 
+    .north_send(north_send), 
+    .north_recv(north_recv), 
+    .south_send(south_send), 
+    .south_recv(south_recv), 
+    .west_send(west_send), 
+    .west_recv(west_recv), 
+    .east_send(east_send), 
+    .east_recv(east_recv), 
+    .local_send(local_send), 
+    .local_recv(local_recv)
+    );
+
+

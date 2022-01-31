@@ -1,0 +1,16 @@
+[Inputs]
+clk
+arst
+valid_i
+ready_i
+=vc_id_i[0:0]=
+=fdata_i[33:0]=
+[Outputs]
+ready_o
+valid_o
+=vc_id_o[0:0]=
+=fdata_o[33:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel vc_buffer
+

@@ -1,0 +1,18 @@
+
+
+
+// Instantiate the module
+fifo instance_name (
+    .clk(clk), 
+    .arst(arst), 
+    .write_i(write_i), 
+    .read_i(read_i), 
+    .data_i(data_i), 
+    .data_o(data_o), 
+    .error_o(error_o), 
+    .full_o(full_o), 
+    .empty_o(empty_o), 
+    .ocup_o(ocup_o)
+    );
+
+

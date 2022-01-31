@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/Users/KRAL/Desktop/ravenoc/src/router/vc_buffer.v -lang verilog -prj router_ravenoc -o vc_buffer.spl -module vc_buffer -template I:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family kintex7 vc_buffer.spl I:/firsttrojan/router_ravenoc/vc_buffer.sym 

@@ -1,0 +1,18 @@
+[Inputs]
+clk
+arst
+north_send
+north_recv
+south_send
+south_recv
+west_send
+west_recv
+east_send
+east_recv
+local_send
+local_recv
+[Outputs]
+[BiDir]
+[ATTRIBUTES]
+VeriModel router_ravenoc
+

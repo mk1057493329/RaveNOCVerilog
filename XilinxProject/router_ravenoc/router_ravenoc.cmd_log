@@ -1,0 +1,28 @@
+vhdtdtfi -lib work C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v -lang verilog -prj router_ravenoc -o router_ravenoc.spl -module router_ravenoc -template I:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family kintex7 router_ravenoc.spl I:/firsttrojan/router_ravenoc/router_ravenoc.sym 
+vhdtdtfi -lang verilog -prj router_ravenoc -o I:/firsttrojan/router_ravenoc/router_ravenoc.tfi -lib work C:/Users/KRAL/Desktop/ravenoc/src/router//router_ravenoc.v -module router_ravenoc -template I:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lib work C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v -lang verilog -prj router_ravenoc -o router_ravenoc.spl -module router_ravenoc -template I:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family kintex7 router_ravenoc.spl I:/firsttrojan/router_ravenoc/router_ravenoc.sym 
+vhdtdtfi -lang verilog -prj router_ravenoc -o I:/firsttrojan/router_ravenoc/router_ravenoc.tfi -lib work C:/Users/KRAL/Desktop/ravenoc/src/router//router_ravenoc.v -module router_ravenoc -template I:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lang verilog -prj router_ravenoc -o I:/firsttrojan/router_ravenoc/router_ravenoc.tfi -lib work C:/Users/KRAL/Desktop/ravenoc/src/router//router_ravenoc.v -module router_ravenoc -template I:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lib work C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v -lang verilog -prj router_ravenoc -o router_ravenoc.spl -module router_ravenoc -template I:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family kintex7 router_ravenoc.spl I:/firsttrojan/router_ravenoc/router_ravenoc.sym 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim router_ravenoc.ngc _synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7k325t-ffg900-2 router_ravenoc.ngc router_ravenoc.ngd  
+map -intstyle ise -p xc7k325t-ffg900-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o router_ravenoc_map.ncd router_ravenoc.ngd router_ravenoc.pcf 
+map -intstyle ise -p xc7k325t-ffg900-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o router_ravenoc_map.ncd router_ravenoc.ngd router_ravenoc.pcf 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 
+xst -intstyle ise -ifn "I:/firsttrojan/router_ravenoc/router_ravenoc.xst" -ofn "I:/firsttrojan/router_ravenoc/router_ravenoc.syr" 

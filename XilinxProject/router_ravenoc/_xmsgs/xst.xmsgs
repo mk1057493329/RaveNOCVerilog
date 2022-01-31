@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/fifo.v" Line 45: Result of <arg fmt="%d" index="1">3</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">2</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/fifo.v" Line 47: Result of <arg fmt="%d" index="1">3</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">2</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/vc_buffer.v" Line 62: Assignment to <arg fmt="%s" index="1">error</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/high_prior_arbiter.v" Line 18: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 184: Result of <arg fmt="%d" index="1">37</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 186: Result of <arg fmt="%d" index="1">37</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 188: Result of <arg fmt="%d" index="1">37</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 190: Result of <arg fmt="%d" index="1">37</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 194: Result of <arg fmt="%d" index="1">37</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 175: Assignment to <arg fmt="%s" index="1">north_recv_resp</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 34: Net &lt;<arg fmt="%s" index="1">north_recv_req</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 35: Net &lt;<arg fmt="%s" index="1">north_send_resp</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 41: Net &lt;<arg fmt="%s" index="1">south_recv_req</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 42: Net &lt;<arg fmt="%s" index="1">south_send_resp</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 46: Net &lt;<arg fmt="%s" index="1">west_recv_req</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 47: Net &lt;<arg fmt="%s" index="1">west_send_resp</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 53: Net &lt;<arg fmt="%s" index="1">east_recv_req</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 54: Net &lt;<arg fmt="%s" index="1">east_send_resp</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 59: Net &lt;<arg fmt="%s" index="1">local_recv_req</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v" Line 60: Net &lt;<arg fmt="%s" index="1">local_send_resp</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">78</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_input_north</arg>&gt; of block &lt;<arg fmt="%s" index="4">input_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">90</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_input_south</arg>&gt; of block &lt;<arg fmt="%s" index="4">input_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">102</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_input_west</arg>&gt; of block &lt;<arg fmt="%s" index="4">input_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">114</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_input_east</arg>&gt; of block &lt;<arg fmt="%s" index="4">input_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">126</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_input_local</arg>&gt; of block &lt;<arg fmt="%s" index="4">input_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">135</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_output_north</arg>&gt; of block &lt;<arg fmt="%s" index="4">output_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">143</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_output_south</arg>&gt; of block &lt;<arg fmt="%s" index="4">output_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">151</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_output_west</arg>&gt; of block &lt;<arg fmt="%s" index="4">output_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">159</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_output_east</arg>&gt; of block &lt;<arg fmt="%s" index="4">output_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%d" index="2">167</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u_output_local</arg>&gt; of block &lt;<arg fmt="%s" index="4">output_module</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">router_ravenoc</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">north_send</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">north_recv</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">south_send</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">south_recv</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">west_send</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">west_recv</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">east_send</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">east_recv</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">local_send</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">local_recv</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">78</arg>: Output port &lt;<arg fmt="%s" index="3">fin_resp_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_input_north</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">90</arg>: Output port &lt;<arg fmt="%s" index="3">fin_resp_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_input_south</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">102</arg>: Output port &lt;<arg fmt="%s" index="3">fin_resp_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_input_west</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">114</arg>: Output port &lt;<arg fmt="%s" index="3">fin_resp_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_input_east</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">126</arg>: Output port &lt;<arg fmt="%s" index="3">fin_resp_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_input_local</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">135</arg>: Output port &lt;<arg fmt="%s" index="3">fout_req_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_output_north</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">143</arg>: Output port &lt;<arg fmt="%s" index="3">fout_req_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_output_south</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">151</arg>: Output port &lt;<arg fmt="%s" index="3">fout_req_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_output_west</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">159</arg>: Output port &lt;<arg fmt="%s" index="3">fout_req_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_output_east</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/router_ravenoc.v</arg>&quot; line <arg fmt="%s" index="2">167</arg>: Output port &lt;<arg fmt="%s" index="3">fout_req_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_output_local</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">north_recv_req</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">north_send_resp</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">south_recv_req</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">south_send_resp</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">west_recv_req</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">west_send_resp</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">east_recv_req</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">east_send_resp</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">local_recv_req</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">local_send_resp</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/vc_buffer.v</arg>&quot; line <arg fmt="%s" index="2">55</arg>: Output port &lt;<arg fmt="%s" index="3">ocup_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_virt_chn_fifo</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/KRAL/Desktop/ravenoc/src/router/vc_buffer.v</arg>&quot; line <arg fmt="%s" index="2">55</arg>: Output port &lt;<arg fmt="%s" index="3">error_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_virt_chn_fifo</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">flit_req_i&lt;32:3&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+</messages>
+

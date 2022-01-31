@@ -1,0 +1,29 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Mapping Report File for Design 'router_ravenoc'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc7k325t-ffg900-2 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off
+-power off -o router_ravenoc_map.ncd router_ravenoc.ngd router_ravenoc.pcf 
+Target Device  : xc7k325t
+Target Package : ffg900
+Target Speed   : -2
+Mapper Version : kintex7 -- $Revision: 1.55 $
+Mapped Date    : Mon Jan 31 23:38:57 2022
+
+Design Summary
+--------------
+Number of errors   :   2
+Number of warnings :   0
+
+Section 1 - Errors
+------------------
+ERROR:Map:116 - The design is empty.  No processing will be done.
+ERROR:Map:52 - Problem encountered processing RPMs. 
+
+Section 2 - Warnings
+--------------------
+
+Section 3 - Informational
+-------------------------
