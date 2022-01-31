@@ -93,4 +93,4 @@ for multiple files having same dependency you should delete the dependency .v fi
 router_if.v is defining an interface which is used in definition of router interfaces. as Verilog does not support interface despite SystemVerilog we should change the file ravenoc_router.v file with some resgisters suffixed by _req and _resp to make it work!
 
 ## 3. Synthesis
-![alt text](https://github.com/r-shakoori/RaveNOCVerilog/top-level.png)
+![alt text](top-level.png)
