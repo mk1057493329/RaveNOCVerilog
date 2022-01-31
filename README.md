@@ -17,7 +17,7 @@ instructions for building from source are below.
 
 [releases page]: https://github.com/r-shakoori/sv2v/releases
 
-### Building from source
+#### Building from source
 
 You must have [Stack] installed to build sv2v. Then you can:
 
@@ -36,7 +36,7 @@ You can install the binary to your local bin path (typically `~/.local/bin`) by
 running `stack install`, or copy over the executable manually.
 
 
-## Usage
+#### Usage
 
 sv2v takes in a list of files and prints the converted Verilog to `stdout`.
 Using `--write=adjacent` will create a converted `.v` for every `.sv` input file
