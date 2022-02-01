@@ -30,7 +30,15 @@ module fifo (clk, arst, write_i, read_i, data_i, data_o, error_o, full_o, empty_
   AND2X1 U3 ( .A(u1temp), .B(u2temp), .Y(empty_o) );
   XOR2X1 U4 ( .A(write_ptr_ff[1]), .B(read_ptr_ff[1]), .Y(u4temp) );
   AND2X1 U5 ( .A(u1temp), .B(u4temp), .Y(full_o) );
-  MUX21X1 U6 (.IN1(fifo_ff[read_ptr_ff[0] * 8+:8]), .IN2(8'b0), .S(empty_o), .Q(data_o));
+  MUX21X1 U6 (.IN1(fifo_ff[read_ptr_ff[0] * 8]), .IN2(1'b0), .S(empty_o), .Q(data_o[0]));
+  MUX21X1 U61 (.IN1(fifo_ff[read_ptr_ff[0] * 8+1]), .IN2(1'b0), .S(empty_o), .Q(data_o[1]));
+  MUX21X1 U62 (.IN1(fifo_ff[read_ptr_ff[0] * 8+2]), .IN2(1'b0), .S(empty_o), .Q(data_o[2]));
+  MUX21X1 U63 (.IN1(fifo_ff[read_ptr_ff[0] * 8+3]), .IN2(1'b0), .S(empty_o), .Q(data_o[3]));
+  MUX21X1 U64 (.IN1(fifo_ff[read_ptr_ff[0] * 8+4]), .IN2(1'b0), .S(empty_o), .Q(data_o[4]));
+  MUX21X1 U65 (.IN1(fifo_ff[read_ptr_ff[0] * 8+5]), .IN2(1'b0), .S(empty_o), .Q(data_o[5]));
+  MUX21X1 U66 (.IN1(fifo_ff[read_ptr_ff[0] * 8+6]), .IN2(1'b0), .S(empty_o), .Q(data_o[6]));
+  MUX21X1 U67 (.IN1(fifo_ff[read_ptr_ff[0] * 8+7]), .IN2(1'b0), .S(empty_o), .Q(data_o[7]));
+
   INVX1 U7 ( .A(full_o), .Y(full_o_not) );
   AND2X1 U8 ( .A(write_i), .B(full_o_not), .Y(u7temp) );
   MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp), .Q(u9temp));
