@@ -137,7 +137,7 @@ module vc_buffer (clk,arst,vc_id_i,vc_id_o,fdata_i,valid_i,ready_o,fdata_o,valid
     AND2X1 U45 ( .IN1(full_vc_buffer_not), .IN2(norres_vc_buffer_vc_buffer), .Q(ready_o) );
     INVX1 U46 ( .A(empty_vc_buffer), .Y(valid_o) );
     AND2X1 U47 ( .IN1(valid_o), .IN2(ready_i), .Q(read_flit_vc_buffer) );
-	BUFX1 U48(.A(vc_id_o), .Y(vc_id_i))
+	BUFX1 U48(.A(vc_id_o), .Y(vc_id_i));
 
 	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
     DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
