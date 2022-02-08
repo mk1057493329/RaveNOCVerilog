@@ -86,40 +86,40 @@ module vc_buffer (clk,arst,vc_id_i,vc_id_o,fdata_i,valid_i,ready_o,fdata_o,valid
 	DFFX2 U49 ( .CLK(u7temp_fifomodule), .D(fdata_i[7]), .Q(fifo_ff_fifomodule[write_ptr_ff_fifomodule[0]*8+7]) );
 
     BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer), .Y(next_locked_vc_buffer) );
-    BUFX1 U0(.A(flit[0]), .Y(fdata_i[0]))
-	BUFX1 U1(.A(flit[1]), .Y(fdata_i[1]))
-	BUFX1 U2(.A(flit[2]), .Y(fdata_i[2]))
-	BUFX1 U3(.A(flit[3]), .Y(fdata_i[3]))
-	BUFX1 U4(.A(flit[4]), .Y(fdata_i[4]))
-	BUFX1 U5(.A(flit[5]), .Y(fdata_i[5]))
-	BUFX1 U6(.A(flit[6]), .Y(fdata_i[6]))
-	BUFX1 U7(.A(flit[7]), .Y(fdata_i[7]))
-	BUFX1 U8(.A(flit[8]), .Y(fdata_i[8]))
-	BUFX1 U9(.A(flit[9]), .Y(fdata_i[9]))
-	BUFX1 U10(.A(flit[10]), .Y(fdata_i[10]))
-	BUFX1 U11(.A(flit[11]), .Y(fdata_i[11]))
-	BUFX1 U12(.A(flit[12]), .Y(fdata_i[12]))
-	BUFX1 U13(.A(flit[13]), .Y(fdata_i[13]))
-	BUFX1 U14(.A(flit[14]), .Y(fdata_i[14]))
-	BUFX1 U15(.A(flit[15]), .Y(fdata_i[15]))
-	BUFX1 U16(.A(flit[16]), .Y(fdata_i[16]))
-	BUFX1 U17(.A(flit[17]), .Y(fdata_i[17]))
-	BUFX1 U18(.A(flit[18]), .Y(fdata_i[18]))
-	BUFX1 U19(.A(flit[19]), .Y(fdata_i[19]))
-	BUFX1 U20(.A(flit[20]), .Y(fdata_i[20]))
-	BUFX1 U21(.A(flit[21]), .Y(fdata_i[21]))
-	BUFX1 U22(.A(flit[22]), .Y(fdata_i[22]))
-	BUFX1 U23(.A(flit[23]), .Y(fdata_i[23]))
-	BUFX1 U24(.A(flit[24]), .Y(fdata_i[24]))
-	BUFX1 U25(.A(flit[25]), .Y(fdata_i[25]))
-	BUFX1 U26(.A(flit[26]), .Y(fdata_i[26]))
-	BUFX1 U27(.A(flit[27]), .Y(fdata_i[27]))
-	BUFX1 U28(.A(flit[28]), .Y(fdata_i[28]))
-	BUFX1 U29(.A(flit[29]), .Y(fdata_i[29]))
-	BUFX1 U30(.A(flit[30]), .Y(fdata_i[30]))
-	BUFX1 U31(.A(flit[31]), .Y(fdata_i[31]))
-	BUFX1 U32(.A(flit[32]), .Y(fdata_i[32]))
-	BUFX1 U33(.A(flit[33]), .Y(fdata_i[33]))
+    BUFX1 U0(.A(flit[0]), .Y(fdata_i[0]));
+	BUFX1 U1(.A(flit[1]), .Y(fdata_i[1]));
+	BUFX1 U2(.A(flit[2]), .Y(fdata_i[2]));
+	BUFX1 U3(.A(flit[3]), .Y(fdata_i[3]));
+	BUFX1 U4(.A(flit[4]), .Y(fdata_i[4]));
+	BUFX1 U5(.A(flit[5]), .Y(fdata_i[5]));
+	BUFX1 U6(.A(flit[6]), .Y(fdata_i[6]));
+	BUFX1 U7(.A(flit[7]), .Y(fdata_i[7]));
+	BUFX1 U8(.A(flit[8]), .Y(fdata_i[8]));
+	BUFX1 U9(.A(flit[9]), .Y(fdata_i[9]));
+	BUFX1 U10(.A(flit[10]), .Y(fdata_i[10]));
+	BUFX1 U11(.A(flit[11]), .Y(fdata_i[11]));
+	BUFX1 U12(.A(flit[12]), .Y(fdata_i[12]));
+	BUFX1 U13(.A(flit[13]), .Y(fdata_i[13]));
+	BUFX1 U14(.A(flit[14]), .Y(fdata_i[14]));
+	BUFX1 U15(.A(flit[15]), .Y(fdata_i[15]));
+	BUFX1 U16(.A(flit[16]), .Y(fdata_i[16]));
+	BUFX1 U17(.A(flit[17]), .Y(fdata_i[17]));
+	BUFX1 U18(.A(flit[18]), .Y(fdata_i[18]));
+	BUFX1 U19(.A(flit[19]), .Y(fdata_i[19]));
+	BUFX1 U20(.A(flit[20]), .Y(fdata_i[20]));
+	BUFX1 U21(.A(flit[21]), .Y(fdata_i[21]));
+	BUFX1 U22(.A(flit[22]), .Y(fdata_i[22]));
+	BUFX1 U23(.A(flit[23]), .Y(fdata_i[23]));
+	BUFX1 U24(.A(flit[24]), .Y(fdata_i[24]));
+	BUFX1 U25(.A(flit[25]), .Y(fdata_i[25]));
+	BUFX1 U26(.A(flit[26]), .Y(fdata_i[26]));
+	BUFX1 U27(.A(flit[27]), .Y(fdata_i[27]));
+	BUFX1 U28(.A(flit[28]), .Y(fdata_i[28]));
+	BUFX1 U29(.A(flit[29]), .Y(fdata_i[29]));
+	BUFX1 U30(.A(flit[30]), .Y(fdata_i[30]));
+	BUFX1 U31(.A(flit[31]), .Y(fdata_i[31]));
+	BUFX1 U32(.A(flit[32]), .Y(fdata_i[32]));
+	BUFX1 U33(.A(flit[33]), .Y(fdata_i[33]));
     NOR2X1 U34 ( .IN1(flit[33]), .IN2(flit[32]), .QN(norres_vc_buffer_vc_buffer) );
     OR4X1 U35 ( .IN1(flit[29]), .IN2(flit[28]), .IN3(flit[27]), .IN4(flit[26]), .Y(or1res_vc_buffer) );
     OR4X1 U35 ( .IN1(flit[25]), .IN2(flit[24]), .IN3(flit[23]), .IN4(flit[22]), .Y(or2res_vc_buffer) );
