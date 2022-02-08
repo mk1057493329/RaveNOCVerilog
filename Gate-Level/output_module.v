@@ -10,7 +10,7 @@ module output_module (clk,arst,fin_req_i,fin_resp_o,fout_req_o,fout_resp_i);
 	wire [2:0] tail_flit_im;
 	wire [1:0] vc_ch_act_out;
 	wire req_out,xnor1resu1,xnor2resu1,and1resu1,xor1resu1,and2resu1,head_flit_32_not,and3resu1,nor23resu1,nor23resu2,and4resu1,and5resu1,or12resu12,nor23resu3,and6resu1,nand1resu,and8resu1,norfinresu1,and9resu1,and10resu1,and11resu1;
-	wire [((((2 + 1) + 1) + 8) + 22) - 1:0] head_flit;
+	wire [33:0] head_flit;
 	wire [0:1] _sv2v_jump;
 	wire [31:0] in_mod;
 	wire [31:0] vc_channel;
