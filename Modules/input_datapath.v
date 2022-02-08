@@ -525,7 +525,7 @@ module input_datapath (clk,arst,fin_req_i,fin_resp_o,fout_req_o,fout_resp_i);
 
     INVX1 U041 ( .A(req_in_jump_input_datapath), .Y(req_in_jump_input_datapath_not) );
     MUX21X1 U0016 (.IN1(fin_resp_o[0]), .IN2(1'sb1), .S(req_in_jump_input_datapath_not), .Q(fin_resp_o[0]));
-    BUFX1 U34(.A(from_input_req_in_jump_input_datapathput_datapath[34]), .Y(fin_req_i[34]))
+    BUFX1 U34(.A(from_input_req_in_jump_input_datapathput_datapath[34]), .Y(fin_req_i[34]));
 
     XOR2X1 U0222 ( .IN1(_sv2v_jump_input_datapath[1]), .IN2(1'b1), .Q(xor1resu_input_datapath) );
     MUX21X1 U0017 (.IN1(_sv2v_jump_input_datapath[0]), .IN2(1'b0), .S(xor1resu_input_datapath), .Q(_sv2v_jump_input_datapath[0]));
