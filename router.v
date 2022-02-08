@@ -128,6 +128,84 @@ module router_ravenoc (clk,arst,north_send,north_recv,south_send,south_recv,west
     wire [33:0] flit_input_router4;
     wire new_rt_input_router4,new_rt_input_router4not,norres_1_input_router4,norres_2_input_router4,norres_3_input_router4,andfinres_input_router4,and2result_input_router4,norres_4_input_router4,invres1_input_router4,invres2_input_router4,and3result_input_router4,and4result_input_router4,and5result_input_router4,norres_5_input_router4,and6result_input_router4,and7result_input_router4,and8result_input_router4,and9result_input_router4,and10result_input_router4,and11result_input_router4,orres1_input_router4,orres2_input_router4,orres3_input_router4,finand1_input_router4,finand2_input_router4,finand3_input_router4,nextrt2not_input_router44,secondAndc_input_router4,norres_5_input_router4_2,and62result_input_router4,and7result_input_router42,orres1_input_router42,finand1_input_router42,finand2_input_router42,and8result_input_router42,orres2_input_router42,and9result_input_router42,orres3_input_router42,finand3_input_router42,and11result_input_router42,nextrt2not_input_router44,and10result_input_router42,arst_valuenot_input_router4,finand3_input_router422;
 
+	wire [110:0] from_input_req_in_jump_input_datapathput_datapath;
+	wire [2:0] from_input_resp_input_datapath;
+	wire [110:0] to_output_req_in_jump_input_datapathput_datapath;
+	wire [2:0] to_output_resp_input_datapath;
+	wire [1:0] vc_ch_act_in_input_datapath;
+	wire [1:0] vc_ch_act_out_input_datapath;
+	wire [2:0] i_input_datapath;
+	wire [2:0] j_input_datapath;
+	wire [0:1] _sv2v_jump_input_datapath;
+
+	wire req_in_jump_input_datapath,req_out_jump_input_datapath,xnor1resu_input_datapath,xnor2resu_input_datapath,and1resu_input_datapath,cond1line_input_datapath,req_in_jump_input_datapath_not,and2resu_input_datapath,xor1resu_input_datapath,nand1resu_input_datapath,xnor23resu_input_datapath,and4resu_input_datapath,write_flit_vc_buffer,norres_vc_buffer_vc_buffer,full_vc_buffer,empty_vc_buffer,error_vc_buffer,read_flit_vc_buffer,locked_by_route_ff_vc_buffer,next_locked_vc_buffer,orres_vc_buffer,or1res_vc_buffer,or2res_vc_buffer,finres1_vc_buffer,andres1_vc_buffer,full_vc_buffer_not,locked_by_route_ff_vc_buffer_not,thirdand_vc_buffer,u1temp_fifomodule,u2temp_fifomodule,u4temp_fifomodule,full_vc_buffer_not_fifomodule,u7temp_fifomodule,u9temp_fifomodule,u10carry_fifomodule,u11carry_fifomodule,empty_vc_buffer_not_fifomodule,u13temp_fifomodule,u14temp_fifomodule,u15carry_fifomodule,u16carry_fifomodule,u17res_fifomodule,u18res_fifomodule,write_ptr_ff_fifomodule_0_not,write_ptr_ff_fifomodule_1_not,b0wire_fifomodule,b1wire_fifomodule,u23temp_fifomodule_not_fifomodule,u23temp_fifomodule,boutb_fifomodule,bouta_fifomodule,boutmain_fifomodule,arst_value_fifomodule,write_flit1_vc_buffer1,norres_vc_buffer1_vc_buffer1,full_vc_buffer1,empty_vc_buffer1,error_vc_buffer1,read_flit1_vc_buffer1,locked_by_route_ff_vc_buffer1,next_locked_vc_buffer1,orres_vc_buffer1,or1res_vc_buffer1,or2res_vc_buffer1,finres1_vc_buffer1,andres1_vc_buffer1,full_vc_buffer1_not1,locked_by_route_ff_vc_buffer1_not1,thirdand_vc_buffer1,u1temp_fifomodule1,u2temp_fifomodule1,u4temp_fifomodule1,full_vc_buffer1_not1_fifomodule1,u7temp_fifomodule1,u9temp_fifomodule1,u10carry_fifomodule1,u11carry_fifomodule1,empty_vc_buffer1_not_fifomodule1,u13temp_fifomodule1,u14temp_fifomodule1,u15carry_fifomodule1,u16carry_fifomodule1,u17res_fifomodule1,u18res_fifomodule1,write_ptr_ff_fifomodule1_0_not1,write_ptr_ff_fifomodule1_1_not1,b0wire_fifomodule1,b1wire_fifomodule1,u23temp_fifomodule1_not_fifomodule1,u23temp_fifomodule1,boutb_fifomodule1,bouta_fifomodule1,boutmain_fifomodule1,arst_value_fifomodule1,write_flit2_vc_buffer2,norres_vc_buffer2_vc_buffer2,full_vc_buffer2,empty_vc_buffer2,error_vc_buffer2,read_flit2_vc_buffer2,locked_by_route_ff_vc_buffer2,next_locked_vc_buffer2,orres_vc_buffer2,or1res_vc_buffer2,or2res_vc_buffer2,finres1_vc_buffer2,andres1_vc_buffer2,full_vc_buffer2_not2,locked_by_route_ff_vc_buffer2_not2,thirdand_vc_buffer2,u1temp_fifomodule2,u2temp_fifomodule2,u4temp_fifomodule2,full_vc_buffer2_not2_fifomodule2,u7temp_fifomodule2,u9temp_fifomodule2,u10carry_fifomodule2,u11carry_fifomodule2,empty_vc_buffer2_not_fifomodule2,u13temp_fifomodule2,u14temp_fifomodule2,u15carry_fifomodule2,u16carry_fifomodule2,u17res_fifomodule2,u18res_fifomodule2,write_ptr_ff_fifomodule2_0_not2,write_ptr_ff_fifomodule2_1_not2,b0wire_fifomodule2,b1wire_fifomodule2,u23temp_fifomodule2_not_fifomodule2,u23temp_fifomodule2,boutb_fifomodule2,bouta_fifomodule2,boutmain_fifomodule2,arst_value_fifomodule2;
+	wire [33:0] flit,flit1,flit2;
+	wire [15:0] fifo_ff_fifomodule,fifo_ff_fifomodule1,fifo_ff_fifomodule2;
+	wire [1:0] write_ptr_ff_fifomodule,read_ptr_ff_fifomodule,next_write_ptr_fifomodule,next_read_ptr_fifomodule,fifo_ocup_fifomodule,write_ptr_ff_fifomodule1,read_ptr_ff_fifomodule1,next_write_ptr_fifomodule1,next_read_ptr_fifomodule1,fifo_ocup_fifomodule1,write_ptr_ff_fifomodule2,read_ptr_ff_fifomodule2,next_write_ptr_fifomodule2,next_read_ptr_fifomodule2,fifo_ocup_fifomodule2;
+
+	wire [110:0] from_input_req_in_jump_input_datapath1put_datapath1;
+	wire [2:0] from_input_resp_input_datapath1;
+	wire [110:0] to_output_req_in_jump_input_datapath1put_datapath1;
+	wire [2:0] to_output_resp_input_datapath1;
+	wire [1:0] vc_ch_act_in_input_datapath1;
+	wire [1:0] vc_ch_act_out_input_datapath1;
+	wire [2:0] i_input_datapath1;
+	wire [2:0] j_input_datapath1;
+	wire [0:1] _sv2v_jump_input_datapath1;
+
+	wire req_in_jump_input_datapath1,req_out_jump_input_datapath1,xnor1resu_input_datapath1,xnor2resu_input_datapath1,and1resu_input_datapath1,cond1line_input_datapath1,req_in_jump_input_datapath1_not,and2resu_input_datapath1,xor1resu_input_datapath1,nand1resu_input_datapath11,xnor23resu_input_datapath1,and4resu_input_datapath1,write_flit11_vc_buffer1,norres_vc_buffer11_vc_buffer11,full_vc_buffer11,empty_vc_buffer11,error_vc_buffer11,read_flit11_vc_buffer1,locked_by_route_ff_vc_buffer11,next_locked_vc_buffer11,orres_vc_buffer11,or1res_vc_buffer11,or2res_vc_buffer11,finres1_vc_buffer11,andres1_vc_buffer11,full_vc_buffer11_not,locked_by_route_ff_vc_buffer11_not,thirdand_vc_buffer11,u1temp_fifomodule11,u2temp_fifomodule11,u4temp_fifomodule11,full_vc_buffer11_not_fifomodule,u7temp_fifomodule11,u9temp_fifomodule11,u10carry_fifomodule11,u11carry_fifomodule11,empty_vc_buffer11_not_fifomodule,u13temp_fifomodule11,u14temp_fifomodule11,u15carry_fifomodule11,u16carry_fifomodule11,u17res_fifomodule11,u18res_fifomodule11,write_ptr_ff_fifomodule11_0_not1,write_ptr_ff_fifomodule11_1_not1,b0wire_fifomodule11,b1wire_fifomodule11,u23temp_fifomodule11_not_fifomodule11,u23temp_fifomodule11,boutb_fifomodule11,bouta_fifomodule11,boutmain_fifomodule11,arst_value_fifomodule11,write_flit111_vc_buffer11,norres_vc_buffer111_vc_buffer1,full_vc_buffer111,empty_vc_buffer111,error_vc_buffer111,read_flit111_vc_buffer11,locked_by_route_ff_vc_buffer111,next_locked_vc_buffer111,orres_vc_buffer111,or1res_vc_buffer111,or2res_vc_buffer111,finres1_vc_buffer111,andres1_vc_buffer111,full_vc_buffer111_not1,locked_by_route_ff_vc_buffer111_not1,thirdand_vc_buffer111,u1temp_fifomodule111,u2temp_fifomodule111,u4temp_fifomodule111,full_vc_buffer111_not1_fifomodule1,u7temp_fifomodule111,u9temp_fifomodule111,u10carry_fifomodule111,u11carry_fifomodule111,empty_vc_buffer111_not_fifomodule1,u13temp_fifomodule111,u14temp_fifomodule111,u15carry_fifomodule111,u16carry_fifomodule111,u17res_fifomodule111,u18res_fifomodule111,write_ptr_ff_fifomodule111_0_not11,write_ptr_ff_fifomodule111_1_not11,b0wire_fifomodule111,b1wire_fifomodule111,u23temp_fifomodule111_not_fifomodule1,u23temp_fifomodule111,boutb_fifomodule111,bouta_fifomodule111,boutmain_fifomodule111,arst_value_fifomodule111,write_flit112_vc_buffer21,norres_vc_buffer112_vc_buffer2,full_vc_buffer112,empty_vc_buffer112,error_vc_buffer112,read_flit112_vc_buffer21,locked_by_route_ff_vc_buffer112,next_locked_vc_buffer112,orres_vc_buffer112,or1res_vc_buffer112,or2res_vc_buffer112,finres1_vc_buffer112,andres1_vc_buffer112,full_vc_buffer112_not2,locked_by_route_ff_vc_buffer112_not2,thirdand_vc_buffer112,u1temp_fifomodule112,u2temp_fifomodule112,u4temp_fifomodule112,full_vc_buffer112_not2_fifomodule2,u7temp_fifomodule112,u9temp_fifomodule112,u10carry_fifomodule112,u11carry_fifomodule112,empty_vc_buffer112_not_fifomodule2,u13temp_fifomodule112,u14temp_fifomodule112,u15carry_fifomodule112,u16carry_fifomodule112,u17res_fifomodule112,u18res_fifomodule112,write_ptr_ff_fifomodule112_0_not21,write_ptr_ff_fifomodule112_1_not21,b0wire_fifomodule112,b1wire_fifomodule112,u23temp_fifomodule112_not_fifomodule2,u23temp_fifomodule112,boutb_fifomodule112,bouta_fifomodule112,boutmain_fifomodule112,arst_value_fifomodule112;
+	wire [33:0] flit11,flit111,flit112;
+	wire [15:0] fifo_ff_fifomodule11,fifo_ff_fifomodule111,fifo_ff_fifomodule112;
+	wire [1:0] write_ptr_ff_fifomodule11,read_ptr_ff_fifomodule11,next_write_ptr_fifomodule11,next_read_ptr_fifomodule11,fifo_ocup_fifomodule11,write_ptr_ff_fifomodule111,read_ptr_ff_fifomodule111,next_write_ptr_fifomodule111,next_read_ptr_fifomodule111,fifo_ocup_fifomodule111,write_ptr_ff_fifomodule112,read_ptr_ff_fifomodule112,next_write_ptr_fifomodule112,next_read_ptr_fifomodule112,fifo_ocup_fifomodule112;
+
+	wire [110:0] from_input_req_in_jump_input_datapath2put_datapath2;
+	wire [2:0] from_input_resp_input_datapath2;
+	wire [110:0] to_output_req_in_jump_input_datapath2put_datapath2;
+	wire [2:0] to_output_resp_input_datapath2;
+	wire [1:0] vc_ch_act_in_input_datapath2;
+	wire [1:0] vc_ch_act_out_input_datapath2;
+	wire [2:0] i_input_datapath2;
+	wire [2:0] j_input_datapath2;
+	wire [0:1] _sv2v_jump_input_datapath2;
+
+	wire req_in_jump_input_datapath2,req_out_jump_input_datapath2,xnor1resu_input_datapath2,xnor2resu_input_datapath2,and1resu_input_datapath2,cond1line_input_datapath2,req_in_jump_input_datapath2_not,and2resu_input_datapath2,xor1resu_input_datapath2,nand1resu_input_datapath22,xnor23resu_input_datapath2,and4resu_input_datapath2,write_flit22_vc_buffer2,norres_vc_buffer22_vc_buffer22,full_vc_buffer22,empty_vc_buffer22,error_vc_buffer22,read_flit22_vc_buffer2,locked_by_route_ff_vc_buffer22,next_locked_vc_buffer22,orres_vc_buffer22,or1res_vc_buffer22,or2res_vc_buffer22,finres1_vc_buffer22,andres1_vc_buffer22,full_vc_buffer22_not,locked_by_route_ff_vc_buffer22_not,thirdand_vc_buffer22,u1temp_fifomodule22,u2temp_fifomodule22,u4temp_fifomodule22,full_vc_buffer22_not_fifomodule,u7temp_fifomodule22,u9temp_fifomodule22,u10carry_fifomodule22,u11carry_fifomodule22,empty_vc_buffer22_not_fifomodule,u13temp_fifomodule22,u14temp_fifomodule22,u15carry_fifomodule22,u16carry_fifomodule22,u17res_fifomodule22,u18res_fifomodule22,write_ptr_ff_fifomodule22_0_not2,write_ptr_ff_fifomodule22_1_not2,b0wire_fifomodule22,b1wire_fifomodule22,u23temp_fifomodule22_not_fifomodule22,u23temp_fifomodule22,boutb_fifomodule22,bouta_fifomodule22,boutmain_fifomodule22,arst_value_fifomodule22,write_flit221_vc_buffer12,norres_vc_buffer221_vc_buffer1,full_vc_buffer221,empty_vc_buffer221,error_vc_buffer221,read_flit221_vc_buffer12,locked_by_route_ff_vc_buffer221,next_locked_vc_buffer221,orres_vc_buffer221,or1res_vc_buffer221,or2res_vc_buffer221,finres1_vc_buffer221,andres1_vc_buffer221,full_vc_buffer221_not1,locked_by_route_ff_vc_buffer221_not1,thirdand_vc_buffer221,u1temp_fifomodule221,u2temp_fifomodule221,u4temp_fifomodule221,full_vc_buffer221_not1_fifomodule1,u7temp_fifomodule221,u9temp_fifomodule221,u10carry_fifomodule221,u11carry_fifomodule221,empty_vc_buffer221_not_fifomodule1,u13temp_fifomodule221,u14temp_fifomodule221,u15carry_fifomodule221,u16carry_fifomodule221,u17res_fifomodule221,u18res_fifomodule221,write_ptr_ff_fifomodule221_0_not12,write_ptr_ff_fifomodule221_1_not12,b0wire_fifomodule221,b1wire_fifomodule221,u23temp_fifomodule221_not_fifomodule1,u23temp_fifomodule221,boutb_fifomodule221,bouta_fifomodule221,boutmain_fifomodule221,arst_value_fifomodule221,write_flit222_vc_buffer22,norres_vc_buffer222_vc_buffer2,full_vc_buffer222,empty_vc_buffer222,error_vc_buffer222,read_flit222_vc_buffer22,locked_by_route_ff_vc_buffer222,next_locked_vc_buffer222,orres_vc_buffer222,or1res_vc_buffer222,or2res_vc_buffer222,finres1_vc_buffer222,andres1_vc_buffer222,full_vc_buffer222_not2,locked_by_route_ff_vc_buffer222_not2,thirdand_vc_buffer222,u1temp_fifomodule222,u2temp_fifomodule222,u4temp_fifomodule222,full_vc_buffer222_not2_fifomodule2,u7temp_fifomodule222,u9temp_fifomodule222,u10carry_fifomodule222,u11carry_fifomodule222,empty_vc_buffer222_not_fifomodule2,u13temp_fifomodule222,u14temp_fifomodule222,u15carry_fifomodule222,u16carry_fifomodule222,u17res_fifomodule222,u18res_fifomodule222,write_ptr_ff_fifomodule222_0_not22,write_ptr_ff_fifomodule222_1_not22,b0wire_fifomodule222,b1wire_fifomodule222,u23temp_fifomodule222_not_fifomodule2,u23temp_fifomodule222,boutb_fifomodule222,bouta_fifomodule222,boutmain_fifomodule222,arst_value_fifomodule222;
+	wire [33:0] flit22,flit221,flit222;
+	wire [15:0] fifo_ff_fifomodule22,fifo_ff_fifomodule221,fifo_ff_fifomodule222;
+	wire [1:0] write_ptr_ff_fifomodule22,read_ptr_ff_fifomodule22,next_write_ptr_fifomodule22,next_read_ptr_fifomodule22,fifo_ocup_fifomodule22,write_ptr_ff_fifomodule221,read_ptr_ff_fifomodule221,next_write_ptr_fifomodule221,next_read_ptr_fifomodule221,fifo_ocup_fifomodule221,write_ptr_ff_fifomodule222,read_ptr_ff_fifomodule222,next_write_ptr_fifomodule222,next_read_ptr_fifomodule222,fifo_ocup_fifomodule222;
+
+	wire [110:0] from_input_req_in_jump_input_datapath3put_datapath3;
+	wire [2:0] from_input_resp_input_datapath3;
+	wire [110:0] to_output_req_in_jump_input_datapath3put_datapath3;
+	wire [2:0] to_output_resp_input_datapath3;
+	wire [1:0] vc_ch_act_in_input_datapath3;
+	wire [1:0] vc_ch_act_out_input_datapath3;
+	wire [2:0] i_input_datapath3;
+	wire [2:0] j_input_datapath3;
+	wire [0:1] _sv2v_jump_input_datapath3;
+
+	wire req_in_jump_input_datapath3,req_out_jump_input_datapath3,xnor1resu_input_datapath3,xnor2resu_input_datapath3,and1resu_input_datapath3,cond1line_input_datapath3,req_in_jump_input_datapath3_not,and2resu_input_datapath3,xor1resu_input_datapath3,nand1resu_input_datapath33,xnor23resu_input_datapath3,and4resu_input_datapath3,write_flit3_vc_buffer3,norres_vc_buffer3_vc_buffer3,full_vc_buffer3,empty_vc_buffer3,error_vc_buffer3,read_flit3_vc_buffer3,locked_by_route_ff_vc_buffer3,next_locked_vc_buffer3,orres_vc_buffer3,or1res_vc_buffer3,or2res_vc_buffer3,finres1_vc_buffer3,andres1_vc_buffer3,full_vc_buffer3_not,locked_by_route_ff_vc_buffer3_not,thirdand_vc_buffer3,u1temp_fifomodule3,u2temp_fifomodule3,u4temp_fifomodule3,full_vc_buffer3_not_fifomodule,u7temp_fifomodule3,u9temp_fifomodule3,u10carry_fifomodule3,u11carry_fifomodule3,empty_vc_buffer3_not_fifomodule,u13temp_fifomodule3,u14temp_fifomodule3,u15carry_fifomodule3,u16carry_fifomodule3,u17res_fifomodule3,u18res_fifomodule3,write_ptr_ff_fifomodule3_0_not3,write_ptr_ff_fifomodule3_1_not3,b0wire_fifomodule3,b1wire_fifomodule3,u23temp_fifomodule3_not_fifomodule3,u23temp_fifomodule3,boutb_fifomodule3,bouta_fifomodule3,boutmain_fifomodule3,arst_value_fifomodule3,write_flit31_vc_buffer13,norres_vc_buffer31_vc_buffer1,full_vc_buffer31,empty_vc_buffer31,error_vc_buffer31,read_flit31_vc_buffer13,locked_by_route_ff_vc_buffer31,next_locked_vc_buffer31,orres_vc_buffer31,or1res_vc_buffer31,or2res_vc_buffer31,finres1_vc_buffer31,andres1_vc_buffer31,full_vc_buffer31_not1,locked_by_route_ff_vc_buffer31_not1,thirdand_vc_buffer31,u1temp_fifomodule31,u2temp_fifomodule31,u4temp_fifomodule31,full_vc_buffer31_not1_fifomodule1,u7temp_fifomodule31,u9temp_fifomodule31,u10carry_fifomodule31,u11carry_fifomodule31,empty_vc_buffer31_not_fifomodule1,u13temp_fifomodule31,u14temp_fifomodule31,u15carry_fifomodule31,u16carry_fifomodule31,u17res_fifomodule31,u18res_fifomodule31,write_ptr_ff_fifomodule31_0_not13,write_ptr_ff_fifomodule31_1_not13,b0wire_fifomodule31,b1wire_fifomodule31,u23temp_fifomodule31_not_fifomodule1,u23temp_fifomodule31,boutb_fifomodule31,bouta_fifomodule31,boutmain_fifomodule31,arst_value_fifomodule31,write_flit32_vc_buffer23,norres_vc_buffer32_vc_buffer2,full_vc_buffer32,empty_vc_buffer32,error_vc_buffer32,read_flit32_vc_buffer23,locked_by_route_ff_vc_buffer32,next_locked_vc_buffer32,orres_vc_buffer32,or1res_vc_buffer32,or2res_vc_buffer32,finres1_vc_buffer32,andres1_vc_buffer32,full_vc_buffer32_not2,locked_by_route_ff_vc_buffer32_not2,thirdand_vc_buffer32,u1temp_fifomodule32,u2temp_fifomodule32,u4temp_fifomodule32,full_vc_buffer32_not2_fifomodule2,u7temp_fifomodule32,u9temp_fifomodule32,u10carry_fifomodule32,u11carry_fifomodule32,empty_vc_buffer32_not_fifomodule2,u13temp_fifomodule32,u14temp_fifomodule32,u15carry_fifomodule32,u16carry_fifomodule32,u17res_fifomodule32,u18res_fifomodule32,write_ptr_ff_fifomodule32_0_not23,write_ptr_ff_fifomodule32_1_not23,b0wire_fifomodule32,b1wire_fifomodule32,u23temp_fifomodule32_not_fifomodule2,u23temp_fifomodule32,boutb_fifomodule32,bouta_fifomodule32,boutmain_fifomodule32,arst_value_fifomodule32;
+	wire [33:0] flit3,flit31,flit32;
+	wire [15:0] fifo_ff_fifomodule3,fifo_ff_fifomodule31,fifo_ff_fifomodule32;
+	wire [1:0] write_ptr_ff_fifomodule3,read_ptr_ff_fifomodule3,next_write_ptr_fifomodule3,next_read_ptr_fifomodule3,fifo_ocup_fifomodule3,write_ptr_ff_fifomodule31,read_ptr_ff_fifomodule31,next_write_ptr_fifomodule31,next_read_ptr_fifomodule31,fifo_ocup_fifomodule31,write_ptr_ff_fifomodule32,read_ptr_ff_fifomodule32,next_write_ptr_fifomodule32,next_read_ptr_fifomodule32,fifo_ocup_fifomodule32;
+
+
+	wire [110:0] from_input_req_in_jump_input_datapath4put_datapath4;
+	wire [2:0] from_input_resp_input_datapath4;
+	wire [110:0] to_output_req_in_jump_input_datapath4put_datapath4;
+	wire [2:0] to_output_resp_input_datapath4;
+	wire [1:0] vc_ch_act_in_input_datapath4;
+	wire [1:0] vc_ch_act_out_input_datapath4;
+	wire [2:0] i_input_datapath4;
+	wire [2:0] j_input_datapath4;
+	wire [0:1] _sv2v_jump_input_datapath4;
+
+	wire req_in_jump_input_datapath4,req_out_jump_input_datapath4,xnor1resu_input_datapath4,xnor2resu_input_datapath4,and1resu_input_datapath4,cond1line_input_datapath4,req_in_jump_input_datapath4_not,and2resu_input_datapath4,xor1resu_input_datapath4,nand1resu_input_datapath44,xnor23resu_input_datapath4,and4resu_input_datapath4,write_flit4_vc_buffer4,norres_vc_buffer4_vc_buffer4,full_vc_buffer4,empty_vc_buffer4,error_vc_buffer4,read_flit4_vc_buffer4,locked_by_route_ff_vc_buffer4,next_locked_vc_buffer4,orres_vc_buffer4,or1res_vc_buffer4,or2res_vc_buffer4,finres1_vc_buffer4,andres1_vc_buffer4,full_vc_buffer4_not,locked_by_route_ff_vc_buffer4_not,thirdand_vc_buffer4,u1temp_fifomodule4,u2temp_fifomodule4,u4temp_fifomodule4,full_vc_buffer4_not_fifomodule,u7temp_fifomodule4,u9temp_fifomodule4,u10carry_fifomodule4,u11carry_fifomodule4,empty_vc_buffer4_not_fifomodule,u13temp_fifomodule4,u14temp_fifomodule4,u15carry_fifomodule4,u16carry_fifomodule4,u17res_fifomodule4,u18res_fifomodule4,write_ptr_ff_fifomodule4_0_not4,write_ptr_ff_fifomodule4_1_not4,b0wire_fifomodule4,b1wire_fifomodule4,u23temp_fifomodule4_not_fifomodule4,u23temp_fifomodule4,boutb_fifomodule4,bouta_fifomodule4,boutmain_fifomodule4,arst_value_fifomodule4,write_flit41_vc_buffer14,norres_vc_buffer41_vc_buffer1,full_vc_buffer41,empty_vc_buffer41,error_vc_buffer41,read_flit41_vc_buffer14,locked_by_route_ff_vc_buffer41,next_locked_vc_buffer41,orres_vc_buffer41,or1res_vc_buffer41,or2res_vc_buffer41,finres1_vc_buffer41,andres1_vc_buffer41,full_vc_buffer41_not1,locked_by_route_ff_vc_buffer41_not1,thirdand_vc_buffer41,u1temp_fifomodule41,u2temp_fifomodule41,u4temp_fifomodule41,full_vc_buffer41_not1_fifomodule1,u7temp_fifomodule41,u9temp_fifomodule41,u10carry_fifomodule41,u11carry_fifomodule41,empty_vc_buffer41_not_fifomodule1,u13temp_fifomodule41,u14temp_fifomodule41,u15carry_fifomodule41,u16carry_fifomodule41,u17res_fifomodule41,u18res_fifomodule41,write_ptr_ff_fifomodule41_0_not14,write_ptr_ff_fifomodule41_1_not14,b0wire_fifomodule41,b1wire_fifomodule41,u23temp_fifomodule41_not_fifomodule1,u23temp_fifomodule41,boutb_fifomodule41,bouta_fifomodule41,boutmain_fifomodule41,arst_value_fifomodule41,write_flit42_vc_buffer24,norres_vc_buffer42_vc_buffer2,full_vc_buffer42,empty_vc_buffer42,error_vc_buffer42,read_flit42_vc_buffer24,locked_by_route_ff_vc_buffer42,next_locked_vc_buffer42,orres_vc_buffer42,or1res_vc_buffer42,or2res_vc_buffer42,finres1_vc_buffer42,andres1_vc_buffer42,full_vc_buffer42_not2,locked_by_route_ff_vc_buffer42_not2,thirdand_vc_buffer42,u1temp_fifomodule42,u2temp_fifomodule42,u4temp_fifomodule42,full_vc_buffer42_not2_fifomodule2,u7temp_fifomodule42,u9temp_fifomodule42,u10carry_fifomodule42,u11carry_fifomodule42,empty_vc_buffer42_not_fifomodule2,u13temp_fifomodule42,u14temp_fifomodule42,u15carry_fifomodule42,u16carry_fifomodule42,u17res_fifomodule42,u18res_fifomodule42,write_ptr_ff_fifomodule42_0_not24,write_ptr_ff_fifomodule42_1_not24,b0wire_fifomodule42,b1wire_fifomodule42,u23temp_fifomodule42_not_fifomodule2,u23temp_fifomodule42,boutb_fifomodule42,bouta_fifomodule42,boutmain_fifomodule42,arst_value_fifomodule42;
+	wire [33:0] flit4,flit41,flit42;
+	wire [15:0] fifo_ff_fifomodule4,fifo_ff_fifomodule41,fifo_ff_fifomodule42;
+	wire [1:0] write_ptr_ff_fifomodule4,read_ptr_ff_fifomodule4,next_write_ptr_fifomodule4,next_read_ptr_fifomodule4,fifo_ocup_fifomodule4,write_ptr_ff_fifomodule41,read_ptr_ff_fifomodule41,next_write_ptr_fifomodule41,next_read_ptr_fifomodule41,fifo_ocup_fifomodule41,write_ptr_ff_fifomodule42,read_ptr_ff_fifomodule42,next_write_ptr_fifomodule42,next_read_ptr_fifomodule42,fifo_ocup_fifomodule42;
+
+
+
 //input router
     BUFX1 U00 ( .A(1'b0), .Y(next_rt_input_router[0]) );
     BUFX1 U01 ( .A(1'b0), .Y(next_rt_input_router[1]) );
@@ -203,7 +281,6 @@ module router_ravenoc (clk,arst,north_send,north_recv,south_send,south_recv,west
     AND2X1 U38 ( .IN1(norres_5_input_router), .IN2(new_rt_input_router), .Q(and6result_input_router) );
     MUX21X1 U38 (.IN1(int_route_v[4:0][0]), .IN2(1'sb1), .S(and6result_input_router), .Q(int_route_v[4:0][4]);
 
-    //1,2,4 and + or
     NOR2X1 U38 ( .IN1(next_rt_input_router[1]), .IN2(next_rt_input_router[2]), .QN(and7result_input_router) );
     AND2X1 U19 ( .IN1(and7result_input_router), .IN2(next_rt_input_router[0]), .Y(orres1_input_router) );
     AND2X1 U38 ( .IN1(new_rt_input_router), .IN2(orres1_input_router), .Q(finand1_input_router) );
@@ -342,7 +419,6 @@ module router_ravenoc (clk,arst,north_send,north_recv,south_send,south_recv,west
     AND2X1 U38 ( .IN1(norres_5_input_router1), .IN2(new_rt_input_router1), .Q(and6result_input_router1) );
     MUX21X1 U38 (.IN1(int_route_v[9:5][0]), .IN2(1'sb1), .S(and6result_input_router1), .Q(int_route_v[9:5][4]);
 
-    //1,2,4 and + or
     NOR2X1 U38 ( .IN1(next_rt_input_router1[1]), .IN2(next_rt_input_router1[2]), .QN(and7result_input_router1) );
     AND2X1 U19 ( .IN1(and7result_input_router1), .IN2(next_rt_input_router1[0]), .Y(orres1_input_router1) );
     AND2X1 U38 ( .IN1(new_rt_input_router1), .IN2(orres1_input_router1), .Q(finand1_input_router1) );
@@ -482,7 +558,6 @@ module router_ravenoc (clk,arst,north_send,north_recv,south_send,south_recv,west
     AND2X1 U38 ( .IN1(norres_5_input_router2), .IN2(new_rt_input_router2), .Q(and6result_input_router2) );
     MUX21X1 U38 (.IN1(int_route_v[14:10][0]), .IN2(1'sb1), .S(and6result_input_router2), .Q(int_route_v[14:10][4]);
 
-    //1,2,4 and + or
     NOR2X1 U38 ( .IN1(next_rt_input_router2[1]), .IN2(next_rt_input_router2[2]), .QN(and7result_input_router22) );
     AND2X1 U19 ( .IN1(and7result_input_router22), .IN2(next_rt_input_router2[0]), .Y(orres1_input_router22) );
     AND2X1 U38 ( .IN1(new_rt_input_router2), .IN2(orres1_input_router22), .Q(finand1_input_router22) );
@@ -621,7 +696,6 @@ module router_ravenoc (clk,arst,north_send,north_recv,south_send,south_recv,west
     AND2X1 U38 ( .IN1(norres_5_input_router3), .IN2(new_rt_input_router3), .Q(and6result_input_router3) );
     MUX21X1 U38 (.IN1(int_route_v[19:15][0]), .IN2(1'sb1), .S(and6result_input_router3), .Q(int_route_v[19:15][4]);
 
-    //1,2,4 and + or
     NOR2X1 U38 ( .IN1(next_rt_input_router3[1]), .IN2(next_rt_input_router3[2]), .QN(and7result_input_router3) );
     AND2X1 U19 ( .IN1(and7result_input_router3), .IN2(next_rt_input_router3[0]), .Y(orres1_input_router3) );
     AND2X1 U38 ( .IN1(new_rt_input_router3), .IN2(orres1_input_router3), .Q(finand1_input_router3) );
@@ -760,7 +834,6 @@ module router_ravenoc (clk,arst,north_send,north_recv,south_send,south_recv,west
     AND2X1 U38 ( .IN1(norres_5_input_router4), .IN2(new_rt_input_router4), .Q(and6result_input_router4) );
     MUX21X1 U38 (.IN1(int_route_v[24:20][0]), .IN2(1'sb1), .S(and6result_input_router4), .Q(int_route_v[24:20][4]);
 
-    //1,2,4 and + or
     NOR2X1 U38 ( .IN1(next_rt_input_router4[1]), .IN2(next_rt_input_router4[2]), .QN(and7result_input_router4) );
     AND2X1 U19 ( .IN1(and7result_input_router4), .IN2(next_rt_input_router4[0]), .Y(orres1_input_router4) );
     AND2X1 U38 ( .IN1(new_rt_input_router4), .IN2(orres1_input_router4), .Q(finand1_input_router4) );
@@ -827,51 +900,2830 @@ module router_ravenoc (clk,arst,north_send,north_recv,south_send,south_recv,west
 
 
 //input part
-	input_datapath u_input_datapath(
-		.clk(clk),
-		.arst(arst),
-		.fin_req_i(ext_req_v_i[36:0]),
-		.fin_resp_o(ext_resp_v_o[1:0]),
-		.fout_req_o(int_req_v[36:0]),
-		.fout_resp_i(int_resp_v[1:0])
-	);
 
-	input_datapath u_input_datapath(
-		.clk(clk),
-		.arst(arst),
-		.fin_req_i(ext_req_v_i[73:37]),
-		.fin_resp_o(ext_resp_v_o[2:1]),
-		.fout_req_o(int_req_v[73:37]),
-		.fout_resp_i(int_resp_v[2:1])
-	);
 
-	input_datapath u_input_datapath(
-		.clk(clk),
-		.arst(arst),
-		.fin_req_i(ext_req_v_i[110:74]),
-		.fin_resp_o(ext_resp_v_o[3:2]),
-		.fout_req_o(int_req_v[110:74]),
-		.fout_resp_i(int_resp_v[3:2])
-	);
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule[0]), .Y(next_read_ptr_fifomodule[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule[1]), .Y(next_read_ptr_fifomodule[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule[0]), .Y(next_write_ptr_fifomodule[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule[1]), .Y(next_write_ptr_fifomodule[1]) );
 
-	input_datapath u_input_datapath(
-		.clk(clk),
-		.arst(arst),
-		.fin_req_i(ext_req_v_i[147:111]),
-		.fin_resp_o(ext_resp_v_o[4:3]),
-		.fout_req_o(int_req_v[147:111]),
-		.fout_resp_i(int_resp_v[4:3])
-	);
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule[0]), .IN2(read_ptr_ff_fifomodule[0]), .Q(u1temp_fifomodule) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule[1]), .IN2(read_ptr_ff_fifomodule[1]), .Q(u2temp_fifomodule) );
+	AND2X1 U3 ( .A(u1temp_fifomodule), .B(u2temp_fifomodule), .Y(empty_vc_buffer) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule[1]), .B(read_ptr_ff_fifomodule[1]), .Y(u4temp_fifomodule) );
+	AND2X1 U5 ( .A(u1temp_fifomodule), .B(u4temp_fifomodule), .Y(full_vc_buffer) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule[read_ptr_ff_fifomodule[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer), .Q(to_output_req_in_jump_input_datapathput_datapath[36:3][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule[read_ptr_ff_fifomodule[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer), .Q(to_output_req_in_jump_input_datapathput_datapath[36:3][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule[read_ptr_ff_fifomodule[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer), .Q(to_output_req_in_jump_input_datapathput_datapath[36:3][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule[read_ptr_ff_fifomodule[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer), .Q(to_output_req_in_jump_input_datapathput_datapath[36:3][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule[read_ptr_ff_fifomodule[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer), .Q(to_output_req_in_jump_input_datapathput_datapath[36:3][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule[read_ptr_ff_fifomodule[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer), .Q(to_output_req_in_jump_input_datapathput_datapath[36:3][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule[read_ptr_ff_fifomodule[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer), .Q(to_output_req_in_jump_input_datapathput_datapath[36:3][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule[read_ptr_ff_fifomodule[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer), .Q(to_output_req_in_jump_input_datapathput_datapath[36:3][7]));
 
-	
-	input_datapath u_input_datapath(
-		.clk(clk),
-		.arst(arst),
-		.fin_req_i(ext_req_v_i[184:148]),
-		.fin_resp_o(ext_resp_v_o[5:4]),
-		.fout_req_o(int_req_v[184:148]),
-		.fout_resp_i(int_resp_v[5:4])
-	);
+	INVX1 U7 ( .A(full_vc_buffer), .Y(full_vc_buffer_not_fifomodule) );
+	AND2X1 U8 ( .A(write_flit_vc_buffer), .B(full_vc_buffer_not_fifomodule), .Y(u7temp_fifomodule) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule), .Q(u9temp_fifomodule));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule[0]), .B0(u9temp_fifomodule), .C1(u10carry_fifomodule), .SO(next_write_ptr_fifomodule[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule), .B0(write_ptr_ff_fifomodule[1]), .C1(u11carry_fifomodule), .SO(next_write_ptr_fifomodule[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer), .Y(empty_vc_buffer_not_fifomodule) );
+	AND2X1 U13 ( .A(read_flit_vc_buffer), .B(empty_vc_buffer_not_fifomodule), .Y(u13temp_fifomodule) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule), .Q(u14temp_fifomodule));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule[0]), .B0(u14temp_fifomodule), .C1(u15carry_fifomodule), .SO(next_read_ptr_fifomodule[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule), .B0(read_ptr_ff_fifomodule[1]), .C1(u16carry_fifomodule), .SO(next_read_ptr_fifomodule[1]) );
+
+	AND2X1 U17 ( .A(write_flit_vc_buffer), .B(full_vc_buffer), .Y(u17res_fifomodule) );
+	AND2X1 U18 ( .A(read_flit_vc_buffer), .B(empty_vc_buffer), .Y(u18res_fifomodule) );
+    OR2X1 U19 ( .A(u17res_fifomodule), .B(u18res_fifomodule), .Y(error_vc_buffer) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule[0]), .B(read_ptr_ff_fifomodule[0]), .Y(fifo_ocup_fifomodule[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule[0]), .Y(write_ptr_ff_fifomodule_0_not) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule_0_not), .B(read_ptr_ff_fifomodule[0]), .Y(b0wire_fifomodule) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule[1]), .B(read_ptr_ff_fifomodule[1]), .Y(u23temp_fifomodule) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule[1]), .Y(write_ptr_ff_fifomodule_1_not) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule[1]), .B(write_ptr_ff_fifomodule_1_not), .Y(boutb_fifomodule) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule), .B(b0wire_fifomodule), .Y(fifo_ocup_fifomodule[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule), .Y(u23temp_fifomodule_not_fifomodule) );
+	AND2X1 U26 ( .A(b0wire_fifomodule), .B(u23temp_fifomodule_not_fifomodule), .Y(bouta_fifomodule) );
+	OR2X1 U27 ( .A(bouta_fifomodule), .B(boutb_fifomodule), .Y(boutmain_fifomodule) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule), .D(1'b0), .Q(write_ptr_ff_fifomodule[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule), .D(1'b0), .Q(read_ptr_ff_fifomodule[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule), .D(1'b0), .Q(fifo_ff_fifomodule[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule), .D(1'b0), .Q(write_ptr_ff_fifomodule[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule), .D(1'b0), .Q(read_ptr_ff_fifomodule[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule), .D(1'b0), .Q(fifo_ff_fifomodule[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule[0]), .Q(write_ptr_ff_fifomodule[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule[1]), .Q(write_ptr_ff_fifomodule[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule[0]), .Q(read_ptr_ff_fifomodule[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule[1]), .Q(read_ptr_ff_fifomodule[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule), .D(from_input_req_in_jump_input_datapathput_datapath[36:3][0]), .Q(fifo_ff_fifomodule[write_ptr_ff_fifomodule[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule), .D(from_input_req_in_jump_input_datapathput_datapath[36:3][1]), .Q(fifo_ff_fifomodule[write_ptr_ff_fifomodule[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule), .D(from_input_req_in_jump_input_datapathput_datapath[36:3][2]), .Q(fifo_ff_fifomodule[write_ptr_ff_fifomodule[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule), .D(from_input_req_in_jump_input_datapathput_datapath[36:3][3]), .Q(fifo_ff_fifomodule[write_ptr_ff_fifomodule[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule), .D(from_input_req_in_jump_input_datapathput_datapath[36:3][4]), .Q(fifo_ff_fifomodule[write_ptr_ff_fifomodule[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule), .D(from_input_req_in_jump_input_datapathput_datapath[36:3][5]), .Q(fifo_ff_fifomodule[write_ptr_ff_fifomodule[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule), .D(from_input_req_in_jump_input_datapathput_datapath[36:3][6]), .Q(fifo_ff_fifomodule[write_ptr_ff_fifomodule[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule), .D(from_input_req_in_jump_input_datapathput_datapath[36:3][7]), .Q(fifo_ff_fifomodule[write_ptr_ff_fifomodule[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer), .Y(next_locked_vc_buffer) );
+    BUFX1 U0(.A(flit[0]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][0]));
+	BUFX1 U1(.A(flit[1]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][1]));
+	BUFX1 U2(.A(flit[2]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][2]));
+	BUFX1 U3(.A(flit[3]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][3]));
+	BUFX1 U4(.A(flit[4]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][4]));
+	BUFX1 U5(.A(flit[5]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][5]));
+	BUFX1 U6(.A(flit[6]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][6]));
+	BUFX1 U7(.A(flit[7]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][7]));
+	BUFX1 U8(.A(flit[8]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][8]));
+	BUFX1 U9(.A(flit[9]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][9]));
+	BUFX1 U10(.A(flit[10]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][10]));
+	BUFX1 U11(.A(flit[11]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][11]));
+	BUFX1 U12(.A(flit[12]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][12]));
+	BUFX1 U13(.A(flit[13]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][13]));
+	BUFX1 U14(.A(flit[14]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][14]));
+	BUFX1 U15(.A(flit[15]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][15]));
+	BUFX1 U16(.A(flit[16]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][16]));
+	BUFX1 U17(.A(flit[17]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][17]));
+	BUFX1 U18(.A(flit[18]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][18]));
+	BUFX1 U19(.A(flit[19]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][19]));
+	BUFX1 U20(.A(flit[20]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][20]));
+	BUFX1 U21(.A(flit[21]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][21]));
+	BUFX1 U22(.A(flit[22]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][22]));
+	BUFX1 U23(.A(flit[23]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][23]));
+	BUFX1 U24(.A(flit[24]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][24]));
+	BUFX1 U25(.A(flit[25]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][25]));
+	BUFX1 U26(.A(flit[26]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][26]));
+	BUFX1 U27(.A(flit[27]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][27]));
+	BUFX1 U28(.A(flit[28]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][28]));
+	BUFX1 U29(.A(flit[29]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][29]));
+	BUFX1 U30(.A(flit[30]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][30]));
+	BUFX1 U31(.A(flit[31]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][31]));
+	BUFX1 U32(.A(flit[32]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][32]));
+	BUFX1 U33(.A(flit[33]), .Y(from_input_req_in_jump_input_datapathput_datapath[36:3][33]));
+    NOR2X1 U34 ( .IN1(flit[33]), .IN2(flit[32]), .QN(norres_vc_buffer_vc_buffer) );
+    OR4X1 U35 ( .IN1(flit[29]), .IN2(flit[28]), .IN3(flit[27]), .IN4(flit[26]), .Y(or1res_vc_buffer) );
+    OR4X1 U35 ( .IN1(flit[25]), .IN2(flit[24]), .IN3(flit[23]), .IN4(flit[22]), .Y(or2res_vc_buffer) );
+    OR2X1 U36 ( .A(or1res_vc_buffer), .B(or2res_vc_buffer), .Y(orres_vc_buffer) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapathput_datapath[0]), .IN2(norres_vc_buffer_vc_buffer), .IN3(orres_vc_buffer), .Q(finres1_vc_buffer) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer), .IN2(1'b1), .S(finres1_vc_buffer), .Q(next_locked_vc_buffer);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapathput_datapath[0]), .IN2(flit[33]), .IN3(flit[32]), .Q(andres1_vc_buffer) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer), .IN2(1'b0), .S(andres1_vc_buffer), .Q(next_locked_vc_buffer);
+
+    INVX1 U41 ( .A(full_vc_buffer), .Y(full_vc_buffer_not) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer), .Y(locked_by_route_ff_vc_buffer_not) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer_not), .S(norres_vc_buffer_vc_buffer), .Q(thirdand_vc_buffer);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapathput_datapath[0]), .IN2(full_vc_buffer_not), .IN3(thirdand_vc_buffer), .Q(write_flit_vc_buffer) );
+    AND2X1 U45 ( .IN1(full_vc_buffer_not), .IN2(norres_vc_buffer_vc_buffer), .Q(from_input_resp_input_datapath[0]) );
+    INVX1 U46 ( .A(empty_vc_buffer), .Y(to_output_req_in_jump_input_datapathput_datapath[0]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapathput_datapath[0]), .IN2(to_output_resp_input_datapath[0]), .Q(read_flit_vc_buffer) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapathput_datapath[2:1]), .Y(2'b00));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer);
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule1[0]), .Y(next_read_ptr_fifomodule1[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule1[1]), .Y(next_read_ptr_fifomodule1[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule1[0]), .Y(next_write_ptr_fifomodule1[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule1[1]), .Y(next_write_ptr_fifomodule1[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule1[0]), .IN2(read_ptr_ff_fifomodule1[0]), .Q(u1temp_fifomodule1) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule1[1]), .IN2(read_ptr_ff_fifomodule1[1]), .Q(u2temp_fifomodule1) );
+	AND2X1 U3 ( .A(u1temp_fifomodule1), .B(u2temp_fifomodule1), .Y(empty_vc_buffer1) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule1[1]), .B(read_ptr_ff_fifomodule1[1]), .Y(u4temp_fifomodule1) );
+	AND2X1 U5 ( .A(u1temp_fifomodule1), .B(u4temp_fifomodule1), .Y(full_vc_buffer1) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule1[read_ptr_ff_fifomodule1[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer1), .Q(to_output_req_in_jump_input_datapathput_datapath[73:40][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule1[read_ptr_ff_fifomodule1[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer1), .Q(to_output_req_in_jump_input_datapathput_datapath[73:40][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule1[read_ptr_ff_fifomodule1[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer1), .Q(to_output_req_in_jump_input_datapathput_datapath[73:40][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule1[read_ptr_ff_fifomodule1[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer1), .Q(to_output_req_in_jump_input_datapathput_datapath[73:40][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule1[read_ptr_ff_fifomodule1[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer1), .Q(to_output_req_in_jump_input_datapathput_datapath[73:40][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule1[read_ptr_ff_fifomodule1[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer1), .Q(to_output_req_in_jump_input_datapathput_datapath[73:40][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule1[read_ptr_ff_fifomodule1[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer1), .Q(to_output_req_in_jump_input_datapathput_datapath[73:40][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule1[read_ptr_ff_fifomodule1[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer1), .Q(to_output_req_in_jump_input_datapathput_datapath[73:40][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer1), .Y(full_vc_buffer1_not1_fifomodule1) );
+	AND2X1 U8 ( .A(write_flit1_vc_buffer1), .B(full_vc_buffer1_not1_fifomodule1), .Y(u7temp_fifomodule1) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule1), .Q(u9temp_fifomodule1));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule1[0]), .B0(u9temp_fifomodule1), .C1(u10carry_fifomodule1), .SO(next_write_ptr_fifomodule1[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule1), .B0(write_ptr_ff_fifomodule1[1]), .C1(u11carry_fifomodule1), .SO(next_write_ptr_fifomodule1[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer1), .Y(empty_vc_buffer1_not_fifomodule1) );
+	AND2X1 U13 ( .A(read_flit1_vc_buffer1), .B(empty_vc_buffer1_not_fifomodule1), .Y(u13temp_fifomodule1) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule1), .Q(u14temp_fifomodule1));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule1[0]), .B0(u14temp_fifomodule1), .C1(u15carry_fifomodule1), .SO(next_read_ptr_fifomodule1[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule1), .B0(read_ptr_ff_fifomodule1[1]), .C1(u16carry_fifomodule1), .SO(next_read_ptr_fifomodule1[1]) );
+
+	AND2X1 U17 ( .A(write_flit1_vc_buffer1), .B(full_vc_buffer1), .Y(u17res_fifomodule1) );
+	AND2X1 U18 ( .A(read_flit1_vc_buffer1), .B(empty_vc_buffer1), .Y(u18res_fifomodule1) );
+    OR2X1 U19 ( .A(u17res_fifomodule1), .B(u18res_fifomodule1), .Y(error_vc_buffer1) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule1[0]), .B(read_ptr_ff_fifomodule1[0]), .Y(fifo_ocup_fifomodule1[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule1[0]), .Y(write_ptr_ff_fifomodule1_0_not1) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule1_0_not1), .B(read_ptr_ff_fifomodule1[0]), .Y(b0wire_fifomodule1) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule1[1]), .B(read_ptr_ff_fifomodule1[1]), .Y(u23temp_fifomodule1) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule1[1]), .Y(write_ptr_ff_fifomodule1_1_not1) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule1[1]), .B(write_ptr_ff_fifomodule1_1_not1), .Y(boutb_fifomodule1) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule1), .B(b0wire_fifomodule1), .Y(fifo_ocup_fifomodule1[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule1), .Y(u23temp_fifomodule1_not_fifomodule1) );
+	AND2X1 U26 ( .A(b0wire_fifomodule1), .B(u23temp_fifomodule1_not_fifomodule1), .Y(bouta_fifomodule1) );
+	OR2X1 U27 ( .A(bouta_fifomodule1), .B(boutb_fifomodule1), .Y(boutmain_fifomodule1) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule1[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule1[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule1) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule1) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule1), .D(1'b0), .Q(write_ptr_ff_fifomodule1[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule1), .D(1'b0), .Q(read_ptr_ff_fifomodule1[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule1), .D(1'b0), .Q(fifo_ff_fifomodule1[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule1), .D(1'b0), .Q(write_ptr_ff_fifomodule1[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule1), .D(1'b0), .Q(read_ptr_ff_fifomodule1[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule1), .D(1'b0), .Q(fifo_ff_fifomodule1[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule1[0]), .Q(write_ptr_ff_fifomodule1[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule1[1]), .Q(write_ptr_ff_fifomodule1[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule1[0]), .Q(read_ptr_ff_fifomodule1[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule1[1]), .Q(read_ptr_ff_fifomodule1[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule1), .D(from_input_req_in_jump_input_datapathput_datapath[73:40][0]), .Q(fifo_ff_fifomodule1[write_ptr_ff_fifomodule1[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule1), .D(from_input_req_in_jump_input_datapathput_datapath[73:40][1]), .Q(fifo_ff_fifomodule1[write_ptr_ff_fifomodule1[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule1), .D(from_input_req_in_jump_input_datapathput_datapath[73:40][2]), .Q(fifo_ff_fifomodule1[write_ptr_ff_fifomodule1[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule1), .D(from_input_req_in_jump_input_datapathput_datapath[73:40][3]), .Q(fifo_ff_fifomodule1[write_ptr_ff_fifomodule1[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule1), .D(from_input_req_in_jump_input_datapathput_datapath[73:40][4]), .Q(fifo_ff_fifomodule1[write_ptr_ff_fifomodule1[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule1), .D(from_input_req_in_jump_input_datapathput_datapath[73:40][5]), .Q(fifo_ff_fifomodule1[write_ptr_ff_fifomodule1[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule1), .D(from_input_req_in_jump_input_datapathput_datapath[73:40][6]), .Q(fifo_ff_fifomodule1[write_ptr_ff_fifomodule1[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule1), .D(from_input_req_in_jump_input_datapathput_datapath[73:40][7]), .Q(fifo_ff_fifomodule1[write_ptr_ff_fifomodule1[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer1), .Y(next_locked_vc_buffer1) );
+    BUFX1 U0(.A(flit1[0]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][0]));
+	BUFX1 U1(.A(flit1[1]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][1]));
+	BUFX1 U2(.A(flit1[2]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][2]));
+	BUFX1 U3(.A(flit1[3]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][3]));
+	BUFX1 U4(.A(flit1[4]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][4]));
+	BUFX1 U5(.A(flit1[5]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][5]));
+	BUFX1 U6(.A(flit1[6]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][6]));
+	BUFX1 U7(.A(flit1[7]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][7]));
+	BUFX1 U8(.A(flit1[8]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][8]));
+	BUFX1 U9(.A(flit1[9]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][9]));
+	BUFX1 U10(.A(flit1[10]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][10]));
+	BUFX1 U11(.A(flit1[11]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][11]));
+	BUFX1 U12(.A(flit1[12]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][12]));
+	BUFX1 U13(.A(flit1[13]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][13]));
+	BUFX1 U14(.A(flit1[14]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][14]));
+	BUFX1 U15(.A(flit1[15]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][15]));
+	BUFX1 U16(.A(flit1[16]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][16]));
+	BUFX1 U17(.A(flit1[17]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][17]));
+	BUFX1 U18(.A(flit1[18]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][18]));
+	BUFX1 U19(.A(flit1[19]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][19]));
+	BUFX1 U20(.A(flit1[20]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][20]));
+	BUFX1 U21(.A(flit1[21]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][21]));
+	BUFX1 U22(.A(flit1[22]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][22]));
+	BUFX1 U23(.A(flit1[23]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][23]));
+	BUFX1 U24(.A(flit1[24]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][24]));
+	BUFX1 U25(.A(flit1[25]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][25]));
+	BUFX1 U26(.A(flit1[26]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][26]));
+	BUFX1 U27(.A(flit1[27]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][27]));
+	BUFX1 U28(.A(flit1[28]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][28]));
+	BUFX1 U29(.A(flit1[29]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][29]));
+	BUFX1 U30(.A(flit1[30]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][30]));
+	BUFX1 U31(.A(flit1[31]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][31]));
+	BUFX1 U32(.A(flit1[32]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][32]));
+	BUFX1 U33(.A(flit1[33]), .Y(from_input_req_in_jump_input_datapathput_datapath[73:40][33]));
+    NOR2X1 U34 ( .IN1(flit1[33]), .IN2(flit1[32]), .QN(norres_vc_buffer1_vc_buffer1) );
+    OR4X1 U35 ( .IN1(flit1[29]), .IN2(flit1[28]), .IN3(flit1[27]), .IN4(flit1[26]), .Y(or1res_vc_buffer1) );
+    OR4X1 U35 ( .IN1(flit1[25]), .IN2(flit1[24]), .IN3(flit1[23]), .IN4(flit1[22]), .Y(or2res_vc_buffer1) );
+    OR2X1 U36 ( .A(or1res_vc_buffer1), .B(or2res_vc_buffer1), .Y(orres_vc_buffer1) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapathput_datapath[37]), .IN2(norres_vc_buffer1_vc_buffer1), .IN3(orres_vc_buffer1), .Q(finres1_vc_buffer1) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer1), .IN2(1'b1), .S(finres1_vc_buffer1), .Q(next_locked_vc_buffer1);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapathput_datapath[37]), .IN2(flit1[33]), .IN3(flit1[32]), .Q(andres1_vc_buffer1) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer1), .IN2(1'b0), .S(andres1_vc_buffer1), .Q(next_locked_vc_buffer1);
+
+    INVX1 U41 ( .A(full_vc_buffer1), .Y(full_vc_buffer1_not1) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer1), .Y(locked_by_route_ff_vc_buffer1_not1) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer1_not1), .S(norres_vc_buffer1_vc_buffer1), .Q(thirdand_vc_buffer1);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapathput_datapath[37]), .IN2(full_vc_buffer1_not1), .IN3(thirdand_vc_buffer1), .Q(write_flit1_vc_buffer1) );
+    AND2X1 U45 ( .IN1(full_vc_buffer1_not1), .IN2(norres_vc_buffer1_vc_buffer1), .Q(from_input_resp_input_datapath[1]) );
+    INVX1 U46 ( .A(empty_vc_buffer1), .Y(to_output_req_in_jump_input_datapathput_datapath[37]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapathput_datapath[37]), .IN2(to_output_resp_input_datapath[1]), .Q(read_flit1_vc_buffer1) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapathput_datapath[39:38]), .Y(2'b01));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer1), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer1);
+
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule2[0]), .Y(next_read_ptr_fifomodule2[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule2[1]), .Y(next_read_ptr_fifomodule2[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule2[0]), .Y(next_write_ptr_fifomodule2[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule2[1]), .Y(next_write_ptr_fifomodule2[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule2[0]), .IN2(read_ptr_ff_fifomodule2[0]), .Q(u1temp_fifomodule2) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule2[1]), .IN2(read_ptr_ff_fifomodule2[1]), .Q(u2temp_fifomodule2) );
+	AND2X1 U3 ( .A(u1temp_fifomodule2), .B(u2temp_fifomodule2), .Y(empty_vc_buffer2) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule2[1]), .B(read_ptr_ff_fifomodule2[1]), .Y(u4temp_fifomodule2) );
+	AND2X1 U5 ( .A(u1temp_fifomodule2), .B(u4temp_fifomodule2), .Y(full_vc_buffer2) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule2[read_ptr_ff_fifomodule2[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer2), .Q(to_output_req_in_jump_input_datapathput_datapath[110:77][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule2[read_ptr_ff_fifomodule2[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer2), .Q(to_output_req_in_jump_input_datapathput_datapath[110:77][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule2[read_ptr_ff_fifomodule2[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer2), .Q(to_output_req_in_jump_input_datapathput_datapath[110:77][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule2[read_ptr_ff_fifomodule2[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer2), .Q(to_output_req_in_jump_input_datapathput_datapath[110:77][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule2[read_ptr_ff_fifomodule2[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer2), .Q(to_output_req_in_jump_input_datapathput_datapath[110:77][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule2[read_ptr_ff_fifomodule2[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer2), .Q(to_output_req_in_jump_input_datapathput_datapath[110:77][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule2[read_ptr_ff_fifomodule2[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer2), .Q(to_output_req_in_jump_input_datapathput_datapath[110:77][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule2[read_ptr_ff_fifomodule2[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer2), .Q(to_output_req_in_jump_input_datapathput_datapath[110:77][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer2), .Y(full_vc_buffer2_not2_fifomodule2) );
+	AND2X1 U8 ( .A(write_flit2_vc_buffer2), .B(full_vc_buffer2_not2_fifomodule2), .Y(u7temp_fifomodule2) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule2), .Q(u9temp_fifomodule2));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule2[0]), .B0(u9temp_fifomodule2), .C1(u10carry_fifomodule2), .SO(next_write_ptr_fifomodule2[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule2), .B0(write_ptr_ff_fifomodule2[1]), .C1(u11carry_fifomodule2), .SO(next_write_ptr_fifomodule2[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer2), .Y(empty_vc_buffer2_not_fifomodule2) );
+	AND2X1 U13 ( .A(read_flit2_vc_buffer2), .B(empty_vc_buffer2_not_fifomodule2), .Y(u13temp_fifomodule2) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule2), .Q(u14temp_fifomodule2));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule2[0]), .B0(u14temp_fifomodule2), .C1(u15carry_fifomodule2), .SO(next_read_ptr_fifomodule2[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule2), .B0(read_ptr_ff_fifomodule2[1]), .C1(u16carry_fifomodule2), .SO(next_read_ptr_fifomodule2[1]) );
+
+	AND2X1 U17 ( .A(write_flit2_vc_buffer2), .B(full_vc_buffer2), .Y(u17res_fifomodule2) );
+	AND2X1 U18 ( .A(read_flit2_vc_buffer2), .B(empty_vc_buffer2), .Y(u18res_fifomodule2) );
+    OR2X1 U19 ( .A(u17res_fifomodule2), .B(u18res_fifomodule2), .Y(error_vc_buffer2) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule2[0]), .B(read_ptr_ff_fifomodule2[0]), .Y(fifo_ocup_fifomodule2[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule2[0]), .Y(write_ptr_ff_fifomodule2_0_not2) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule2_0_not2), .B(read_ptr_ff_fifomodule2[0]), .Y(b0wire_fifomodule2) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule2[1]), .B(read_ptr_ff_fifomodule2[1]), .Y(u23temp_fifomodule2) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule2[1]), .Y(write_ptr_ff_fifomodule2_1_not2) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule2[1]), .B(write_ptr_ff_fifomodule2_1_not2), .Y(boutb_fifomodule2) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule2), .B(b0wire_fifomodule2), .Y(fifo_ocup_fifomodule2[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule2), .Y(u23temp_fifomodule2_not_fifomodule2) );
+	AND2X1 U26 ( .A(b0wire_fifomodule2), .B(u23temp_fifomodule2_not_fifomodule2), .Y(bouta_fifomodule2) );
+	OR2X1 U27 ( .A(bouta_fifomodule2), .B(boutb_fifomodule2), .Y(boutmain_fifomodule2) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule2[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule2[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule2) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule2) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule2), .D(1'b0), .Q(write_ptr_ff_fifomodule2[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule2), .D(1'b0), .Q(read_ptr_ff_fifomodule2[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule2), .D(1'b0), .Q(fifo_ff_fifomodule2[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule2), .D(1'b0), .Q(write_ptr_ff_fifomodule2[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule2), .D(1'b0), .Q(read_ptr_ff_fifomodule2[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule2), .D(1'b0), .Q(fifo_ff_fifomodule2[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule2[0]), .Q(write_ptr_ff_fifomodule2[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule2[1]), .Q(write_ptr_ff_fifomodule2[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule2[0]), .Q(read_ptr_ff_fifomodule2[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule2[1]), .Q(read_ptr_ff_fifomodule2[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule2), .D(from_input_req_in_jump_input_datapathput_datapath[110:77][0]), .Q(fifo_ff_fifomodule2[write_ptr_ff_fifomodule2[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule2), .D(from_input_req_in_jump_input_datapathput_datapath[110:77][1]), .Q(fifo_ff_fifomodule2[write_ptr_ff_fifomodule2[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule2), .D(from_input_req_in_jump_input_datapathput_datapath[110:77][2]), .Q(fifo_ff_fifomodule2[write_ptr_ff_fifomodule2[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule2), .D(from_input_req_in_jump_input_datapathput_datapath[110:77][3]), .Q(fifo_ff_fifomodule2[write_ptr_ff_fifomodule2[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule2), .D(from_input_req_in_jump_input_datapathput_datapath[110:77][4]), .Q(fifo_ff_fifomodule2[write_ptr_ff_fifomodule2[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule2), .D(from_input_req_in_jump_input_datapathput_datapath[110:77][5]), .Q(fifo_ff_fifomodule2[write_ptr_ff_fifomodule2[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule2), .D(from_input_req_in_jump_input_datapathput_datapath[110:77][6]), .Q(fifo_ff_fifomodule2[write_ptr_ff_fifomodule2[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule2), .D(from_input_req_in_jump_input_datapathput_datapath[110:77][7]), .Q(fifo_ff_fifomodule2[write_ptr_ff_fifomodule2[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer2), .Y(next_locked_vc_buffer2) );
+    BUFX1 U0(.A(flit2[0]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][0]));
+	BUFX1 U1(.A(flit2[1]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][1]));
+	BUFX1 U2(.A(flit2[2]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][2]));
+	BUFX1 U3(.A(flit2[3]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][3]));
+	BUFX1 U4(.A(flit2[4]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][4]));
+	BUFX1 U5(.A(flit2[5]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][5]));
+	BUFX1 U6(.A(flit2[6]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][6]));
+	BUFX1 U7(.A(flit2[7]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][7]));
+	BUFX1 U8(.A(flit2[8]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][8]));
+	BUFX1 U9(.A(flit2[9]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][9]));
+	BUFX1 U10(.A(flit2[10]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][10]));
+	BUFX1 U11(.A(flit2[11]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][11]));
+	BUFX1 U12(.A(flit2[12]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][12]));
+	BUFX1 U13(.A(flit2[13]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][13]));
+	BUFX1 U14(.A(flit2[14]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][14]));
+	BUFX1 U15(.A(flit2[15]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][15]));
+	BUFX1 U16(.A(flit2[16]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][16]));
+	BUFX1 U17(.A(flit2[17]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][17]));
+	BUFX1 U18(.A(flit2[18]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][18]));
+	BUFX1 U19(.A(flit2[19]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][19]));
+	BUFX1 U20(.A(flit2[20]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][20]));
+	BUFX1 U21(.A(flit2[21]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][21]));
+	BUFX1 U22(.A(flit2[22]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][22]));
+	BUFX1 U23(.A(flit2[23]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][23]));
+	BUFX1 U24(.A(flit2[24]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][24]));
+	BUFX1 U25(.A(flit2[25]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][25]));
+	BUFX1 U26(.A(flit2[26]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][26]));
+	BUFX1 U27(.A(flit2[27]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][27]));
+	BUFX1 U28(.A(flit2[28]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][28]));
+	BUFX1 U29(.A(flit2[29]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][29]));
+	BUFX1 U30(.A(flit2[30]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][30]));
+	BUFX1 U31(.A(flit2[31]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][31]));
+	BUFX1 U32(.A(flit2[32]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][32]));
+	BUFX1 U33(.A(flit2[33]), .Y(from_input_req_in_jump_input_datapathput_datapath[110:77][33]));
+    NOR2X1 U34 ( .IN1(flit2[33]), .IN2(flit2[32]), .QN(norres_vc_buffer2_vc_buffer2) );
+    OR4X1 U35 ( .IN1(flit2[29]), .IN2(flit2[28]), .IN3(flit2[27]), .IN4(flit2[26]), .Y(or1res_vc_buffer2) );
+    OR4X1 U35 ( .IN1(flit2[25]), .IN2(flit2[24]), .IN3(flit2[23]), .IN4(flit2[22]), .Y(or2res_vc_buffer2) );
+    OR2X1 U36 ( .A(or1res_vc_buffer2), .B(or2res_vc_buffer2), .Y(orres_vc_buffer2) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapathput_datapath[74]), .IN2(norres_vc_buffer2_vc_buffer2), .IN3(orres_vc_buffer2), .Q(finres1_vc_buffer2) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer2), .IN2(1'b1), .S(finres1_vc_buffer2), .Q(next_locked_vc_buffer2);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapathput_datapath[74]), .IN2(flit2[33]), .IN3(flit2[32]), .Q(andres1_vc_buffer2) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer2), .IN2(1'b0), .S(andres1_vc_buffer2), .Q(next_locked_vc_buffer2);
+
+    INVX1 U41 ( .A(full_vc_buffer2), .Y(full_vc_buffer2_not2) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer2), .Y(locked_by_route_ff_vc_buffer2_not2) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer2_not2), .S(norres_vc_buffer2_vc_buffer2), .Q(thirdand_vc_buffer2);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapathput_datapath[74]), .IN2(full_vc_buffer2_not2), .IN3(thirdand_vc_buffer2), .Q(write_flit2_vc_buffer2) );
+    AND2X1 U45 ( .IN1(full_vc_buffer2_not2), .IN2(norres_vc_buffer2_vc_buffer2), .Q(from_input_resp_input_datapath[2]) );
+    INVX1 U46 ( .A(empty_vc_buffer2), .Y(to_output_req_in_jump_input_datapathput_datapath[74]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapathput_datapath[74]), .IN2(to_output_resp_input_datapath[2]), .Q(read_flit2_vc_buffer2) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapathput_datapath[76:75]), .Y(2'b10));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer2), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer2);
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapathput_datapath[77]), .Y(ext_req_v_i[36:0][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapathput_datapath[78]), .Y(ext_req_v_i[36:0][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapathput_datapath[79]), .Y(ext_req_v_i[36:0][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapathput_datapath[80]), .Y(ext_req_v_i[36:0][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapathput_datapath[81]), .Y(ext_req_v_i[36:0][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapathput_datapath[82]), .Y(ext_req_v_i[36:0][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapathput_datapath[83]), .Y(ext_req_v_i[36:0][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapathput_datapath[84]), .Y(ext_req_v_i[36:0][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapathput_datapath[85]), .Y(ext_req_v_i[36:0][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapathput_datapath[86]), .Y(ext_req_v_i[36:0][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapathput_datapath[87]), .Y(ext_req_v_i[36:0][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapathput_datapath[88]), .Y(ext_req_v_i[36:0][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapathput_datapath[89]), .Y(ext_req_v_i[36:0][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapathput_datapath[90]), .Y(ext_req_v_i[36:0][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapathput_datapath[91]), .Y(ext_req_v_i[36:0][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapathput_datapath[92]), .Y(ext_req_v_i[36:0][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapathput_datapath[93]), .Y(ext_req_v_i[36:0][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapathput_datapath[94]), .Y(ext_req_v_i[36:0][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapathput_datapath[95]), .Y(ext_req_v_i[36:0][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapathput_datapath[96]), .Y(ext_req_v_i[36:0][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapathput_datapath[97]), .Y(ext_req_v_i[36:0][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapathput_datapath[98]), .Y(ext_req_v_i[36:0][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapathput_datapath[99]), .Y(ext_req_v_i[36:0][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapathput_datapath[100]), .Y(ext_req_v_i[36:0][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapathput_datapath[101]), .Y(ext_req_v_i[36:0][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapathput_datapath[102]), .Y(ext_req_v_i[36:0][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapathput_datapath[103]), .Y(ext_req_v_i[36:0][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapathput_datapath[104]), .Y(ext_req_v_i[36:0][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapathput_datapath[105]), .Y(ext_req_v_i[36:0][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapathput_datapath[106]), .Y(ext_req_v_i[36:0][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapathput_datapath[107]), .Y(ext_req_v_i[36:0][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapathput_datapath[108]), .Y(ext_req_v_i[36:0][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapathput_datapath[109]), .Y(ext_req_v_i[36:0][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapathput_datapath[110]), .Y(ext_req_v_i[36:0][36]));
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[36:0][1]), .IN2(i_input_datapath[0]), .QN(xnor1resu_input_datapath) );
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[36:0][2]), .IN2(i_input_datapath[1]), .QN(xnor2resu_input_datapath) );
+    AND2X1 U128 ( .IN1(xnor1resu_input_datapath), .IN2(xnor2resu_input_datapath), .Q(and1resu_input_datapath) );
+    AND3X1 U128 ( .IN1(and1resu_input_datapath), .IN2(ext_req_v_i[36:0][0]), .IN2(ext_req_v_i[36:0][0]), .Q(cond1line_input_datapath) );
+    MUX21X1 U0009 (.IN1(vc_ch_act_in_input_datapath[0]), .IN2(i_input_datapath[0]), .S(cond1line_input_datapath), .Q(vc_ch_act_in_input_datapath[0]));
+    MUX21X1 U0010 (.IN1(vc_ch_act_in_input_datapath[1]), .IN2(i_input_datapath[1]), .S(cond1line_input_datapath), .Q(vc_ch_act_in_input_datapath[1]));
+    MUX21X1 U0011 (.IN1(req_in_jump_input_datapath), .IN2(1), .S(cond1line_input_datapath), .Q(req_in_jump_input_datapath));
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapathput_datapath[40]), .Y(ext_req_v_i[36:0][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapathput_datapath[41]), .Y(ext_req_v_i[36:0][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapathput_datapath[42]), .Y(ext_req_v_i[36:0][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapathput_datapath[43]), .Y(ext_req_v_i[36:0][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapathput_datapath[44]), .Y(ext_req_v_i[36:0][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapathput_datapath[45]), .Y(ext_req_v_i[36:0][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapathput_datapath[46]), .Y(ext_req_v_i[36:0][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapathput_datapath[47]), .Y(ext_req_v_i[36:0][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapathput_datapath[48]), .Y(ext_req_v_i[36:0][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapathput_datapath[49]), .Y(ext_req_v_i[36:0][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapathput_datapath[50]), .Y(ext_req_v_i[36:0][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapathput_datapath[51]), .Y(ext_req_v_i[36:0][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapathput_datapath[52]), .Y(ext_req_v_i[36:0][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapathput_datapath[53]), .Y(ext_req_v_i[36:0][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapathput_datapath[54]), .Y(ext_req_v_i[36:0][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapathput_datapath[55]), .Y(ext_req_v_i[36:0][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapathput_datapath[56]), .Y(ext_req_v_i[36:0][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapathput_datapath[57]), .Y(ext_req_v_i[36:0][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapathput_datapath[58]), .Y(ext_req_v_i[36:0][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapathput_datapath[59]), .Y(ext_req_v_i[36:0][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapathput_datapath[60]), .Y(ext_req_v_i[36:0][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapathput_datapath[61]), .Y(ext_req_v_i[36:0][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapathput_datapath[62]), .Y(ext_req_v_i[36:0][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapathput_datapath[63]), .Y(ext_req_v_i[36:0][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapathput_datapath[64]), .Y(ext_req_v_i[36:0][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapathput_datapath[65]), .Y(ext_req_v_i[36:0][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapathput_datapath[66]), .Y(ext_req_v_i[36:0][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapathput_datapath[67]), .Y(ext_req_v_i[36:0][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapathput_datapath[68]), .Y(ext_req_v_i[36:0][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapathput_datapath[69]), .Y(ext_req_v_i[36:0][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapathput_datapath[70]), .Y(ext_req_v_i[36:0][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapathput_datapath[71]), .Y(ext_req_v_i[36:0][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapathput_datapath[72]), .Y(ext_req_v_i[36:0][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapathput_datapath[73]), .Y(ext_req_v_i[36:0][36]));
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapathput_datapath[3]), .Y(ext_req_v_i[36:0][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapathput_datapath[4]), .Y(ext_req_v_i[36:0][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapathput_datapath[5]), .Y(ext_req_v_i[36:0][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapathput_datapath[6]), .Y(ext_req_v_i[36:0][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapathput_datapath[7]), .Y(ext_req_v_i[36:0][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapathput_datapath[8]), .Y(ext_req_v_i[36:0][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapathput_datapath[9]), .Y(ext_req_v_i[36:0][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapathput_datapath[10]), .Y(ext_req_v_i[36:0][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapathput_datapath[11]), .Y(ext_req_v_i[36:0][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapathput_datapath[12]), .Y(ext_req_v_i[36:0][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapathput_datapath[13]), .Y(ext_req_v_i[36:0][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapathput_datapath[14]), .Y(ext_req_v_i[36:0][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapathput_datapath[15]), .Y(ext_req_v_i[36:0][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapathput_datapath[16]), .Y(ext_req_v_i[36:0][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapathput_datapath[17]), .Y(ext_req_v_i[36:0][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapathput_datapath[18]), .Y(ext_req_v_i[36:0][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapathput_datapath[19]), .Y(ext_req_v_i[36:0][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapathput_datapath[20]), .Y(ext_req_v_i[36:0][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapathput_datapath[21]), .Y(ext_req_v_i[36:0][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapathput_datapath[22]), .Y(ext_req_v_i[36:0][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapathput_datapath[23]), .Y(ext_req_v_i[36:0][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapathput_datapath[24]), .Y(ext_req_v_i[36:0][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapathput_datapath[25]), .Y(ext_req_v_i[36:0][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapathput_datapath[26]), .Y(ext_req_v_i[36:0][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapathput_datapath[27]), .Y(ext_req_v_i[36:0][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapathput_datapath[28]), .Y(ext_req_v_i[36:0][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapathput_datapath[29]), .Y(ext_req_v_i[36:0][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapathput_datapath[30]), .Y(ext_req_v_i[36:0][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapathput_datapath[31]), .Y(ext_req_v_i[36:0][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapathput_datapath[32]), .Y(ext_req_v_i[36:0][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapathput_datapath[33]), .Y(ext_req_v_i[36:0][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapathput_datapath[34]), .Y(ext_req_v_i[36:0][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapathput_datapath[35]), .Y(ext_req_v_i[36:0][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapathput_datapath[36]), .Y(ext_req_v_i[36:0][36]));
+
+    MUX21X1 U0012 (.IN1(from_input_req_in_jump_input_datapathput_datapath[vc_ch_act_in_input_datapath * 37]), .IN2(ext_req_v_i[36:0][0]), .S(req_in_jump_input_datapath), .Q(from_input_req_in_jump_input_datapathput_datapath[vc_ch_act_in_input_datapath * 37]));
+    MUX21X1 U0013 (.IN1(from_input_req_in_jump_input_datapathput_datapath[vc_ch_act_in_input_datapath*37+2]), .IN2(vc_ch_act_in_input_datapath[1]), .S(req_in_jump_input_datapath), .Q(from_input_req_in_jump_input_datapathput_datapath[vc_ch_act_in_input_datapath*37+2]));
+    MUX21X1 U0014 (.IN1(from_input_req_in_jump_input_datapathput_datapath[vc_ch_act_in_input_datapath*37+1]), .IN2(vc_ch_act_in_input_datapath[0]), .S(req_in_jump_input_datapath), .Q(from_input_req_in_jump_input_datapathput_datapath[vc_ch_act_in_input_datapath*37+1]));
+    MUX21X1 U0015 (.IN1(ext_resp_v_o[1:0][0]), .IN2(from_input_resp_input_datapath[vc_ch_act_in_input_datapath]), .S(req_in_jump_input_datapath), .Q(ext_resp_v_o[1:0][0]));
+
+    INVX1 U041 ( .A(req_in_jump_input_datapath), .Y(req_in_jump_input_datapath_not) );
+    MUX21X1 U0016 (.IN1(ext_resp_v_o[1:0][0]), .IN2(1'sb1), .S(req_in_jump_input_datapath_not), .Q(ext_resp_v_o[1:0][0]));
+    BUFX1 U34(.A(from_input_req_in_jump_input_datapathput_datapath[34]), .Y(ext_req_v_i[36:0][34]));
+
+    XOR2X1 U0222 ( .IN1(_sv2v_jump_input_datapath[1]), .IN2(1'b1), .Q(xor1resu_input_datapath) );
+    MUX21X1 U0017 (.IN1(_sv2v_jump_input_datapath[0]), .IN2(1'b0), .S(xor1resu_input_datapath), .Q(_sv2v_jump_input_datapath[0]));
+    MUX21X1 U0018 (.IN1(_sv2v_jump_input_datapath[1]), .IN2(1'b0), .S(xor1resu_input_datapath), .Q(_sv2v_jump_input_datapath[1]));
+    AND2X1 U38123 ( .IN1(xor1resu_input_datapath), .IN2(to_output_req_in_jump_input_datapathput_datapath[j_input_datapath*37]), .Q(and2resu_input_datapath) );
+    MUX21X1 U0019 (.IN1(vc_ch_act_out_input_datapath[0]), .IN2(j_input_datapath[0]), .S(and2resu_input_datapath), .Q(vc_ch_act_out_input_datapath[0]));
+    MUX21X1 U0020 (.IN1(vc_ch_act_out_input_datapath[1]), .IN2(j_input_datapath[1]), .S(and2resu_input_datapath), .Q(vc_ch_act_out_input_datapath[1]));
+    MUX21X1 U0021 (.IN1(req_out_jump_input_datapath), .IN2(1'b1), .S(and2resu_input_datapath), .Q(req_out_jump_input_datapath));
+    MUX21X1 U0022 (.IN1(_sv2v_jump_input_datapath[0]), .IN2(1'b0), .S(and2resu_input_datapath), .Q(_sv2v_jump_input_datapath[0]));
+    MUX21X1 U0023 (.IN1(_sv2v_jump_input_datapath[1]), .IN2(1'b1), .S(and2resu_input_datapath), .Q(_sv2v_jump_input_datapath[1]));
+    HADDX1 U00021 ( .A0(j_input_datapath[0]), .B0(1'b1), .C1(j_input_datapath[1]), .SO(j_input_datapath[0]) );
+    HADDX1 U00022 ( .A0(j_input_datapath[0]), .B0(1'b1), .C1(j_input_datapath[1]), .SO(j_input_datapath[0]) );
+    AND2X1 U38111 ( .IN1(xor1resu_input_datapath), .IN2(to_output_req_in_jump_input_datapathput_datapath[j_input_datapath*37]), .Q(and3resu) );
+    NAND2X1 U29311(.A(_sv2v_jump_input_datapath[0]),.B(_sv2v_jump_input_datapath[1]),.Y(nand1resu_input_datapath));
+    MUX21X1 U00212 (.IN1(_sv2v_jump_input_datapath[0]), .IN2(1'b0), .S(nand1resu_input_datapath), .Q(_sv2v_jump_input_datapath[0]));
+    MUX21X1 U00213 (.IN1(_sv2v_jump_input_datapath[1]), .IN2(1'b0), .S(nand1resu_input_datapath), .Q(_sv2v_jump_input_datapath[1]));
+    XNOR2X1 U17581 (.IN1(_sv2v_jump_input_datapath[0]), .IN2(_sv2v_jump_input_datapath[1]), .Q(xnor23resu_input_datapath) );
+    AND2X1 U38111 ( .IN1(xnor23resu_input_datapath), .IN2(req_out_jump_input_datapath), .Q(and4resu_input_datapath) );
+
+    MUX21X1 U3(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+3]),.IN2(int_req_v[36:0][3]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+3]));
+	MUX21X1 U4(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+4]),.IN2(int_req_v[36:0][4]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+4]));
+	MUX21X1 U5(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+5]),.IN2(int_req_v[36:0][5]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+5]));
+	MUX21X1 U6(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+6]),.IN2(int_req_v[36:0][6]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+6]));
+	MUX21X1 U7(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+7]),.IN2(int_req_v[36:0][7]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+7]));
+	MUX21X1 U8(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+8]),.IN2(int_req_v[36:0][8]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+8]));
+	MUX21X1 U9(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+9]),.IN2(int_req_v[36:0][9]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+9]));
+	MUX21X1 U10(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+10]),.IN2(int_req_v[36:0][10]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+10]));
+	MUX21X1 U11(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+11]),.IN2(int_req_v[36:0][11]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+11]));
+	MUX21X1 U12(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+12]),.IN2(int_req_v[36:0][12]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+12]));
+	MUX21X1 U13(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+13]),.IN2(int_req_v[36:0][13]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+13]));
+	MUX21X1 U14(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+14]),.IN2(int_req_v[36:0][14]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+14]));
+	MUX21X1 U15(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+15]),.IN2(int_req_v[36:0][15]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+15]));
+	MUX21X1 U16(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+16]),.IN2(int_req_v[36:0][16]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+16]));
+	MUX21X1 U17(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+17]),.IN2(int_req_v[36:0][17]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+17]));
+	MUX21X1 U18(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+18]),.IN2(int_req_v[36:0][18]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+18]));
+	MUX21X1 U19(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+19]),.IN2(int_req_v[36:0][19]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+19]));
+	MUX21X1 U20(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+20]),.IN2(int_req_v[36:0][20]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+20]));
+	MUX21X1 U21(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+21]),.IN2(int_req_v[36:0][21]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+21]));
+	MUX21X1 U22(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+22]),.IN2(int_req_v[36:0][22]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+22]));
+	MUX21X1 U23(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+23]),.IN2(int_req_v[36:0][23]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+23]));
+	MUX21X1 U24(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+24]),.IN2(int_req_v[36:0][24]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+24]));
+	MUX21X1 U25(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+25]),.IN2(int_req_v[36:0][25]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+25]));
+	MUX21X1 U26(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+26]),.IN2(int_req_v[36:0][26]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+26]));
+	MUX21X1 U27(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+27]),.IN2(int_req_v[36:0][27]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+27]));
+	MUX21X1 U28(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+28]),.IN2(int_req_v[36:0][28]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+28]));
+	MUX21X1 U29(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+29]),.IN2(int_req_v[36:0][29]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+29]));
+	MUX21X1 U30(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+30]),.IN2(int_req_v[36:0][30]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+30]));
+	MUX21X1 U31(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+31]),.IN2(int_req_v[36:0][31]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+31]));
+	MUX21X1 U32(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+32]),.IN2(int_req_v[36:0][32]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+32]));
+	MUX21X1 U33(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+33]),.IN2(int_req_v[36:0][33]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+33]));
+	MUX21X1 U34(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+34]),.IN2(int_req_v[36:0][34]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+34]));
+	MUX21X1 U35(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+35]),.IN2(int_req_v[36:0][35]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+35]));
+	MUX21X1 U36(.IN1(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+36]),.IN2(int_req_v[36:0][36]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_ouot*37)+36]));
+
+	MUX21X1 U321111(.IN1(int_req_v[36:0][0]),.IN2(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_out_input_datapath * 37)]), .S(and4resu_input_datapath), .Q(int_req_v[36:0][0]));
+	MUX21X1 U331112(.IN1(int_req_v[36:0][1]),.IN2(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_out_input_datapath*37)+1]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_out_input_datapath*37)+1]));
+	MUX21X1 U331122(.IN1(int_req_v[36:0][2]),.IN2(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_out_input_datapath*37)+2]), .S(and4resu_input_datapath), .Q(to_output_req_in_jump_input_datapathput_datapath[(vc_ch_act_out_input_datapath*37)+2]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath[vc_ch_act_out_input_datapath]),.IN2(int_resp_v[1:0]), .S(and4resu_input_datapath), .Q(to_output_resp_input_datapath[vc_ch_act_out_input_datapath]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath[vc_ch_act_out_input_datapath+1]),.IN2(int_resp_v[1:0]), .S(and4resu_input_datapath), .Q(to_output_resp_input_datapath[vc_ch_act_out_input_datapath+1]));
+
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule11[0]), .Y(next_read_ptr_fifomodule11[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule11[1]), .Y(next_read_ptr_fifomodule11[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule11[0]), .Y(next_write_ptr_fifomodule11[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule11[1]), .Y(next_write_ptr_fifomodule11[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule11[0]), .IN2(read_ptr_ff_fifomodule11[0]), .Q(u1temp_fifomodule11) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule11[1]), .IN2(read_ptr_ff_fifomodule11[1]), .Q(u2temp_fifomodule11) );
+	AND2X1 U3 ( .A(u1temp_fifomodule11), .B(u2temp_fifomodule11), .Y(empty_vc_buffer11) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule11[1]), .B(read_ptr_ff_fifomodule11[1]), .Y(u4temp_fifomodule11) );
+	AND2X1 U5 ( .A(u1temp_fifomodule11), .B(u4temp_fifomodule11), .Y(full_vc_buffer11) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule11[read_ptr_ff_fifomodule11[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer11), .Q(to_output_req_in_jump_input_datapath1put_datapath1[36:3][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule11[read_ptr_ff_fifomodule11[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer11), .Q(to_output_req_in_jump_input_datapath1put_datapath1[36:3][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule11[read_ptr_ff_fifomodule11[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer11), .Q(to_output_req_in_jump_input_datapath1put_datapath1[36:3][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule11[read_ptr_ff_fifomodule11[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer11), .Q(to_output_req_in_jump_input_datapath1put_datapath1[36:3][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule11[read_ptr_ff_fifomodule11[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer11), .Q(to_output_req_in_jump_input_datapath1put_datapath1[36:3][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule11[read_ptr_ff_fifomodule11[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer11), .Q(to_output_req_in_jump_input_datapath1put_datapath1[36:3][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule11[read_ptr_ff_fifomodule11[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer11), .Q(to_output_req_in_jump_input_datapath1put_datapath1[36:3][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule11[read_ptr_ff_fifomodule11[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer11), .Q(to_output_req_in_jump_input_datapath1put_datapath1[36:3][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer11), .Y(full_vc_buffer11_not_fifomodule) );
+	AND2X1 U8 ( .A(write_flit11_vc_buffer1), .B(full_vc_buffer11_not_fifomodule), .Y(u7temp_fifomodule11) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule11), .Q(u9temp_fifomodule11));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule11[0]), .B0(u9temp_fifomodule11), .C1(u10carry_fifomodule11), .SO(next_write_ptr_fifomodule11[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule11), .B0(write_ptr_ff_fifomodule11[1]), .C1(u11carry_fifomodule11), .SO(next_write_ptr_fifomodule11[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer11), .Y(empty_vc_buffer11_not_fifomodule) );
+	AND2X1 U13 ( .A(read_flit11_vc_buffer1), .B(empty_vc_buffer11_not_fifomodule), .Y(u13temp_fifomodule11) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule11), .Q(u14temp_fifomodule11));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule11[0]), .B0(u14temp_fifomodule11), .C1(u15carry_fifomodule11), .SO(next_read_ptr_fifomodule11[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule11), .B0(read_ptr_ff_fifomodule11[1]), .C1(u16carry_fifomodule11), .SO(next_read_ptr_fifomodule11[1]) );
+
+	AND2X1 U17 ( .A(write_flit11_vc_buffer1), .B(full_vc_buffer11), .Y(u17res_fifomodule11) );
+	AND2X1 U18 ( .A(read_flit11_vc_buffer1), .B(empty_vc_buffer11), .Y(u18res_fifomodule11) );
+    OR2X1 U19 ( .A(u17res_fifomodule11), .B(u18res_fifomodule11), .Y(error_vc_buffer11) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule11[0]), .B(read_ptr_ff_fifomodule11[0]), .Y(fifo_ocup_fifomodule11[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule11[0]), .Y(write_ptr_ff_fifomodule11_0_not1) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule11_0_not1), .B(read_ptr_ff_fifomodule11[0]), .Y(b0wire_fifomodule11) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule11[1]), .B(read_ptr_ff_fifomodule11[1]), .Y(u23temp_fifomodule11) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule11[1]), .Y(write_ptr_ff_fifomodule11_1_not1) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule11[1]), .B(write_ptr_ff_fifomodule11_1_not1), .Y(boutb_fifomodule11) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule11), .B(b0wire_fifomodule11), .Y(fifo_ocup_fifomodule11[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule11), .Y(u23temp_fifomodule11_not_fifomodule11) );
+	AND2X1 U26 ( .A(b0wire_fifomodule11), .B(u23temp_fifomodule11_not_fifomodule11), .Y(bouta_fifomodule11) );
+	OR2X1 U27 ( .A(bouta_fifomodule11), .B(boutb_fifomodule11), .Y(boutmain_fifomodule11) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule11[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule11[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule11) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule11) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule11), .D(1'b0), .Q(write_ptr_ff_fifomodule11[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule11), .D(1'b0), .Q(read_ptr_ff_fifomodule11[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule11), .D(1'b0), .Q(fifo_ff_fifomodule11[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule11), .D(1'b0), .Q(write_ptr_ff_fifomodule11[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule11), .D(1'b0), .Q(read_ptr_ff_fifomodule11[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule11), .D(1'b0), .Q(fifo_ff_fifomodule11[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule11[0]), .Q(write_ptr_ff_fifomodule11[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule11[1]), .Q(write_ptr_ff_fifomodule11[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule11[0]), .Q(read_ptr_ff_fifomodule11[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule11[1]), .Q(read_ptr_ff_fifomodule11[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule11), .D(from_input_req_in_jump_input_datapath1put_datapath1[36:3][0]), .Q(fifo_ff_fifomodule11[write_ptr_ff_fifomodule11[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule11), .D(from_input_req_in_jump_input_datapath1put_datapath1[36:3][1]), .Q(fifo_ff_fifomodule11[write_ptr_ff_fifomodule11[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule11), .D(from_input_req_in_jump_input_datapath1put_datapath1[36:3][2]), .Q(fifo_ff_fifomodule11[write_ptr_ff_fifomodule11[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule11), .D(from_input_req_in_jump_input_datapath1put_datapath1[36:3][3]), .Q(fifo_ff_fifomodule11[write_ptr_ff_fifomodule11[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule11), .D(from_input_req_in_jump_input_datapath1put_datapath1[36:3][4]), .Q(fifo_ff_fifomodule11[write_ptr_ff_fifomodule11[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule11), .D(from_input_req_in_jump_input_datapath1put_datapath1[36:3][5]), .Q(fifo_ff_fifomodule11[write_ptr_ff_fifomodule11[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule11), .D(from_input_req_in_jump_input_datapath1put_datapath1[36:3][6]), .Q(fifo_ff_fifomodule11[write_ptr_ff_fifomodule11[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule11), .D(from_input_req_in_jump_input_datapath1put_datapath1[36:3][7]), .Q(fifo_ff_fifomodule11[write_ptr_ff_fifomodule11[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer11), .Y(next_locked_vc_buffer11) );
+    BUFX1 U0(.A(flit11[0]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][0]));
+	BUFX1 U1(.A(flit11[1]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][1]));
+	BUFX1 U2(.A(flit11[2]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][2]));
+	BUFX1 U3(.A(flit11[3]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][3]));
+	BUFX1 U4(.A(flit11[4]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][4]));
+	BUFX1 U5(.A(flit11[5]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][5]));
+	BUFX1 U6(.A(flit11[6]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][6]));
+	BUFX1 U7(.A(flit11[7]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][7]));
+	BUFX1 U8(.A(flit11[8]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][8]));
+	BUFX1 U9(.A(flit11[9]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][9]));
+	BUFX1 U10(.A(flit11[10]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][10]));
+	BUFX1 U11(.A(flit11[11]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][11]));
+	BUFX1 U12(.A(flit11[12]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][12]));
+	BUFX1 U13(.A(flit11[13]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][13]));
+	BUFX1 U14(.A(flit11[14]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][14]));
+	BUFX1 U15(.A(flit11[15]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][15]));
+	BUFX1 U16(.A(flit11[16]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][16]));
+	BUFX1 U17(.A(flit11[17]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][17]));
+	BUFX1 U18(.A(flit11[18]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][18]));
+	BUFX1 U19(.A(flit11[19]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][19]));
+	BUFX1 U20(.A(flit11[20]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][20]));
+	BUFX1 U21(.A(flit11[21]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][21]));
+	BUFX1 U22(.A(flit11[22]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][22]));
+	BUFX1 U23(.A(flit11[23]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][23]));
+	BUFX1 U24(.A(flit11[24]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][24]));
+	BUFX1 U25(.A(flit11[25]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][25]));
+	BUFX1 U26(.A(flit11[26]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][26]));
+	BUFX1 U27(.A(flit11[27]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][27]));
+	BUFX1 U28(.A(flit11[28]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][28]));
+	BUFX1 U29(.A(flit11[29]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][29]));
+	BUFX1 U30(.A(flit11[30]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][30]));
+	BUFX1 U31(.A(flit11[31]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][31]));
+	BUFX1 U32(.A(flit11[32]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][32]));
+	BUFX1 U33(.A(flit11[33]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[36:3][33]));
+    NOR2X1 U34 ( .IN1(flit11[33]), .IN2(flit11[32]), .QN(norres_vc_buffer11_vc_buffer11) );
+    OR4X1 U35 ( .IN1(flit11[29]), .IN2(flit11[28]), .IN3(flit11[27]), .IN4(flit11[26]), .Y(or1res_vc_buffer11) );
+    OR4X1 U35 ( .IN1(flit11[25]), .IN2(flit11[24]), .IN3(flit11[23]), .IN4(flit11[22]), .Y(or2res_vc_buffer11) );
+    OR2X1 U36 ( .A(or1res_vc_buffer11), .B(or2res_vc_buffer11), .Y(orres_vc_buffer11) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath1put_datapath1[0]), .IN2(norres_vc_buffer11_vc_buffer11), .IN3(orres_vc_buffer11), .Q(finres1_vc_buffer11) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer11), .IN2(1'b1), .S(finres1_vc_buffer11), .Q(next_locked_vc_buffer11);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath1put_datapath1[0]), .IN2(flit11[33]), .IN3(flit11[32]), .Q(andres1_vc_buffer11) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer11), .IN2(1'b0), .S(andres1_vc_buffer11), .Q(next_locked_vc_buffer11);
+
+    INVX1 U41 ( .A(full_vc_buffer11), .Y(full_vc_buffer11_not) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer11), .Y(locked_by_route_ff_vc_buffer11_not) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer11_not), .S(norres_vc_buffer11_vc_buffer11), .Q(thirdand_vc_buffer11);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath1put_datapath1[0]), .IN2(full_vc_buffer11_not), .IN3(thirdand_vc_buffer11), .Q(write_flit11_vc_buffer1) );
+    AND2X1 U45 ( .IN1(full_vc_buffer11_not), .IN2(norres_vc_buffer11_vc_buffer11), .Q(from_input_resp_input_datapath1[0]) );
+    INVX1 U46 ( .A(empty_vc_buffer11), .Y(to_output_req_in_jump_input_datapath1put_datapath1[0]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath1put_datapath1[0]), .IN2(to_output_resp_input_datapath1[0]), .Q(read_flit11_vc_buffer1) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath1put_datapath1[2:1]), .Y(2'b00));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer11), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer11);
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule111[0]), .Y(next_read_ptr_fifomodule111[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule111[1]), .Y(next_read_ptr_fifomodule111[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule111[0]), .Y(next_write_ptr_fifomodule111[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule111[1]), .Y(next_write_ptr_fifomodule111[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule111[0]), .IN2(read_ptr_ff_fifomodule111[0]), .Q(u1temp_fifomodule111) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule111[1]), .IN2(read_ptr_ff_fifomodule111[1]), .Q(u2temp_fifomodule111) );
+	AND2X1 U3 ( .A(u1temp_fifomodule111), .B(u2temp_fifomodule111), .Y(empty_vc_buffer111) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule111[1]), .B(read_ptr_ff_fifomodule111[1]), .Y(u4temp_fifomodule111) );
+	AND2X1 U5 ( .A(u1temp_fifomodule111), .B(u4temp_fifomodule111), .Y(full_vc_buffer111) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule111[read_ptr_ff_fifomodule111[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer111), .Q(to_output_req_in_jump_input_datapath1put_datapath1[73:40][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule111[read_ptr_ff_fifomodule111[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer111), .Q(to_output_req_in_jump_input_datapath1put_datapath1[73:40][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule111[read_ptr_ff_fifomodule111[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer111), .Q(to_output_req_in_jump_input_datapath1put_datapath1[73:40][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule111[read_ptr_ff_fifomodule111[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer111), .Q(to_output_req_in_jump_input_datapath1put_datapath1[73:40][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule111[read_ptr_ff_fifomodule111[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer111), .Q(to_output_req_in_jump_input_datapath1put_datapath1[73:40][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule111[read_ptr_ff_fifomodule111[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer111), .Q(to_output_req_in_jump_input_datapath1put_datapath1[73:40][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule111[read_ptr_ff_fifomodule111[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer111), .Q(to_output_req_in_jump_input_datapath1put_datapath1[73:40][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule111[read_ptr_ff_fifomodule111[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer111), .Q(to_output_req_in_jump_input_datapath1put_datapath1[73:40][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer111), .Y(full_vc_buffer111_not1_fifomodule1) );
+	AND2X1 U8 ( .A(write_flit111_vc_buffer11), .B(full_vc_buffer111_not1_fifomodule1), .Y(u7temp_fifomodule111) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule111), .Q(u9temp_fifomodule111));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule111[0]), .B0(u9temp_fifomodule111), .C1(u10carry_fifomodule111), .SO(next_write_ptr_fifomodule111[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule111), .B0(write_ptr_ff_fifomodule111[1]), .C1(u11carry_fifomodule111), .SO(next_write_ptr_fifomodule111[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer111), .Y(empty_vc_buffer111_not_fifomodule1) );
+	AND2X1 U13 ( .A(read_flit111_vc_buffer11), .B(empty_vc_buffer111_not_fifomodule1), .Y(u13temp_fifomodule111) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule111), .Q(u14temp_fifomodule111));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule111[0]), .B0(u14temp_fifomodule111), .C1(u15carry_fifomodule111), .SO(next_read_ptr_fifomodule111[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule111), .B0(read_ptr_ff_fifomodule111[1]), .C1(u16carry_fifomodule111), .SO(next_read_ptr_fifomodule111[1]) );
+
+	AND2X1 U17 ( .A(write_flit111_vc_buffer11), .B(full_vc_buffer111), .Y(u17res_fifomodule111) );
+	AND2X1 U18 ( .A(read_flit111_vc_buffer11), .B(empty_vc_buffer111), .Y(u18res_fifomodule111) );
+    OR2X1 U19 ( .A(u17res_fifomodule111), .B(u18res_fifomodule111), .Y(error_vc_buffer111) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule111[0]), .B(read_ptr_ff_fifomodule111[0]), .Y(fifo_ocup_fifomodule111[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule111[0]), .Y(write_ptr_ff_fifomodule111_0_not11) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule111_0_not11), .B(read_ptr_ff_fifomodule111[0]), .Y(b0wire_fifomodule111) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule111[1]), .B(read_ptr_ff_fifomodule111[1]), .Y(u23temp_fifomodule111) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule111[1]), .Y(write_ptr_ff_fifomodule111_1_not11) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule111[1]), .B(write_ptr_ff_fifomodule111_1_not11), .Y(boutb_fifomodule111) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule111), .B(b0wire_fifomodule111), .Y(fifo_ocup_fifomodule111[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule111), .Y(u23temp_fifomodule111_not_fifomodule1) );
+	AND2X1 U26 ( .A(b0wire_fifomodule111), .B(u23temp_fifomodule111_not_fifomodule1), .Y(bouta_fifomodule111) );
+	OR2X1 U27 ( .A(bouta_fifomodule111), .B(boutb_fifomodule111), .Y(boutmain_fifomodule111) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule111[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule111[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule111) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule111) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule111), .D(1'b0), .Q(write_ptr_ff_fifomodule111[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule111), .D(1'b0), .Q(read_ptr_ff_fifomodule111[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule111), .D(1'b0), .Q(fifo_ff_fifomodule111[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule111), .D(1'b0), .Q(write_ptr_ff_fifomodule111[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule111), .D(1'b0), .Q(read_ptr_ff_fifomodule111[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule111), .D(1'b0), .Q(fifo_ff_fifomodule111[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule111[0]), .Q(write_ptr_ff_fifomodule111[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule111[1]), .Q(write_ptr_ff_fifomodule111[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule111[0]), .Q(read_ptr_ff_fifomodule111[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule111[1]), .Q(read_ptr_ff_fifomodule111[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule111), .D(from_input_req_in_jump_input_datapath1put_datapath1[73:40][0]), .Q(fifo_ff_fifomodule111[write_ptr_ff_fifomodule111[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule111), .D(from_input_req_in_jump_input_datapath1put_datapath1[73:40][1]), .Q(fifo_ff_fifomodule111[write_ptr_ff_fifomodule111[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule111), .D(from_input_req_in_jump_input_datapath1put_datapath1[73:40][2]), .Q(fifo_ff_fifomodule111[write_ptr_ff_fifomodule111[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule111), .D(from_input_req_in_jump_input_datapath1put_datapath1[73:40][3]), .Q(fifo_ff_fifomodule111[write_ptr_ff_fifomodule111[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule111), .D(from_input_req_in_jump_input_datapath1put_datapath1[73:40][4]), .Q(fifo_ff_fifomodule111[write_ptr_ff_fifomodule111[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule111), .D(from_input_req_in_jump_input_datapath1put_datapath1[73:40][5]), .Q(fifo_ff_fifomodule111[write_ptr_ff_fifomodule111[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule111), .D(from_input_req_in_jump_input_datapath1put_datapath1[73:40][6]), .Q(fifo_ff_fifomodule111[write_ptr_ff_fifomodule111[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule111), .D(from_input_req_in_jump_input_datapath1put_datapath1[73:40][7]), .Q(fifo_ff_fifomodule111[write_ptr_ff_fifomodule111[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer111), .Y(next_locked_vc_buffer111) );
+    BUFX1 U0(.A(flit111[0]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][0]));
+	BUFX1 U1(.A(flit111[1]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][1]));
+	BUFX1 U2(.A(flit111[2]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][2]));
+	BUFX1 U3(.A(flit111[3]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][3]));
+	BUFX1 U4(.A(flit111[4]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][4]));
+	BUFX1 U5(.A(flit111[5]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][5]));
+	BUFX1 U6(.A(flit111[6]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][6]));
+	BUFX1 U7(.A(flit111[7]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][7]));
+	BUFX1 U8(.A(flit111[8]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][8]));
+	BUFX1 U9(.A(flit111[9]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][9]));
+	BUFX1 U10(.A(flit111[10]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][10]));
+	BUFX1 U11(.A(flit111[11]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][11]));
+	BUFX1 U12(.A(flit111[12]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][12]));
+	BUFX1 U13(.A(flit111[13]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][13]));
+	BUFX1 U14(.A(flit111[14]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][14]));
+	BUFX1 U15(.A(flit111[15]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][15]));
+	BUFX1 U16(.A(flit111[16]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][16]));
+	BUFX1 U17(.A(flit111[17]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][17]));
+	BUFX1 U18(.A(flit111[18]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][18]));
+	BUFX1 U19(.A(flit111[19]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][19]));
+	BUFX1 U20(.A(flit111[20]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][20]));
+	BUFX1 U21(.A(flit111[21]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][21]));
+	BUFX1 U22(.A(flit111[22]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][22]));
+	BUFX1 U23(.A(flit111[23]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][23]));
+	BUFX1 U24(.A(flit111[24]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][24]));
+	BUFX1 U25(.A(flit111[25]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][25]));
+	BUFX1 U26(.A(flit111[26]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][26]));
+	BUFX1 U27(.A(flit111[27]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][27]));
+	BUFX1 U28(.A(flit111[28]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][28]));
+	BUFX1 U29(.A(flit111[29]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][29]));
+	BUFX1 U30(.A(flit111[30]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][30]));
+	BUFX1 U31(.A(flit111[31]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][31]));
+	BUFX1 U32(.A(flit111[32]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][32]));
+	BUFX1 U33(.A(flit111[33]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[73:40][33]));
+    NOR2X1 U34 ( .IN1(flit111[33]), .IN2(flit111[32]), .QN(norres_vc_buffer111_vc_buffer1) );
+    OR4X1 U35 ( .IN1(flit111[29]), .IN2(flit111[28]), .IN3(flit111[27]), .IN4(flit111[26]), .Y(or1res_vc_buffer111) );
+    OR4X1 U35 ( .IN1(flit111[25]), .IN2(flit111[24]), .IN3(flit111[23]), .IN4(flit111[22]), .Y(or2res_vc_buffer111) );
+    OR2X1 U36 ( .A(or1res_vc_buffer111), .B(or2res_vc_buffer111), .Y(orres_vc_buffer111) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath1put_datapath1[37]), .IN2(norres_vc_buffer111_vc_buffer1), .IN3(orres_vc_buffer111), .Q(finres1_vc_buffer111) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer111), .IN2(1'b1), .S(finres1_vc_buffer111), .Q(next_locked_vc_buffer111);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath1put_datapath1[37]), .IN2(flit111[33]), .IN3(flit111[32]), .Q(andres1_vc_buffer111) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer111), .IN2(1'b0), .S(andres1_vc_buffer111), .Q(next_locked_vc_buffer111);
+
+    INVX1 U41 ( .A(full_vc_buffer111), .Y(full_vc_buffer111_not1) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer111), .Y(locked_by_route_ff_vc_buffer111_not1) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer111_not1), .S(norres_vc_buffer111_vc_buffer1), .Q(thirdand_vc_buffer111);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath1put_datapath1[37]), .IN2(full_vc_buffer111_not1), .IN3(thirdand_vc_buffer111), .Q(write_flit111_vc_buffer11) );
+    AND2X1 U45 ( .IN1(full_vc_buffer111_not1), .IN2(norres_vc_buffer111_vc_buffer1), .Q(from_input_resp_input_datapath1[1]) );
+    INVX1 U46 ( .A(empty_vc_buffer111), .Y(to_output_req_in_jump_input_datapath1put_datapath1[37]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath1put_datapath1[37]), .IN2(to_output_resp_input_datapath1[1]), .Q(read_flit111_vc_buffer11) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath1put_datapath1[39:38]), .Y(2'b01));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer111), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer111);
+
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule112[0]), .Y(next_read_ptr_fifomodule112[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule112[1]), .Y(next_read_ptr_fifomodule112[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule112[0]), .Y(next_write_ptr_fifomodule112[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule112[1]), .Y(next_write_ptr_fifomodule112[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule112[0]), .IN2(read_ptr_ff_fifomodule112[0]), .Q(u1temp_fifomodule112) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule112[1]), .IN2(read_ptr_ff_fifomodule112[1]), .Q(u2temp_fifomodule112) );
+	AND2X1 U3 ( .A(u1temp_fifomodule112), .B(u2temp_fifomodule112), .Y(empty_vc_buffer112) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule112[1]), .B(read_ptr_ff_fifomodule112[1]), .Y(u4temp_fifomodule112) );
+	AND2X1 U5 ( .A(u1temp_fifomodule112), .B(u4temp_fifomodule112), .Y(full_vc_buffer112) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule112[read_ptr_ff_fifomodule112[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer112), .Q(to_output_req_in_jump_input_datapath1put_datapath1[110:77][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule112[read_ptr_ff_fifomodule112[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer112), .Q(to_output_req_in_jump_input_datapath1put_datapath1[110:77][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule112[read_ptr_ff_fifomodule112[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer112), .Q(to_output_req_in_jump_input_datapath1put_datapath1[110:77][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule112[read_ptr_ff_fifomodule112[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer112), .Q(to_output_req_in_jump_input_datapath1put_datapath1[110:77][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule112[read_ptr_ff_fifomodule112[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer112), .Q(to_output_req_in_jump_input_datapath1put_datapath1[110:77][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule112[read_ptr_ff_fifomodule112[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer112), .Q(to_output_req_in_jump_input_datapath1put_datapath1[110:77][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule112[read_ptr_ff_fifomodule112[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer112), .Q(to_output_req_in_jump_input_datapath1put_datapath1[110:77][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule112[read_ptr_ff_fifomodule112[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer112), .Q(to_output_req_in_jump_input_datapath1put_datapath1[110:77][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer112), .Y(full_vc_buffer112_not2_fifomodule2) );
+	AND2X1 U8 ( .A(write_flit112_vc_buffer21), .B(full_vc_buffer112_not2_fifomodule2), .Y(u7temp_fifomodule112) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule112), .Q(u9temp_fifomodule112));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule112[0]), .B0(u9temp_fifomodule112), .C1(u10carry_fifomodule112), .SO(next_write_ptr_fifomodule112[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule112), .B0(write_ptr_ff_fifomodule112[1]), .C1(u11carry_fifomodule112), .SO(next_write_ptr_fifomodule112[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer112), .Y(empty_vc_buffer112_not_fifomodule2) );
+	AND2X1 U13 ( .A(read_flit112_vc_buffer21), .B(empty_vc_buffer112_not_fifomodule2), .Y(u13temp_fifomodule112) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule112), .Q(u14temp_fifomodule112));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule112[0]), .B0(u14temp_fifomodule112), .C1(u15carry_fifomodule112), .SO(next_read_ptr_fifomodule112[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule112), .B0(read_ptr_ff_fifomodule112[1]), .C1(u16carry_fifomodule112), .SO(next_read_ptr_fifomodule112[1]) );
+
+	AND2X1 U17 ( .A(write_flit112_vc_buffer21), .B(full_vc_buffer112), .Y(u17res_fifomodule112) );
+	AND2X1 U18 ( .A(read_flit112_vc_buffer21), .B(empty_vc_buffer112), .Y(u18res_fifomodule112) );
+    OR2X1 U19 ( .A(u17res_fifomodule112), .B(u18res_fifomodule112), .Y(error_vc_buffer112) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule112[0]), .B(read_ptr_ff_fifomodule112[0]), .Y(fifo_ocup_fifomodule112[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule112[0]), .Y(write_ptr_ff_fifomodule112_0_not21) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule112_0_not21), .B(read_ptr_ff_fifomodule112[0]), .Y(b0wire_fifomodule112) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule112[1]), .B(read_ptr_ff_fifomodule112[1]), .Y(u23temp_fifomodule112) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule112[1]), .Y(write_ptr_ff_fifomodule112_1_not21) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule112[1]), .B(write_ptr_ff_fifomodule112_1_not21), .Y(boutb_fifomodule112) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule112), .B(b0wire_fifomodule112), .Y(fifo_ocup_fifomodule112[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule112), .Y(u23temp_fifomodule112_not_fifomodule2) );
+	AND2X1 U26 ( .A(b0wire_fifomodule112), .B(u23temp_fifomodule112_not_fifomodule2), .Y(bouta_fifomodule112) );
+	OR2X1 U27 ( .A(bouta_fifomodule112), .B(boutb_fifomodule112), .Y(boutmain_fifomodule112) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule112[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule112[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule112) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule112) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule112), .D(1'b0), .Q(write_ptr_ff_fifomodule112[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule112), .D(1'b0), .Q(read_ptr_ff_fifomodule112[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule112), .D(1'b0), .Q(fifo_ff_fifomodule112[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule112), .D(1'b0), .Q(write_ptr_ff_fifomodule112[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule112), .D(1'b0), .Q(read_ptr_ff_fifomodule112[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule112), .D(1'b0), .Q(fifo_ff_fifomodule112[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule112[0]), .Q(write_ptr_ff_fifomodule112[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule112[1]), .Q(write_ptr_ff_fifomodule112[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule112[0]), .Q(read_ptr_ff_fifomodule112[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule112[1]), .Q(read_ptr_ff_fifomodule112[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule112), .D(from_input_req_in_jump_input_datapath1put_datapath1[110:77][0]), .Q(fifo_ff_fifomodule112[write_ptr_ff_fifomodule112[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule112), .D(from_input_req_in_jump_input_datapath1put_datapath1[110:77][1]), .Q(fifo_ff_fifomodule112[write_ptr_ff_fifomodule112[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule112), .D(from_input_req_in_jump_input_datapath1put_datapath1[110:77][2]), .Q(fifo_ff_fifomodule112[write_ptr_ff_fifomodule112[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule112), .D(from_input_req_in_jump_input_datapath1put_datapath1[110:77][3]), .Q(fifo_ff_fifomodule112[write_ptr_ff_fifomodule112[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule112), .D(from_input_req_in_jump_input_datapath1put_datapath1[110:77][4]), .Q(fifo_ff_fifomodule112[write_ptr_ff_fifomodule112[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule112), .D(from_input_req_in_jump_input_datapath1put_datapath1[110:77][5]), .Q(fifo_ff_fifomodule112[write_ptr_ff_fifomodule112[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule112), .D(from_input_req_in_jump_input_datapath1put_datapath1[110:77][6]), .Q(fifo_ff_fifomodule112[write_ptr_ff_fifomodule112[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule112), .D(from_input_req_in_jump_input_datapath1put_datapath1[110:77][7]), .Q(fifo_ff_fifomodule112[write_ptr_ff_fifomodule112[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer112), .Y(next_locked_vc_buffer112) );
+    BUFX1 U0(.A(flit112[0]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][0]));
+	BUFX1 U1(.A(flit112[1]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][1]));
+	BUFX1 U2(.A(flit112[2]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][2]));
+	BUFX1 U3(.A(flit112[3]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][3]));
+	BUFX1 U4(.A(flit112[4]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][4]));
+	BUFX1 U5(.A(flit112[5]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][5]));
+	BUFX1 U6(.A(flit112[6]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][6]));
+	BUFX1 U7(.A(flit112[7]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][7]));
+	BUFX1 U8(.A(flit112[8]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][8]));
+	BUFX1 U9(.A(flit112[9]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][9]));
+	BUFX1 U10(.A(flit112[10]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][10]));
+	BUFX1 U11(.A(flit112[11]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][11]));
+	BUFX1 U12(.A(flit112[12]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][12]));
+	BUFX1 U13(.A(flit112[13]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][13]));
+	BUFX1 U14(.A(flit112[14]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][14]));
+	BUFX1 U15(.A(flit112[15]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][15]));
+	BUFX1 U16(.A(flit112[16]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][16]));
+	BUFX1 U17(.A(flit112[17]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][17]));
+	BUFX1 U18(.A(flit112[18]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][18]));
+	BUFX1 U19(.A(flit112[19]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][19]));
+	BUFX1 U20(.A(flit112[20]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][20]));
+	BUFX1 U21(.A(flit112[21]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][21]));
+	BUFX1 U22(.A(flit112[22]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][22]));
+	BUFX1 U23(.A(flit112[23]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][23]));
+	BUFX1 U24(.A(flit112[24]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][24]));
+	BUFX1 U25(.A(flit112[25]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][25]));
+	BUFX1 U26(.A(flit112[26]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][26]));
+	BUFX1 U27(.A(flit112[27]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][27]));
+	BUFX1 U28(.A(flit112[28]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][28]));
+	BUFX1 U29(.A(flit112[29]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][29]));
+	BUFX1 U30(.A(flit112[30]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][30]));
+	BUFX1 U31(.A(flit112[31]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][31]));
+	BUFX1 U32(.A(flit112[32]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][32]));
+	BUFX1 U33(.A(flit112[33]), .Y(from_input_req_in_jump_input_datapath1put_datapath1[110:77][33]));
+    NOR2X1 U34 ( .IN1(flit112[33]), .IN2(flit112[32]), .QN(norres_vc_buffer112_vc_buffer2) );
+    OR4X1 U35 ( .IN1(flit112[29]), .IN2(flit112[28]), .IN3(flit112[27]), .IN4(flit112[26]), .Y(or1res_vc_buffer112) );
+    OR4X1 U35 ( .IN1(flit112[25]), .IN2(flit112[24]), .IN3(flit112[23]), .IN4(flit112[22]), .Y(or2res_vc_buffer112) );
+    OR2X1 U36 ( .A(or1res_vc_buffer112), .B(or2res_vc_buffer112), .Y(orres_vc_buffer112) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath1put_datapath1[74]), .IN2(norres_vc_buffer112_vc_buffer2), .IN3(orres_vc_buffer112), .Q(finres1_vc_buffer112) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer112), .IN2(1'b1), .S(finres1_vc_buffer112), .Q(next_locked_vc_buffer112);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath1put_datapath1[74]), .IN2(flit112[33]), .IN3(flit112[32]), .Q(andres1_vc_buffer112) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer112), .IN2(1'b0), .S(andres1_vc_buffer112), .Q(next_locked_vc_buffer112);
+
+    INVX1 U41 ( .A(full_vc_buffer112), .Y(full_vc_buffer112_not2) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer112), .Y(locked_by_route_ff_vc_buffer112_not2) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer112_not2), .S(norres_vc_buffer112_vc_buffer2), .Q(thirdand_vc_buffer112);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath1put_datapath1[74]), .IN2(full_vc_buffer112_not2), .IN3(thirdand_vc_buffer112), .Q(write_flit112_vc_buffer21) );
+    AND2X1 U45 ( .IN1(full_vc_buffer112_not2), .IN2(norres_vc_buffer112_vc_buffer2), .Q(from_input_resp_input_datapath1[2]) );
+    INVX1 U46 ( .A(empty_vc_buffer112), .Y(to_output_req_in_jump_input_datapath1put_datapath1[74]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath1put_datapath1[74]), .IN2(to_output_resp_input_datapath1[2]), .Q(read_flit112_vc_buffer21) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath1put_datapath1[76:75]), .Y(2'b10));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer112), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer112);
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath1put_datapath1[77]), .Y(ext_req_v_i[73:37][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath1put_datapath1[78]), .Y(ext_req_v_i[73:37][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath1put_datapath1[79]), .Y(ext_req_v_i[73:37][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath1put_datapath1[80]), .Y(ext_req_v_i[73:37][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath1put_datapath1[81]), .Y(ext_req_v_i[73:37][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath1put_datapath1[82]), .Y(ext_req_v_i[73:37][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath1put_datapath1[83]), .Y(ext_req_v_i[73:37][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath1put_datapath1[84]), .Y(ext_req_v_i[73:37][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath1put_datapath1[85]), .Y(ext_req_v_i[73:37][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath1put_datapath1[86]), .Y(ext_req_v_i[73:37][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath1put_datapath1[87]), .Y(ext_req_v_i[73:37][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath1put_datapath1[88]), .Y(ext_req_v_i[73:37][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath1put_datapath1[89]), .Y(ext_req_v_i[73:37][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath1put_datapath1[90]), .Y(ext_req_v_i[73:37][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath1put_datapath1[91]), .Y(ext_req_v_i[73:37][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath1put_datapath1[92]), .Y(ext_req_v_i[73:37][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath1put_datapath1[93]), .Y(ext_req_v_i[73:37][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath1put_datapath1[94]), .Y(ext_req_v_i[73:37][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath1put_datapath1[95]), .Y(ext_req_v_i[73:37][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath1put_datapath1[96]), .Y(ext_req_v_i[73:37][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath1put_datapath1[97]), .Y(ext_req_v_i[73:37][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath1put_datapath1[98]), .Y(ext_req_v_i[73:37][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath1put_datapath1[99]), .Y(ext_req_v_i[73:37][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath1put_datapath1[100]), .Y(ext_req_v_i[73:37][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath1put_datapath1[101]), .Y(ext_req_v_i[73:37][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath1put_datapath1[102]), .Y(ext_req_v_i[73:37][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath1put_datapath1[103]), .Y(ext_req_v_i[73:37][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath1put_datapath1[104]), .Y(ext_req_v_i[73:37][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath1put_datapath1[105]), .Y(ext_req_v_i[73:37][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath1put_datapath1[106]), .Y(ext_req_v_i[73:37][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath1put_datapath1[107]), .Y(ext_req_v_i[73:37][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath1put_datapath1[108]), .Y(ext_req_v_i[73:37][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath1put_datapath1[109]), .Y(ext_req_v_i[73:37][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath1put_datapath1[110]), .Y(ext_req_v_i[73:37][36]));
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[73:37][1]), .IN2(i_input_datapath1[0]), .QN(xnor1resu_input_datapath1) );
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[73:37][2]), .IN2(i_input_datapath1[1]), .QN(xnor2resu_input_datapath1) );
+    AND2X1 U128 ( .IN1(xnor1resu_input_datapath1), .IN2(xnor2resu_input_datapath1), .Q(and1resu_input_datapath1) );
+    AND3X1 U128 ( .IN1(and1resu_input_datapath1), .IN2(ext_req_v_i[73:37][0]), .IN2(ext_req_v_i[73:37][0]), .Q(cond1line_input_datapath1) );
+    MUX21X1 U0009 (.IN1(vc_ch_act_in_input_datapath1[0]), .IN2(i_input_datapath1[0]), .S(cond1line_input_datapath1), .Q(vc_ch_act_in_input_datapath1[0]));
+    MUX21X1 U0010 (.IN1(vc_ch_act_in_input_datapath1[1]), .IN2(i_input_datapath1[1]), .S(cond1line_input_datapath1), .Q(vc_ch_act_in_input_datapath1[1]));
+    MUX21X1 U0011 (.IN1(req_in_jump_input_datapath1), .IN2(1), .S(cond1line_input_datapath1), .Q(req_in_jump_input_datapath1));
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath1put_datapath1[40]), .Y(ext_req_v_i[73:37][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath1put_datapath1[41]), .Y(ext_req_v_i[73:37][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath1put_datapath1[42]), .Y(ext_req_v_i[73:37][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath1put_datapath1[43]), .Y(ext_req_v_i[73:37][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath1put_datapath1[44]), .Y(ext_req_v_i[73:37][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath1put_datapath1[45]), .Y(ext_req_v_i[73:37][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath1put_datapath1[46]), .Y(ext_req_v_i[73:37][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath1put_datapath1[47]), .Y(ext_req_v_i[73:37][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath1put_datapath1[48]), .Y(ext_req_v_i[73:37][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath1put_datapath1[49]), .Y(ext_req_v_i[73:37][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath1put_datapath1[50]), .Y(ext_req_v_i[73:37][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath1put_datapath1[51]), .Y(ext_req_v_i[73:37][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath1put_datapath1[52]), .Y(ext_req_v_i[73:37][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath1put_datapath1[53]), .Y(ext_req_v_i[73:37][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath1put_datapath1[54]), .Y(ext_req_v_i[73:37][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath1put_datapath1[55]), .Y(ext_req_v_i[73:37][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath1put_datapath1[56]), .Y(ext_req_v_i[73:37][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath1put_datapath1[57]), .Y(ext_req_v_i[73:37][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath1put_datapath1[58]), .Y(ext_req_v_i[73:37][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath1put_datapath1[59]), .Y(ext_req_v_i[73:37][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath1put_datapath1[60]), .Y(ext_req_v_i[73:37][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath1put_datapath1[61]), .Y(ext_req_v_i[73:37][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath1put_datapath1[62]), .Y(ext_req_v_i[73:37][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath1put_datapath1[63]), .Y(ext_req_v_i[73:37][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath1put_datapath1[64]), .Y(ext_req_v_i[73:37][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath1put_datapath1[65]), .Y(ext_req_v_i[73:37][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath1put_datapath1[66]), .Y(ext_req_v_i[73:37][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath1put_datapath1[67]), .Y(ext_req_v_i[73:37][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath1put_datapath1[68]), .Y(ext_req_v_i[73:37][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath1put_datapath1[69]), .Y(ext_req_v_i[73:37][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath1put_datapath1[70]), .Y(ext_req_v_i[73:37][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath1put_datapath1[71]), .Y(ext_req_v_i[73:37][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath1put_datapath1[72]), .Y(ext_req_v_i[73:37][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath1put_datapath1[73]), .Y(ext_req_v_i[73:37][36]));
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath1put_datapath1[3]), .Y(ext_req_v_i[73:37][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath1put_datapath1[4]), .Y(ext_req_v_i[73:37][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath1put_datapath1[5]), .Y(ext_req_v_i[73:37][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath1put_datapath1[6]), .Y(ext_req_v_i[73:37][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath1put_datapath1[7]), .Y(ext_req_v_i[73:37][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath1put_datapath1[8]), .Y(ext_req_v_i[73:37][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath1put_datapath1[9]), .Y(ext_req_v_i[73:37][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath1put_datapath1[10]), .Y(ext_req_v_i[73:37][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath1put_datapath1[11]), .Y(ext_req_v_i[73:37][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath1put_datapath1[12]), .Y(ext_req_v_i[73:37][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath1put_datapath1[13]), .Y(ext_req_v_i[73:37][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath1put_datapath1[14]), .Y(ext_req_v_i[73:37][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath1put_datapath1[15]), .Y(ext_req_v_i[73:37][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath1put_datapath1[16]), .Y(ext_req_v_i[73:37][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath1put_datapath1[17]), .Y(ext_req_v_i[73:37][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath1put_datapath1[18]), .Y(ext_req_v_i[73:37][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath1put_datapath1[19]), .Y(ext_req_v_i[73:37][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath1put_datapath1[20]), .Y(ext_req_v_i[73:37][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath1put_datapath1[21]), .Y(ext_req_v_i[73:37][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath1put_datapath1[22]), .Y(ext_req_v_i[73:37][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath1put_datapath1[23]), .Y(ext_req_v_i[73:37][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath1put_datapath1[24]), .Y(ext_req_v_i[73:37][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath1put_datapath1[25]), .Y(ext_req_v_i[73:37][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath1put_datapath1[26]), .Y(ext_req_v_i[73:37][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath1put_datapath1[27]), .Y(ext_req_v_i[73:37][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath1put_datapath1[28]), .Y(ext_req_v_i[73:37][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath1put_datapath1[29]), .Y(ext_req_v_i[73:37][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath1put_datapath1[30]), .Y(ext_req_v_i[73:37][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath1put_datapath1[31]), .Y(ext_req_v_i[73:37][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath1put_datapath1[32]), .Y(ext_req_v_i[73:37][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath1put_datapath1[33]), .Y(ext_req_v_i[73:37][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath1put_datapath1[34]), .Y(ext_req_v_i[73:37][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath1put_datapath1[35]), .Y(ext_req_v_i[73:37][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath1put_datapath1[36]), .Y(ext_req_v_i[73:37][36]));
+
+    MUX21X1 U0012 (.IN1(from_input_req_in_jump_input_datapath1put_datapath1[vc_ch_act_in_input_datapath1 * 37]), .IN2(ext_req_v_i[73:37][0]), .S(req_in_jump_input_datapath1), .Q(from_input_req_in_jump_input_datapath1put_datapath1[vc_ch_act_in_input_datapath1 * 37]));
+    MUX21X1 U0013 (.IN1(from_input_req_in_jump_input_datapath1put_datapath1[vc_ch_act_in_input_datapath1*37+2]), .IN2(vc_ch_act_in_input_datapath1[1]), .S(req_in_jump_input_datapath1), .Q(from_input_req_in_jump_input_datapath1put_datapath1[vc_ch_act_in_input_datapath1*37+2]));
+    MUX21X1 U0014 (.IN1(from_input_req_in_jump_input_datapath1put_datapath1[vc_ch_act_in_input_datapath1*37+1]), .IN2(vc_ch_act_in_input_datapath1[0]), .S(req_in_jump_input_datapath1), .Q(from_input_req_in_jump_input_datapath1put_datapath1[vc_ch_act_in_input_datapath1*37+1]));
+    MUX21X1 U0015 (.IN1(ext_resp_v_o[2:1][0]), .IN2(from_input_resp_input_datapath1[vc_ch_act_in_input_datapath1]), .S(req_in_jump_input_datapath1), .Q(ext_resp_v_o[2:1][0]));
+
+    INVX1 U041 ( .A(req_in_jump_input_datapath1), .Y(req_in_jump_input_datapath1_not) );
+    MUX21X1 U0016 (.IN1(ext_resp_v_o[2:1][0]), .IN2(1'sb1), .S(req_in_jump_input_datapath1_not), .Q(ext_resp_v_o[2:1][0]));
+    BUFX1 U34(.A(from_input_req_in_jump_input_datapath1put_datapath1[34]), .Y(ext_req_v_i[73:37][34]));
+
+    XOR2X1 U0222 ( .IN1(_sv2v_jump_input_datapath1[1]), .IN2(1'b1), .Q(xor1resu_input_datapath1) );
+    MUX21X1 U0017 (.IN1(_sv2v_jump_input_datapath1[0]), .IN2(1'b0), .S(xor1resu_input_datapath1), .Q(_sv2v_jump_input_datapath1[0]));
+    MUX21X1 U0018 (.IN1(_sv2v_jump_input_datapath1[1]), .IN2(1'b0), .S(xor1resu_input_datapath1), .Q(_sv2v_jump_input_datapath1[1]));
+    AND2X1 U38123 ( .IN1(xor1resu_input_datapath1), .IN2(to_output_req_in_jump_input_datapath1put_datapath1[j_input_datapath1*37]), .Q(and2resu_input_datapath1) );
+    MUX21X1 U0019 (.IN1(vc_ch_act_out_input_datapath1[0]), .IN2(j_input_datapath1[0]), .S(and2resu_input_datapath1), .Q(vc_ch_act_out_input_datapath1[0]));
+    MUX21X1 U0020 (.IN1(vc_ch_act_out_input_datapath1[1]), .IN2(j_input_datapath1[1]), .S(and2resu_input_datapath1), .Q(vc_ch_act_out_input_datapath1[1]));
+    MUX21X1 U0021 (.IN1(req_out_jump_input_datapath1), .IN2(1'b1), .S(and2resu_input_datapath1), .Q(req_out_jump_input_datapath1));
+    MUX21X1 U0022 (.IN1(_sv2v_jump_input_datapath1[0]), .IN2(1'b0), .S(and2resu_input_datapath1), .Q(_sv2v_jump_input_datapath1[0]));
+    MUX21X1 U0023 (.IN1(_sv2v_jump_input_datapath1[1]), .IN2(1'b1), .S(and2resu_input_datapath1), .Q(_sv2v_jump_input_datapath1[1]));
+    HADDX1 U00021 ( .A0(j_input_datapath1[0]), .B0(1'b1), .C1(j_input_datapath1[1]), .SO(j_input_datapath1[0]) );
+    HADDX1 U00022 ( .A0(j_input_datapath1[0]), .B0(1'b1), .C1(j_input_datapath1[1]), .SO(j_input_datapath1[0]) );
+    AND2X1 U38111 ( .IN1(xor1resu_input_datapath1), .IN2(to_output_req_in_jump_input_datapath1put_datapath1[j_input_datapath1*37]), .Q(and3resu) );
+    NAND2X1 U29311(.A(_sv2v_jump_input_datapath1[0]),.B(_sv2v_jump_input_datapath1[1]),.Y(nand1resu_input_datapath11));
+    MUX21X1 U00212 (.IN1(_sv2v_jump_input_datapath1[0]), .IN2(1'b0), .S(nand1resu_input_datapath11), .Q(_sv2v_jump_input_datapath1[0]));
+    MUX21X1 U00213 (.IN1(_sv2v_jump_input_datapath1[1]), .IN2(1'b0), .S(nand1resu_input_datapath11), .Q(_sv2v_jump_input_datapath1[1]));
+    XNOR2X1 U17581 (.IN1(_sv2v_jump_input_datapath1[0]), .IN2(_sv2v_jump_input_datapath1[1]), .Q(xnor23resu_input_datapath1) );
+    AND2X1 U38111 ( .IN1(xnor23resu_input_datapath1), .IN2(req_out_jump_input_datapath1), .Q(and4resu_input_datapath1) );
+
+    MUX21X1 U3(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+3]),.IN2(int_req_v[73:37][3]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+3]));
+	MUX21X1 U4(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+4]),.IN2(int_req_v[73:37][4]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+4]));
+	MUX21X1 U5(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+5]),.IN2(int_req_v[73:37][5]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+5]));
+	MUX21X1 U6(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+6]),.IN2(int_req_v[73:37][6]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+6]));
+	MUX21X1 U7(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+7]),.IN2(int_req_v[73:37][7]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+7]));
+	MUX21X1 U8(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+8]),.IN2(int_req_v[73:37][8]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+8]));
+	MUX21X1 U9(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+9]),.IN2(int_req_v[73:37][9]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+9]));
+	MUX21X1 U10(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+10]),.IN2(int_req_v[73:37][10]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+10]));
+	MUX21X1 U11(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+11]),.IN2(int_req_v[73:37][11]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+11]));
+	MUX21X1 U12(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+12]),.IN2(int_req_v[73:37][12]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+12]));
+	MUX21X1 U13(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+13]),.IN2(int_req_v[73:37][13]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+13]));
+	MUX21X1 U14(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+14]),.IN2(int_req_v[73:37][14]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+14]));
+	MUX21X1 U15(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+15]),.IN2(int_req_v[73:37][15]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+15]));
+	MUX21X1 U16(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+16]),.IN2(int_req_v[73:37][16]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+16]));
+	MUX21X1 U17(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+17]),.IN2(int_req_v[73:37][17]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+17]));
+	MUX21X1 U18(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+18]),.IN2(int_req_v[73:37][18]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+18]));
+	MUX21X1 U19(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+19]),.IN2(int_req_v[73:37][19]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+19]));
+	MUX21X1 U20(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+20]),.IN2(int_req_v[73:37][20]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+20]));
+	MUX21X1 U21(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+21]),.IN2(int_req_v[73:37][21]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+21]));
+	MUX21X1 U22(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+22]),.IN2(int_req_v[73:37][22]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+22]));
+	MUX21X1 U23(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+23]),.IN2(int_req_v[73:37][23]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+23]));
+	MUX21X1 U24(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+24]),.IN2(int_req_v[73:37][24]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+24]));
+	MUX21X1 U25(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+25]),.IN2(int_req_v[73:37][25]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+25]));
+	MUX21X1 U26(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+26]),.IN2(int_req_v[73:37][26]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+26]));
+	MUX21X1 U27(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+27]),.IN2(int_req_v[73:37][27]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+27]));
+	MUX21X1 U28(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+28]),.IN2(int_req_v[73:37][28]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+28]));
+	MUX21X1 U29(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+29]),.IN2(int_req_v[73:37][29]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+29]));
+	MUX21X1 U30(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+30]),.IN2(int_req_v[73:37][30]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+30]));
+	MUX21X1 U31(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+31]),.IN2(int_req_v[73:37][31]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+31]));
+	MUX21X1 U32(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+32]),.IN2(int_req_v[73:37][32]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+32]));
+	MUX21X1 U33(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+33]),.IN2(int_req_v[73:37][33]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+33]));
+	MUX21X1 U34(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+34]),.IN2(int_req_v[73:37][34]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+34]));
+	MUX21X1 U35(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+35]),.IN2(int_req_v[73:37][35]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+35]));
+	MUX21X1 U36(.IN1(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+36]),.IN2(int_req_v[73:37][36]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_ouot*37)+36]));
+
+	MUX21X1 U321111(.IN1(int_req_v[73:37][0]),.IN2(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_out_input_datapath1 * 37)]), .S(and4resu_input_datapath1), .Q(int_req_v[73:37][0]));
+	MUX21X1 U331112(.IN1(int_req_v[73:37][1]),.IN2(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_out_input_datapath1*37)+1]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_out_input_datapath1*37)+1]));
+	MUX21X1 U331122(.IN1(int_req_v[73:37][2]),.IN2(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_out_input_datapath1*37)+2]), .S(and4resu_input_datapath1), .Q(to_output_req_in_jump_input_datapath1put_datapath1[(vc_ch_act_out_input_datapath1*37)+2]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath1[vc_ch_act_out_input_datapath1]),.IN2(int_resp_v[2:1]), .S(and4resu_input_datapath1), .Q(to_output_resp_input_datapath1[vc_ch_act_out_input_datapath1]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath1[vc_ch_act_out_input_datapath1+1]),.IN2(int_resp_v[2:1]), .S(and4resu_input_datapath1), .Q(to_output_resp_input_datapath1[vc_ch_act_out_input_datapath1+1]));
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule22[0]), .Y(next_read_ptr_fifomodule22[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule22[1]), .Y(next_read_ptr_fifomodule22[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule22[0]), .Y(next_write_ptr_fifomodule22[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule22[1]), .Y(next_write_ptr_fifomodule22[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule22[0]), .IN2(read_ptr_ff_fifomodule22[0]), .Q(u1temp_fifomodule22) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule22[1]), .IN2(read_ptr_ff_fifomodule22[1]), .Q(u2temp_fifomodule22) );
+	AND2X1 U3 ( .A(u1temp_fifomodule22), .B(u2temp_fifomodule22), .Y(empty_vc_buffer22) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule22[1]), .B(read_ptr_ff_fifomodule22[1]), .Y(u4temp_fifomodule22) );
+	AND2X1 U5 ( .A(u1temp_fifomodule22), .B(u4temp_fifomodule22), .Y(full_vc_buffer22) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule22[read_ptr_ff_fifomodule22[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer22), .Q(to_output_req_in_jump_input_datapath2put_datapath2[36:3][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule22[read_ptr_ff_fifomodule22[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer22), .Q(to_output_req_in_jump_input_datapath2put_datapath2[36:3][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule22[read_ptr_ff_fifomodule22[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer22), .Q(to_output_req_in_jump_input_datapath2put_datapath2[36:3][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule22[read_ptr_ff_fifomodule22[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer22), .Q(to_output_req_in_jump_input_datapath2put_datapath2[36:3][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule22[read_ptr_ff_fifomodule22[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer22), .Q(to_output_req_in_jump_input_datapath2put_datapath2[36:3][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule22[read_ptr_ff_fifomodule22[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer22), .Q(to_output_req_in_jump_input_datapath2put_datapath2[36:3][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule22[read_ptr_ff_fifomodule22[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer22), .Q(to_output_req_in_jump_input_datapath2put_datapath2[36:3][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule22[read_ptr_ff_fifomodule22[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer22), .Q(to_output_req_in_jump_input_datapath2put_datapath2[36:3][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer22), .Y(full_vc_buffer22_not_fifomodule) );
+	AND2X1 U8 ( .A(write_flit22_vc_buffer2), .B(full_vc_buffer22_not_fifomodule), .Y(u7temp_fifomodule22) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule22), .Q(u9temp_fifomodule22));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule22[0]), .B0(u9temp_fifomodule22), .C1(u10carry_fifomodule22), .SO(next_write_ptr_fifomodule22[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule22), .B0(write_ptr_ff_fifomodule22[1]), .C1(u11carry_fifomodule22), .SO(next_write_ptr_fifomodule22[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer22), .Y(empty_vc_buffer22_not_fifomodule) );
+	AND2X1 U13 ( .A(read_flit22_vc_buffer2), .B(empty_vc_buffer22_not_fifomodule), .Y(u13temp_fifomodule22) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule22), .Q(u14temp_fifomodule22));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule22[0]), .B0(u14temp_fifomodule22), .C1(u15carry_fifomodule22), .SO(next_read_ptr_fifomodule22[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule22), .B0(read_ptr_ff_fifomodule22[1]), .C1(u16carry_fifomodule22), .SO(next_read_ptr_fifomodule22[1]) );
+
+	AND2X1 U17 ( .A(write_flit22_vc_buffer2), .B(full_vc_buffer22), .Y(u17res_fifomodule22) );
+	AND2X1 U18 ( .A(read_flit22_vc_buffer2), .B(empty_vc_buffer22), .Y(u18res_fifomodule22) );
+    OR2X1 U19 ( .A(u17res_fifomodule22), .B(u18res_fifomodule22), .Y(error_vc_buffer22) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule22[0]), .B(read_ptr_ff_fifomodule22[0]), .Y(fifo_ocup_fifomodule22[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule22[0]), .Y(write_ptr_ff_fifomodule22_0_not2) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule22_0_not2), .B(read_ptr_ff_fifomodule22[0]), .Y(b0wire_fifomodule22) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule22[1]), .B(read_ptr_ff_fifomodule22[1]), .Y(u23temp_fifomodule22) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule22[1]), .Y(write_ptr_ff_fifomodule22_1_not2) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule22[1]), .B(write_ptr_ff_fifomodule22_1_not2), .Y(boutb_fifomodule22) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule22), .B(b0wire_fifomodule22), .Y(fifo_ocup_fifomodule22[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule22), .Y(u23temp_fifomodule22_not_fifomodule22) );
+	AND2X1 U26 ( .A(b0wire_fifomodule22), .B(u23temp_fifomodule22_not_fifomodule22), .Y(bouta_fifomodule22) );
+	OR2X1 U27 ( .A(bouta_fifomodule22), .B(boutb_fifomodule22), .Y(boutmain_fifomodule22) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule22[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule22[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule22) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule22) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule22), .D(1'b0), .Q(write_ptr_ff_fifomodule22[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule22), .D(1'b0), .Q(read_ptr_ff_fifomodule22[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule22), .D(1'b0), .Q(fifo_ff_fifomodule22[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule22), .D(1'b0), .Q(write_ptr_ff_fifomodule22[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule22), .D(1'b0), .Q(read_ptr_ff_fifomodule22[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule22), .D(1'b0), .Q(fifo_ff_fifomodule22[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule22[0]), .Q(write_ptr_ff_fifomodule22[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule22[1]), .Q(write_ptr_ff_fifomodule22[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule22[0]), .Q(read_ptr_ff_fifomodule22[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule22[1]), .Q(read_ptr_ff_fifomodule22[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule22), .D(from_input_req_in_jump_input_datapath2put_datapath2[36:3][0]), .Q(fifo_ff_fifomodule22[write_ptr_ff_fifomodule22[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule22), .D(from_input_req_in_jump_input_datapath2put_datapath2[36:3][1]), .Q(fifo_ff_fifomodule22[write_ptr_ff_fifomodule22[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule22), .D(from_input_req_in_jump_input_datapath2put_datapath2[36:3][2]), .Q(fifo_ff_fifomodule22[write_ptr_ff_fifomodule22[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule22), .D(from_input_req_in_jump_input_datapath2put_datapath2[36:3][3]), .Q(fifo_ff_fifomodule22[write_ptr_ff_fifomodule22[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule22), .D(from_input_req_in_jump_input_datapath2put_datapath2[36:3][4]), .Q(fifo_ff_fifomodule22[write_ptr_ff_fifomodule22[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule22), .D(from_input_req_in_jump_input_datapath2put_datapath2[36:3][5]), .Q(fifo_ff_fifomodule22[write_ptr_ff_fifomodule22[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule22), .D(from_input_req_in_jump_input_datapath2put_datapath2[36:3][6]), .Q(fifo_ff_fifomodule22[write_ptr_ff_fifomodule22[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule22), .D(from_input_req_in_jump_input_datapath2put_datapath2[36:3][7]), .Q(fifo_ff_fifomodule22[write_ptr_ff_fifomodule22[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer22), .Y(next_locked_vc_buffer22) );
+    BUFX1 U0(.A(flit22[0]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][0]));
+	BUFX1 U1(.A(flit22[1]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][1]));
+	BUFX1 U2(.A(flit22[2]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][2]));
+	BUFX1 U3(.A(flit22[3]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][3]));
+	BUFX1 U4(.A(flit22[4]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][4]));
+	BUFX1 U5(.A(flit22[5]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][5]));
+	BUFX1 U6(.A(flit22[6]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][6]));
+	BUFX1 U7(.A(flit22[7]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][7]));
+	BUFX1 U8(.A(flit22[8]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][8]));
+	BUFX1 U9(.A(flit22[9]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][9]));
+	BUFX1 U10(.A(flit22[10]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][10]));
+	BUFX1 U11(.A(flit22[11]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][11]));
+	BUFX1 U12(.A(flit22[12]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][12]));
+	BUFX1 U13(.A(flit22[13]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][13]));
+	BUFX1 U14(.A(flit22[14]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][14]));
+	BUFX1 U15(.A(flit22[15]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][15]));
+	BUFX1 U16(.A(flit22[16]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][16]));
+	BUFX1 U17(.A(flit22[17]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][17]));
+	BUFX1 U18(.A(flit22[18]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][18]));
+	BUFX1 U19(.A(flit22[19]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][19]));
+	BUFX1 U20(.A(flit22[20]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][20]));
+	BUFX1 U21(.A(flit22[21]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][21]));
+	BUFX1 U22(.A(flit22[22]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][22]));
+	BUFX1 U23(.A(flit22[23]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][23]));
+	BUFX1 U24(.A(flit22[24]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][24]));
+	BUFX1 U25(.A(flit22[25]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][25]));
+	BUFX1 U26(.A(flit22[26]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][26]));
+	BUFX1 U27(.A(flit22[27]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][27]));
+	BUFX1 U28(.A(flit22[28]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][28]));
+	BUFX1 U29(.A(flit22[29]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][29]));
+	BUFX1 U30(.A(flit22[30]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][30]));
+	BUFX1 U31(.A(flit22[31]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][31]));
+	BUFX1 U32(.A(flit22[32]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][32]));
+	BUFX1 U33(.A(flit22[33]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[36:3][33]));
+    NOR2X1 U34 ( .IN1(flit22[33]), .IN2(flit22[32]), .QN(norres_vc_buffer22_vc_buffer22) );
+    OR4X1 U35 ( .IN1(flit22[29]), .IN2(flit22[28]), .IN3(flit22[27]), .IN4(flit22[26]), .Y(or1res_vc_buffer22) );
+    OR4X1 U35 ( .IN1(flit22[25]), .IN2(flit22[24]), .IN3(flit22[23]), .IN4(flit22[22]), .Y(or2res_vc_buffer22) );
+    OR2X1 U36 ( .A(or1res_vc_buffer22), .B(or2res_vc_buffer22), .Y(orres_vc_buffer22) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath2put_datapath2[0]), .IN2(norres_vc_buffer22_vc_buffer22), .IN3(orres_vc_buffer22), .Q(finres1_vc_buffer22) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer22), .IN2(1'b1), .S(finres1_vc_buffer22), .Q(next_locked_vc_buffer22);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath2put_datapath2[0]), .IN2(flit22[33]), .IN3(flit22[32]), .Q(andres1_vc_buffer22) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer22), .IN2(1'b0), .S(andres1_vc_buffer22), .Q(next_locked_vc_buffer22);
+
+    INVX1 U41 ( .A(full_vc_buffer22), .Y(full_vc_buffer22_not) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer22), .Y(locked_by_route_ff_vc_buffer22_not) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer22_not), .S(norres_vc_buffer22_vc_buffer22), .Q(thirdand_vc_buffer22);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath2put_datapath2[0]), .IN2(full_vc_buffer22_not), .IN3(thirdand_vc_buffer22), .Q(write_flit22_vc_buffer2) );
+    AND2X1 U45 ( .IN1(full_vc_buffer22_not), .IN2(norres_vc_buffer22_vc_buffer22), .Q(from_input_resp_input_datapath2[0]) );
+    INVX1 U46 ( .A(empty_vc_buffer22), .Y(to_output_req_in_jump_input_datapath2put_datapath2[0]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath2put_datapath2[0]), .IN2(to_output_resp_input_datapath2[0]), .Q(read_flit22_vc_buffer2) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath2put_datapath2[2:1]), .Y(2'b00));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer22), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer22);
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule221[0]), .Y(next_read_ptr_fifomodule221[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule221[1]), .Y(next_read_ptr_fifomodule221[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule221[0]), .Y(next_write_ptr_fifomodule221[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule221[1]), .Y(next_write_ptr_fifomodule221[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule221[0]), .IN2(read_ptr_ff_fifomodule221[0]), .Q(u1temp_fifomodule221) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule221[1]), .IN2(read_ptr_ff_fifomodule221[1]), .Q(u2temp_fifomodule221) );
+	AND2X1 U3 ( .A(u1temp_fifomodule221), .B(u2temp_fifomodule221), .Y(empty_vc_buffer221) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule221[1]), .B(read_ptr_ff_fifomodule221[1]), .Y(u4temp_fifomodule221) );
+	AND2X1 U5 ( .A(u1temp_fifomodule221), .B(u4temp_fifomodule221), .Y(full_vc_buffer221) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule221[read_ptr_ff_fifomodule221[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer221), .Q(to_output_req_in_jump_input_datapath2put_datapath2[73:40][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule221[read_ptr_ff_fifomodule221[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer221), .Q(to_output_req_in_jump_input_datapath2put_datapath2[73:40][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule221[read_ptr_ff_fifomodule221[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer221), .Q(to_output_req_in_jump_input_datapath2put_datapath2[73:40][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule221[read_ptr_ff_fifomodule221[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer221), .Q(to_output_req_in_jump_input_datapath2put_datapath2[73:40][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule221[read_ptr_ff_fifomodule221[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer221), .Q(to_output_req_in_jump_input_datapath2put_datapath2[73:40][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule221[read_ptr_ff_fifomodule221[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer221), .Q(to_output_req_in_jump_input_datapath2put_datapath2[73:40][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule221[read_ptr_ff_fifomodule221[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer221), .Q(to_output_req_in_jump_input_datapath2put_datapath2[73:40][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule221[read_ptr_ff_fifomodule221[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer221), .Q(to_output_req_in_jump_input_datapath2put_datapath2[73:40][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer221), .Y(full_vc_buffer221_not1_fifomodule1) );
+	AND2X1 U8 ( .A(write_flit221_vc_buffer12), .B(full_vc_buffer221_not1_fifomodule1), .Y(u7temp_fifomodule221) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule221), .Q(u9temp_fifomodule221));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule221[0]), .B0(u9temp_fifomodule221), .C1(u10carry_fifomodule221), .SO(next_write_ptr_fifomodule221[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule221), .B0(write_ptr_ff_fifomodule221[1]), .C1(u11carry_fifomodule221), .SO(next_write_ptr_fifomodule221[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer221), .Y(empty_vc_buffer221_not_fifomodule1) );
+	AND2X1 U13 ( .A(read_flit221_vc_buffer12), .B(empty_vc_buffer221_not_fifomodule1), .Y(u13temp_fifomodule221) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule221), .Q(u14temp_fifomodule221));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule221[0]), .B0(u14temp_fifomodule221), .C1(u15carry_fifomodule221), .SO(next_read_ptr_fifomodule221[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule221), .B0(read_ptr_ff_fifomodule221[1]), .C1(u16carry_fifomodule221), .SO(next_read_ptr_fifomodule221[1]) );
+
+	AND2X1 U17 ( .A(write_flit221_vc_buffer12), .B(full_vc_buffer221), .Y(u17res_fifomodule221) );
+	AND2X1 U18 ( .A(read_flit221_vc_buffer12), .B(empty_vc_buffer221), .Y(u18res_fifomodule221) );
+    OR2X1 U19 ( .A(u17res_fifomodule221), .B(u18res_fifomodule221), .Y(error_vc_buffer221) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule221[0]), .B(read_ptr_ff_fifomodule221[0]), .Y(fifo_ocup_fifomodule221[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule221[0]), .Y(write_ptr_ff_fifomodule221_0_not12) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule221_0_not12), .B(read_ptr_ff_fifomodule221[0]), .Y(b0wire_fifomodule221) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule221[1]), .B(read_ptr_ff_fifomodule221[1]), .Y(u23temp_fifomodule221) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule221[1]), .Y(write_ptr_ff_fifomodule221_1_not12) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule221[1]), .B(write_ptr_ff_fifomodule221_1_not12), .Y(boutb_fifomodule221) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule221), .B(b0wire_fifomodule221), .Y(fifo_ocup_fifomodule221[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule221), .Y(u23temp_fifomodule221_not_fifomodule1) );
+	AND2X1 U26 ( .A(b0wire_fifomodule221), .B(u23temp_fifomodule221_not_fifomodule1), .Y(bouta_fifomodule221) );
+	OR2X1 U27 ( .A(bouta_fifomodule221), .B(boutb_fifomodule221), .Y(boutmain_fifomodule221) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule221[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule221[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule221) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule221) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule221), .D(1'b0), .Q(write_ptr_ff_fifomodule221[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule221), .D(1'b0), .Q(read_ptr_ff_fifomodule221[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule221), .D(1'b0), .Q(fifo_ff_fifomodule221[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule221), .D(1'b0), .Q(write_ptr_ff_fifomodule221[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule221), .D(1'b0), .Q(read_ptr_ff_fifomodule221[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule221), .D(1'b0), .Q(fifo_ff_fifomodule221[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule221[0]), .Q(write_ptr_ff_fifomodule221[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule221[1]), .Q(write_ptr_ff_fifomodule221[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule221[0]), .Q(read_ptr_ff_fifomodule221[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule221[1]), .Q(read_ptr_ff_fifomodule221[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule221), .D(from_input_req_in_jump_input_datapath2put_datapath2[73:40][0]), .Q(fifo_ff_fifomodule221[write_ptr_ff_fifomodule221[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule221), .D(from_input_req_in_jump_input_datapath2put_datapath2[73:40][1]), .Q(fifo_ff_fifomodule221[write_ptr_ff_fifomodule221[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule221), .D(from_input_req_in_jump_input_datapath2put_datapath2[73:40][2]), .Q(fifo_ff_fifomodule221[write_ptr_ff_fifomodule221[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule221), .D(from_input_req_in_jump_input_datapath2put_datapath2[73:40][3]), .Q(fifo_ff_fifomodule221[write_ptr_ff_fifomodule221[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule221), .D(from_input_req_in_jump_input_datapath2put_datapath2[73:40][4]), .Q(fifo_ff_fifomodule221[write_ptr_ff_fifomodule221[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule221), .D(from_input_req_in_jump_input_datapath2put_datapath2[73:40][5]), .Q(fifo_ff_fifomodule221[write_ptr_ff_fifomodule221[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule221), .D(from_input_req_in_jump_input_datapath2put_datapath2[73:40][6]), .Q(fifo_ff_fifomodule221[write_ptr_ff_fifomodule221[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule221), .D(from_input_req_in_jump_input_datapath2put_datapath2[73:40][7]), .Q(fifo_ff_fifomodule221[write_ptr_ff_fifomodule221[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer221), .Y(next_locked_vc_buffer221) );
+    BUFX1 U0(.A(flit221[0]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][0]));
+	BUFX1 U1(.A(flit221[1]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][1]));
+	BUFX1 U2(.A(flit221[2]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][2]));
+	BUFX1 U3(.A(flit221[3]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][3]));
+	BUFX1 U4(.A(flit221[4]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][4]));
+	BUFX1 U5(.A(flit221[5]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][5]));
+	BUFX1 U6(.A(flit221[6]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][6]));
+	BUFX1 U7(.A(flit221[7]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][7]));
+	BUFX1 U8(.A(flit221[8]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][8]));
+	BUFX1 U9(.A(flit221[9]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][9]));
+	BUFX1 U10(.A(flit221[10]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][10]));
+	BUFX1 U11(.A(flit221[11]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][11]));
+	BUFX1 U12(.A(flit221[12]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][12]));
+	BUFX1 U13(.A(flit221[13]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][13]));
+	BUFX1 U14(.A(flit221[14]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][14]));
+	BUFX1 U15(.A(flit221[15]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][15]));
+	BUFX1 U16(.A(flit221[16]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][16]));
+	BUFX1 U17(.A(flit221[17]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][17]));
+	BUFX1 U18(.A(flit221[18]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][18]));
+	BUFX1 U19(.A(flit221[19]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][19]));
+	BUFX1 U20(.A(flit221[20]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][20]));
+	BUFX1 U21(.A(flit221[21]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][21]));
+	BUFX1 U22(.A(flit221[22]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][22]));
+	BUFX1 U23(.A(flit221[23]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][23]));
+	BUFX1 U24(.A(flit221[24]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][24]));
+	BUFX1 U25(.A(flit221[25]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][25]));
+	BUFX1 U26(.A(flit221[26]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][26]));
+	BUFX1 U27(.A(flit221[27]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][27]));
+	BUFX1 U28(.A(flit221[28]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][28]));
+	BUFX1 U29(.A(flit221[29]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][29]));
+	BUFX1 U30(.A(flit221[30]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][30]));
+	BUFX1 U31(.A(flit221[31]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][31]));
+	BUFX1 U32(.A(flit221[32]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][32]));
+	BUFX1 U33(.A(flit221[33]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[73:40][33]));
+    NOR2X1 U34 ( .IN1(flit221[33]), .IN2(flit221[32]), .QN(norres_vc_buffer221_vc_buffer1) );
+    OR4X1 U35 ( .IN1(flit221[29]), .IN2(flit221[28]), .IN3(flit221[27]), .IN4(flit221[26]), .Y(or1res_vc_buffer221) );
+    OR4X1 U35 ( .IN1(flit221[25]), .IN2(flit221[24]), .IN3(flit221[23]), .IN4(flit221[22]), .Y(or2res_vc_buffer221) );
+    OR2X1 U36 ( .A(or1res_vc_buffer221), .B(or2res_vc_buffer221), .Y(orres_vc_buffer221) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath2put_datapath2[37]), .IN2(norres_vc_buffer221_vc_buffer1), .IN3(orres_vc_buffer221), .Q(finres1_vc_buffer221) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer221), .IN2(1'b1), .S(finres1_vc_buffer221), .Q(next_locked_vc_buffer221);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath2put_datapath2[37]), .IN2(flit221[33]), .IN3(flit221[32]), .Q(andres1_vc_buffer221) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer221), .IN2(1'b0), .S(andres1_vc_buffer221), .Q(next_locked_vc_buffer221);
+
+    INVX1 U41 ( .A(full_vc_buffer221), .Y(full_vc_buffer221_not1) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer221), .Y(locked_by_route_ff_vc_buffer221_not1) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer221_not1), .S(norres_vc_buffer221_vc_buffer1), .Q(thirdand_vc_buffer221);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath2put_datapath2[37]), .IN2(full_vc_buffer221_not1), .IN3(thirdand_vc_buffer221), .Q(write_flit221_vc_buffer12) );
+    AND2X1 U45 ( .IN1(full_vc_buffer221_not1), .IN2(norres_vc_buffer221_vc_buffer1), .Q(from_input_resp_input_datapath2[1]) );
+    INVX1 U46 ( .A(empty_vc_buffer221), .Y(to_output_req_in_jump_input_datapath2put_datapath2[37]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath2put_datapath2[37]), .IN2(to_output_resp_input_datapath2[1]), .Q(read_flit221_vc_buffer12) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath2put_datapath2[39:38]), .Y(2'b01));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer221), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer221);
+
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule222[0]), .Y(next_read_ptr_fifomodule222[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule222[1]), .Y(next_read_ptr_fifomodule222[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule222[0]), .Y(next_write_ptr_fifomodule222[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule222[1]), .Y(next_write_ptr_fifomodule222[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule222[0]), .IN2(read_ptr_ff_fifomodule222[0]), .Q(u1temp_fifomodule222) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule222[1]), .IN2(read_ptr_ff_fifomodule222[1]), .Q(u2temp_fifomodule222) );
+	AND2X1 U3 ( .A(u1temp_fifomodule222), .B(u2temp_fifomodule222), .Y(empty_vc_buffer222) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule222[1]), .B(read_ptr_ff_fifomodule222[1]), .Y(u4temp_fifomodule222) );
+	AND2X1 U5 ( .A(u1temp_fifomodule222), .B(u4temp_fifomodule222), .Y(full_vc_buffer222) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule222[read_ptr_ff_fifomodule222[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer222), .Q(to_output_req_in_jump_input_datapath2put_datapath2[110:77][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule222[read_ptr_ff_fifomodule222[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer222), .Q(to_output_req_in_jump_input_datapath2put_datapath2[110:77][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule222[read_ptr_ff_fifomodule222[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer222), .Q(to_output_req_in_jump_input_datapath2put_datapath2[110:77][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule222[read_ptr_ff_fifomodule222[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer222), .Q(to_output_req_in_jump_input_datapath2put_datapath2[110:77][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule222[read_ptr_ff_fifomodule222[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer222), .Q(to_output_req_in_jump_input_datapath2put_datapath2[110:77][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule222[read_ptr_ff_fifomodule222[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer222), .Q(to_output_req_in_jump_input_datapath2put_datapath2[110:77][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule222[read_ptr_ff_fifomodule222[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer222), .Q(to_output_req_in_jump_input_datapath2put_datapath2[110:77][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule222[read_ptr_ff_fifomodule222[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer222), .Q(to_output_req_in_jump_input_datapath2put_datapath2[110:77][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer222), .Y(full_vc_buffer222_not2_fifomodule2) );
+	AND2X1 U8 ( .A(write_flit222_vc_buffer22), .B(full_vc_buffer222_not2_fifomodule2), .Y(u7temp_fifomodule222) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule222), .Q(u9temp_fifomodule222));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule222[0]), .B0(u9temp_fifomodule222), .C1(u10carry_fifomodule222), .SO(next_write_ptr_fifomodule222[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule222), .B0(write_ptr_ff_fifomodule222[1]), .C1(u11carry_fifomodule222), .SO(next_write_ptr_fifomodule222[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer222), .Y(empty_vc_buffer222_not_fifomodule2) );
+	AND2X1 U13 ( .A(read_flit222_vc_buffer22), .B(empty_vc_buffer222_not_fifomodule2), .Y(u13temp_fifomodule222) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule222), .Q(u14temp_fifomodule222));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule222[0]), .B0(u14temp_fifomodule222), .C1(u15carry_fifomodule222), .SO(next_read_ptr_fifomodule222[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule222), .B0(read_ptr_ff_fifomodule222[1]), .C1(u16carry_fifomodule222), .SO(next_read_ptr_fifomodule222[1]) );
+
+	AND2X1 U17 ( .A(write_flit222_vc_buffer22), .B(full_vc_buffer222), .Y(u17res_fifomodule222) );
+	AND2X1 U18 ( .A(read_flit222_vc_buffer22), .B(empty_vc_buffer222), .Y(u18res_fifomodule222) );
+    OR2X1 U19 ( .A(u17res_fifomodule222), .B(u18res_fifomodule222), .Y(error_vc_buffer222) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule222[0]), .B(read_ptr_ff_fifomodule222[0]), .Y(fifo_ocup_fifomodule222[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule222[0]), .Y(write_ptr_ff_fifomodule222_0_not22) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule222_0_not22), .B(read_ptr_ff_fifomodule222[0]), .Y(b0wire_fifomodule222) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule222[1]), .B(read_ptr_ff_fifomodule222[1]), .Y(u23temp_fifomodule222) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule222[1]), .Y(write_ptr_ff_fifomodule222_1_not22) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule222[1]), .B(write_ptr_ff_fifomodule222_1_not22), .Y(boutb_fifomodule222) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule222), .B(b0wire_fifomodule222), .Y(fifo_ocup_fifomodule222[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule222), .Y(u23temp_fifomodule222_not_fifomodule2) );
+	AND2X1 U26 ( .A(b0wire_fifomodule222), .B(u23temp_fifomodule222_not_fifomodule2), .Y(bouta_fifomodule222) );
+	OR2X1 U27 ( .A(bouta_fifomodule222), .B(boutb_fifomodule222), .Y(boutmain_fifomodule222) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule222[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule222[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule222) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule222) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule222), .D(1'b0), .Q(write_ptr_ff_fifomodule222[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule222), .D(1'b0), .Q(read_ptr_ff_fifomodule222[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule222), .D(1'b0), .Q(fifo_ff_fifomodule222[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule222), .D(1'b0), .Q(write_ptr_ff_fifomodule222[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule222), .D(1'b0), .Q(read_ptr_ff_fifomodule222[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule222), .D(1'b0), .Q(fifo_ff_fifomodule222[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule222[0]), .Q(write_ptr_ff_fifomodule222[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule222[1]), .Q(write_ptr_ff_fifomodule222[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule222[0]), .Q(read_ptr_ff_fifomodule222[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule222[1]), .Q(read_ptr_ff_fifomodule222[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule222), .D(from_input_req_in_jump_input_datapath2put_datapath2[110:77][0]), .Q(fifo_ff_fifomodule222[write_ptr_ff_fifomodule222[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule222), .D(from_input_req_in_jump_input_datapath2put_datapath2[110:77][1]), .Q(fifo_ff_fifomodule222[write_ptr_ff_fifomodule222[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule222), .D(from_input_req_in_jump_input_datapath2put_datapath2[110:77][2]), .Q(fifo_ff_fifomodule222[write_ptr_ff_fifomodule222[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule222), .D(from_input_req_in_jump_input_datapath2put_datapath2[110:77][3]), .Q(fifo_ff_fifomodule222[write_ptr_ff_fifomodule222[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule222), .D(from_input_req_in_jump_input_datapath2put_datapath2[110:77][4]), .Q(fifo_ff_fifomodule222[write_ptr_ff_fifomodule222[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule222), .D(from_input_req_in_jump_input_datapath2put_datapath2[110:77][5]), .Q(fifo_ff_fifomodule222[write_ptr_ff_fifomodule222[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule222), .D(from_input_req_in_jump_input_datapath2put_datapath2[110:77][6]), .Q(fifo_ff_fifomodule222[write_ptr_ff_fifomodule222[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule222), .D(from_input_req_in_jump_input_datapath2put_datapath2[110:77][7]), .Q(fifo_ff_fifomodule222[write_ptr_ff_fifomodule222[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer222), .Y(next_locked_vc_buffer222) );
+    BUFX1 U0(.A(flit222[0]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][0]));
+	BUFX1 U1(.A(flit222[1]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][1]));
+	BUFX1 U2(.A(flit222[2]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][2]));
+	BUFX1 U3(.A(flit222[3]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][3]));
+	BUFX1 U4(.A(flit222[4]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][4]));
+	BUFX1 U5(.A(flit222[5]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][5]));
+	BUFX1 U6(.A(flit222[6]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][6]));
+	BUFX1 U7(.A(flit222[7]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][7]));
+	BUFX1 U8(.A(flit222[8]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][8]));
+	BUFX1 U9(.A(flit222[9]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][9]));
+	BUFX1 U10(.A(flit222[10]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][10]));
+	BUFX1 U11(.A(flit222[11]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][11]));
+	BUFX1 U12(.A(flit222[12]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][12]));
+	BUFX1 U13(.A(flit222[13]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][13]));
+	BUFX1 U14(.A(flit222[14]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][14]));
+	BUFX1 U15(.A(flit222[15]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][15]));
+	BUFX1 U16(.A(flit222[16]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][16]));
+	BUFX1 U17(.A(flit222[17]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][17]));
+	BUFX1 U18(.A(flit222[18]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][18]));
+	BUFX1 U19(.A(flit222[19]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][19]));
+	BUFX1 U20(.A(flit222[20]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][20]));
+	BUFX1 U21(.A(flit222[21]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][21]));
+	BUFX1 U22(.A(flit222[22]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][22]));
+	BUFX1 U23(.A(flit222[23]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][23]));
+	BUFX1 U24(.A(flit222[24]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][24]));
+	BUFX1 U25(.A(flit222[25]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][25]));
+	BUFX1 U26(.A(flit222[26]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][26]));
+	BUFX1 U27(.A(flit222[27]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][27]));
+	BUFX1 U28(.A(flit222[28]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][28]));
+	BUFX1 U29(.A(flit222[29]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][29]));
+	BUFX1 U30(.A(flit222[30]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][30]));
+	BUFX1 U31(.A(flit222[31]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][31]));
+	BUFX1 U32(.A(flit222[32]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][32]));
+	BUFX1 U33(.A(flit222[33]), .Y(from_input_req_in_jump_input_datapath2put_datapath2[110:77][33]));
+    NOR2X1 U34 ( .IN1(flit222[33]), .IN2(flit222[32]), .QN(norres_vc_buffer222_vc_buffer2) );
+    OR4X1 U35 ( .IN1(flit222[29]), .IN2(flit222[28]), .IN3(flit222[27]), .IN4(flit222[26]), .Y(or1res_vc_buffer222) );
+    OR4X1 U35 ( .IN1(flit222[25]), .IN2(flit222[24]), .IN3(flit222[23]), .IN4(flit222[22]), .Y(or2res_vc_buffer222) );
+    OR2X1 U36 ( .A(or1res_vc_buffer222), .B(or2res_vc_buffer222), .Y(orres_vc_buffer222) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath2put_datapath2[74]), .IN2(norres_vc_buffer222_vc_buffer2), .IN3(orres_vc_buffer222), .Q(finres1_vc_buffer222) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer222), .IN2(1'b1), .S(finres1_vc_buffer222), .Q(next_locked_vc_buffer222);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath2put_datapath2[74]), .IN2(flit222[33]), .IN3(flit222[32]), .Q(andres1_vc_buffer222) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer222), .IN2(1'b0), .S(andres1_vc_buffer222), .Q(next_locked_vc_buffer222);
+
+    INVX1 U41 ( .A(full_vc_buffer222), .Y(full_vc_buffer222_not2) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer222), .Y(locked_by_route_ff_vc_buffer222_not2) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer222_not2), .S(norres_vc_buffer222_vc_buffer2), .Q(thirdand_vc_buffer222);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath2put_datapath2[74]), .IN2(full_vc_buffer222_not2), .IN3(thirdand_vc_buffer222), .Q(write_flit222_vc_buffer22) );
+    AND2X1 U45 ( .IN1(full_vc_buffer222_not2), .IN2(norres_vc_buffer222_vc_buffer2), .Q(from_input_resp_input_datapath2[2]) );
+    INVX1 U46 ( .A(empty_vc_buffer222), .Y(to_output_req_in_jump_input_datapath2put_datapath2[74]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath2put_datapath2[74]), .IN2(to_output_resp_input_datapath2[2]), .Q(read_flit222_vc_buffer22) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath2put_datapath2[76:75]), .Y(2'b10));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer222), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer222);
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath2put_datapath2[77]), .Y(ext_req_v_i[110:74][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath2put_datapath2[78]), .Y(ext_req_v_i[110:74][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath2put_datapath2[79]), .Y(ext_req_v_i[110:74][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath2put_datapath2[80]), .Y(ext_req_v_i[110:74][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath2put_datapath2[81]), .Y(ext_req_v_i[110:74][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath2put_datapath2[82]), .Y(ext_req_v_i[110:74][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath2put_datapath2[83]), .Y(ext_req_v_i[110:74][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath2put_datapath2[84]), .Y(ext_req_v_i[110:74][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath2put_datapath2[85]), .Y(ext_req_v_i[110:74][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath2put_datapath2[86]), .Y(ext_req_v_i[110:74][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath2put_datapath2[87]), .Y(ext_req_v_i[110:74][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath2put_datapath2[88]), .Y(ext_req_v_i[110:74][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath2put_datapath2[89]), .Y(ext_req_v_i[110:74][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath2put_datapath2[90]), .Y(ext_req_v_i[110:74][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath2put_datapath2[91]), .Y(ext_req_v_i[110:74][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath2put_datapath2[92]), .Y(ext_req_v_i[110:74][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath2put_datapath2[93]), .Y(ext_req_v_i[110:74][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath2put_datapath2[94]), .Y(ext_req_v_i[110:74][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath2put_datapath2[95]), .Y(ext_req_v_i[110:74][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath2put_datapath2[96]), .Y(ext_req_v_i[110:74][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath2put_datapath2[97]), .Y(ext_req_v_i[110:74][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath2put_datapath2[98]), .Y(ext_req_v_i[110:74][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath2put_datapath2[99]), .Y(ext_req_v_i[110:74][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath2put_datapath2[100]), .Y(ext_req_v_i[110:74][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath2put_datapath2[101]), .Y(ext_req_v_i[110:74][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath2put_datapath2[102]), .Y(ext_req_v_i[110:74][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath2put_datapath2[103]), .Y(ext_req_v_i[110:74][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath2put_datapath2[104]), .Y(ext_req_v_i[110:74][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath2put_datapath2[105]), .Y(ext_req_v_i[110:74][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath2put_datapath2[106]), .Y(ext_req_v_i[110:74][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath2put_datapath2[107]), .Y(ext_req_v_i[110:74][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath2put_datapath2[108]), .Y(ext_req_v_i[110:74][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath2put_datapath2[109]), .Y(ext_req_v_i[110:74][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath2put_datapath2[110]), .Y(ext_req_v_i[110:74][36]));
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[110:74][1]), .IN2(i_input_datapath2[0]), .QN(xnor1resu_input_datapath2) );
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[110:74][2]), .IN2(i_input_datapath2[1]), .QN(xnor2resu_input_datapath2) );
+    AND2X1 U128 ( .IN1(xnor1resu_input_datapath2), .IN2(xnor2resu_input_datapath2), .Q(and1resu_input_datapath2) );
+    AND3X1 U128 ( .IN1(and1resu_input_datapath2), .IN2(ext_req_v_i[110:74][0]), .IN2(ext_req_v_i[110:74][0]), .Q(cond1line_input_datapath2) );
+    MUX21X1 U0009 (.IN1(vc_ch_act_in_input_datapath2[0]), .IN2(i_input_datapath2[0]), .S(cond1line_input_datapath2), .Q(vc_ch_act_in_input_datapath2[0]));
+    MUX21X1 U0010 (.IN1(vc_ch_act_in_input_datapath2[1]), .IN2(i_input_datapath2[1]), .S(cond1line_input_datapath2), .Q(vc_ch_act_in_input_datapath2[1]));
+    MUX21X1 U0011 (.IN1(req_in_jump_input_datapath2), .IN2(1), .S(cond1line_input_datapath2), .Q(req_in_jump_input_datapath2));
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath2put_datapath2[40]), .Y(ext_req_v_i[110:74][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath2put_datapath2[41]), .Y(ext_req_v_i[110:74][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath2put_datapath2[42]), .Y(ext_req_v_i[110:74][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath2put_datapath2[43]), .Y(ext_req_v_i[110:74][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath2put_datapath2[44]), .Y(ext_req_v_i[110:74][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath2put_datapath2[45]), .Y(ext_req_v_i[110:74][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath2put_datapath2[46]), .Y(ext_req_v_i[110:74][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath2put_datapath2[47]), .Y(ext_req_v_i[110:74][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath2put_datapath2[48]), .Y(ext_req_v_i[110:74][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath2put_datapath2[49]), .Y(ext_req_v_i[110:74][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath2put_datapath2[50]), .Y(ext_req_v_i[110:74][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath2put_datapath2[51]), .Y(ext_req_v_i[110:74][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath2put_datapath2[52]), .Y(ext_req_v_i[110:74][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath2put_datapath2[53]), .Y(ext_req_v_i[110:74][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath2put_datapath2[54]), .Y(ext_req_v_i[110:74][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath2put_datapath2[55]), .Y(ext_req_v_i[110:74][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath2put_datapath2[56]), .Y(ext_req_v_i[110:74][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath2put_datapath2[57]), .Y(ext_req_v_i[110:74][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath2put_datapath2[58]), .Y(ext_req_v_i[110:74][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath2put_datapath2[59]), .Y(ext_req_v_i[110:74][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath2put_datapath2[60]), .Y(ext_req_v_i[110:74][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath2put_datapath2[61]), .Y(ext_req_v_i[110:74][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath2put_datapath2[62]), .Y(ext_req_v_i[110:74][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath2put_datapath2[63]), .Y(ext_req_v_i[110:74][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath2put_datapath2[64]), .Y(ext_req_v_i[110:74][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath2put_datapath2[65]), .Y(ext_req_v_i[110:74][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath2put_datapath2[66]), .Y(ext_req_v_i[110:74][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath2put_datapath2[67]), .Y(ext_req_v_i[110:74][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath2put_datapath2[68]), .Y(ext_req_v_i[110:74][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath2put_datapath2[69]), .Y(ext_req_v_i[110:74][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath2put_datapath2[70]), .Y(ext_req_v_i[110:74][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath2put_datapath2[71]), .Y(ext_req_v_i[110:74][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath2put_datapath2[72]), .Y(ext_req_v_i[110:74][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath2put_datapath2[73]), .Y(ext_req_v_i[110:74][36]));
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath2put_datapath2[3]), .Y(ext_req_v_i[110:74][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath2put_datapath2[4]), .Y(ext_req_v_i[110:74][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath2put_datapath2[5]), .Y(ext_req_v_i[110:74][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath2put_datapath2[6]), .Y(ext_req_v_i[110:74][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath2put_datapath2[7]), .Y(ext_req_v_i[110:74][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath2put_datapath2[8]), .Y(ext_req_v_i[110:74][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath2put_datapath2[9]), .Y(ext_req_v_i[110:74][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath2put_datapath2[10]), .Y(ext_req_v_i[110:74][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath2put_datapath2[11]), .Y(ext_req_v_i[110:74][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath2put_datapath2[12]), .Y(ext_req_v_i[110:74][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath2put_datapath2[13]), .Y(ext_req_v_i[110:74][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath2put_datapath2[14]), .Y(ext_req_v_i[110:74][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath2put_datapath2[15]), .Y(ext_req_v_i[110:74][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath2put_datapath2[16]), .Y(ext_req_v_i[110:74][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath2put_datapath2[17]), .Y(ext_req_v_i[110:74][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath2put_datapath2[18]), .Y(ext_req_v_i[110:74][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath2put_datapath2[19]), .Y(ext_req_v_i[110:74][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath2put_datapath2[20]), .Y(ext_req_v_i[110:74][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath2put_datapath2[21]), .Y(ext_req_v_i[110:74][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath2put_datapath2[22]), .Y(ext_req_v_i[110:74][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath2put_datapath2[23]), .Y(ext_req_v_i[110:74][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath2put_datapath2[24]), .Y(ext_req_v_i[110:74][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath2put_datapath2[25]), .Y(ext_req_v_i[110:74][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath2put_datapath2[26]), .Y(ext_req_v_i[110:74][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath2put_datapath2[27]), .Y(ext_req_v_i[110:74][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath2put_datapath2[28]), .Y(ext_req_v_i[110:74][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath2put_datapath2[29]), .Y(ext_req_v_i[110:74][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath2put_datapath2[30]), .Y(ext_req_v_i[110:74][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath2put_datapath2[31]), .Y(ext_req_v_i[110:74][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath2put_datapath2[32]), .Y(ext_req_v_i[110:74][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath2put_datapath2[33]), .Y(ext_req_v_i[110:74][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath2put_datapath2[34]), .Y(ext_req_v_i[110:74][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath2put_datapath2[35]), .Y(ext_req_v_i[110:74][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath2put_datapath2[36]), .Y(ext_req_v_i[110:74][36]));
+
+    MUX21X1 U0012 (.IN1(from_input_req_in_jump_input_datapath2put_datapath2[vc_ch_act_in_input_datapath2 * 37]), .IN2(ext_req_v_i[110:74][0]), .S(req_in_jump_input_datapath2), .Q(from_input_req_in_jump_input_datapath2put_datapath2[vc_ch_act_in_input_datapath2 * 37]));
+    MUX21X1 U0013 (.IN1(from_input_req_in_jump_input_datapath2put_datapath2[vc_ch_act_in_input_datapath2*37+2]), .IN2(vc_ch_act_in_input_datapath2[1]), .S(req_in_jump_input_datapath2), .Q(from_input_req_in_jump_input_datapath2put_datapath2[vc_ch_act_in_input_datapath2*37+2]));
+    MUX21X1 U0014 (.IN1(from_input_req_in_jump_input_datapath2put_datapath2[vc_ch_act_in_input_datapath2*37+1]), .IN2(vc_ch_act_in_input_datapath2[0]), .S(req_in_jump_input_datapath2), .Q(from_input_req_in_jump_input_datapath2put_datapath2[vc_ch_act_in_input_datapath2*37+1]));
+    MUX21X1 U0015 (.IN1(ext_resp_v_o[3:2][0]), .IN2(from_input_resp_input_datapath2[vc_ch_act_in_input_datapath2]), .S(req_in_jump_input_datapath2), .Q(ext_resp_v_o[3:2][0]));
+
+    INVX1 U041 ( .A(req_in_jump_input_datapath2), .Y(req_in_jump_input_datapath2_not) );
+    MUX21X1 U0016 (.IN1(ext_resp_v_o[3:2][0]), .IN2(1'sb1), .S(req_in_jump_input_datapath2_not), .Q(ext_resp_v_o[3:2][0]));
+    BUFX1 U34(.A(from_input_req_in_jump_input_datapath2put_datapath2[34]), .Y(ext_req_v_i[110:74][34]));
+
+    XOR2X1 U0222 ( .IN1(_sv2v_jump_input_datapath2[1]), .IN2(1'b1), .Q(xor1resu_input_datapath2) );
+    MUX21X1 U0017 (.IN1(_sv2v_jump_input_datapath2[0]), .IN2(1'b0), .S(xor1resu_input_datapath2), .Q(_sv2v_jump_input_datapath2[0]));
+    MUX21X1 U0018 (.IN1(_sv2v_jump_input_datapath2[1]), .IN2(1'b0), .S(xor1resu_input_datapath2), .Q(_sv2v_jump_input_datapath2[1]));
+    AND2X1 U38123 ( .IN1(xor1resu_input_datapath2), .IN2(to_output_req_in_jump_input_datapath2put_datapath2[j_input_datapath2*37]), .Q(and2resu_input_datapath2) );
+    MUX21X1 U0019 (.IN1(vc_ch_act_out_input_datapath2[0]), .IN2(j_input_datapath2[0]), .S(and2resu_input_datapath2), .Q(vc_ch_act_out_input_datapath2[0]));
+    MUX21X1 U0020 (.IN1(vc_ch_act_out_input_datapath2[1]), .IN2(j_input_datapath2[1]), .S(and2resu_input_datapath2), .Q(vc_ch_act_out_input_datapath2[1]));
+    MUX21X1 U0021 (.IN1(req_out_jump_input_datapath2), .IN2(1'b1), .S(and2resu_input_datapath2), .Q(req_out_jump_input_datapath2));
+    MUX21X1 U0022 (.IN1(_sv2v_jump_input_datapath2[0]), .IN2(1'b0), .S(and2resu_input_datapath2), .Q(_sv2v_jump_input_datapath2[0]));
+    MUX21X1 U0023 (.IN1(_sv2v_jump_input_datapath2[1]), .IN2(1'b1), .S(and2resu_input_datapath2), .Q(_sv2v_jump_input_datapath2[1]));
+    HADDX1 U00021 ( .A0(j_input_datapath2[0]), .B0(1'b1), .C1(j_input_datapath2[1]), .SO(j_input_datapath2[0]) );
+    HADDX1 U00022 ( .A0(j_input_datapath2[0]), .B0(1'b1), .C1(j_input_datapath2[1]), .SO(j_input_datapath2[0]) );
+    AND2X1 U38111 ( .IN1(xor1resu_input_datapath2), .IN2(to_output_req_in_jump_input_datapath2put_datapath2[j_input_datapath2*37]), .Q(and3resu) );
+    NAND2X1 U29311(.A(_sv2v_jump_input_datapath2[0]),.B(_sv2v_jump_input_datapath2[1]),.Y(nand1resu_input_datapath22));
+    MUX21X1 U00212 (.IN1(_sv2v_jump_input_datapath2[0]), .IN2(1'b0), .S(nand1resu_input_datapath22), .Q(_sv2v_jump_input_datapath2[0]));
+    MUX21X1 U00213 (.IN1(_sv2v_jump_input_datapath2[1]), .IN2(1'b0), .S(nand1resu_input_datapath22), .Q(_sv2v_jump_input_datapath2[1]));
+    XNOR2X1 U17581 (.IN1(_sv2v_jump_input_datapath2[0]), .IN2(_sv2v_jump_input_datapath2[1]), .Q(xnor23resu_input_datapath2) );
+    AND2X1 U38111 ( .IN1(xnor23resu_input_datapath2), .IN2(req_out_jump_input_datapath2), .Q(and4resu_input_datapath2) );
+
+    MUX21X1 U3(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+3]),.IN2(int_req_v[110:74][3]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+3]));
+	MUX21X1 U4(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+4]),.IN2(int_req_v[110:74][4]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+4]));
+	MUX21X1 U5(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+5]),.IN2(int_req_v[110:74][5]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+5]));
+	MUX21X1 U6(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+6]),.IN2(int_req_v[110:74][6]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+6]));
+	MUX21X1 U7(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+7]),.IN2(int_req_v[110:74][7]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+7]));
+	MUX21X1 U8(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+8]),.IN2(int_req_v[110:74][8]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+8]));
+	MUX21X1 U9(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+9]),.IN2(int_req_v[110:74][9]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+9]));
+	MUX21X1 U10(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+10]),.IN2(int_req_v[110:74][10]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+10]));
+	MUX21X1 U11(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+11]),.IN2(int_req_v[110:74][11]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+11]));
+	MUX21X1 U12(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+12]),.IN2(int_req_v[110:74][12]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+12]));
+	MUX21X1 U13(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+13]),.IN2(int_req_v[110:74][13]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+13]));
+	MUX21X1 U14(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+14]),.IN2(int_req_v[110:74][14]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+14]));
+	MUX21X1 U15(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+15]),.IN2(int_req_v[110:74][15]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+15]));
+	MUX21X1 U16(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+16]),.IN2(int_req_v[110:74][16]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+16]));
+	MUX21X1 U17(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+17]),.IN2(int_req_v[110:74][17]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+17]));
+	MUX21X1 U18(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+18]),.IN2(int_req_v[110:74][18]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+18]));
+	MUX21X1 U19(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+19]),.IN2(int_req_v[110:74][19]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+19]));
+	MUX21X1 U20(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+20]),.IN2(int_req_v[110:74][20]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+20]));
+	MUX21X1 U21(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+21]),.IN2(int_req_v[110:74][21]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+21]));
+	MUX21X1 U22(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+22]),.IN2(int_req_v[110:74][22]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+22]));
+	MUX21X1 U23(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+23]),.IN2(int_req_v[110:74][23]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+23]));
+	MUX21X1 U24(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+24]),.IN2(int_req_v[110:74][24]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+24]));
+	MUX21X1 U25(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+25]),.IN2(int_req_v[110:74][25]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+25]));
+	MUX21X1 U26(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+26]),.IN2(int_req_v[110:74][26]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+26]));
+	MUX21X1 U27(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+27]),.IN2(int_req_v[110:74][27]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+27]));
+	MUX21X1 U28(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+28]),.IN2(int_req_v[110:74][28]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+28]));
+	MUX21X1 U29(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+29]),.IN2(int_req_v[110:74][29]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+29]));
+	MUX21X1 U30(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+30]),.IN2(int_req_v[110:74][30]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+30]));
+	MUX21X1 U31(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+31]),.IN2(int_req_v[110:74][31]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+31]));
+	MUX21X1 U32(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+32]),.IN2(int_req_v[110:74][32]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+32]));
+	MUX21X1 U33(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+33]),.IN2(int_req_v[110:74][33]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+33]));
+	MUX21X1 U34(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+34]),.IN2(int_req_v[110:74][34]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+34]));
+	MUX21X1 U35(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+35]),.IN2(int_req_v[110:74][35]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+35]));
+	MUX21X1 U36(.IN1(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+36]),.IN2(int_req_v[110:74][36]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_ouot*37)+36]));
+
+	MUX21X1 U321111(.IN1(int_req_v[110:74][0]),.IN2(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_out_input_datapath2 * 37)]), .S(and4resu_input_datapath2), .Q(int_req_v[110:74][0]));
+	MUX21X1 U331112(.IN1(int_req_v[110:74][1]),.IN2(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_out_input_datapath2*37)+1]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_out_input_datapath2*37)+1]));
+	MUX21X1 U331122(.IN1(int_req_v[110:74][2]),.IN2(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_out_input_datapath2*37)+2]), .S(and4resu_input_datapath2), .Q(to_output_req_in_jump_input_datapath2put_datapath2[(vc_ch_act_out_input_datapath2*37)+2]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath2[vc_ch_act_out_input_datapath2]),.IN2(int_resp_v[3:2]), .S(and4resu_input_datapath2), .Q(to_output_resp_input_datapath2[vc_ch_act_out_input_datapath2]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath2[vc_ch_act_out_input_datapath2+1]),.IN2(int_resp_v[3:2]), .S(and4resu_input_datapath2), .Q(to_output_resp_input_datapath2[vc_ch_act_out_input_datapath2+1]));
+
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule3[0]), .Y(next_read_ptr_fifomodule3[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule3[1]), .Y(next_read_ptr_fifomodule3[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule3[0]), .Y(next_write_ptr_fifomodule3[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule3[1]), .Y(next_write_ptr_fifomodule3[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule3[0]), .IN2(read_ptr_ff_fifomodule3[0]), .Q(u1temp_fifomodule3) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule3[1]), .IN2(read_ptr_ff_fifomodule3[1]), .Q(u2temp_fifomodule3) );
+	AND2X1 U3 ( .A(u1temp_fifomodule3), .B(u2temp_fifomodule3), .Y(empty_vc_buffer3) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule3[1]), .B(read_ptr_ff_fifomodule3[1]), .Y(u4temp_fifomodule3) );
+	AND2X1 U5 ( .A(u1temp_fifomodule3), .B(u4temp_fifomodule3), .Y(full_vc_buffer3) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule3[read_ptr_ff_fifomodule3[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[36:3][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule3[read_ptr_ff_fifomodule3[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[36:3][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule3[read_ptr_ff_fifomodule3[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[36:3][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule3[read_ptr_ff_fifomodule3[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[36:3][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule3[read_ptr_ff_fifomodule3[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[36:3][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule3[read_ptr_ff_fifomodule3[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[36:3][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule3[read_ptr_ff_fifomodule3[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[36:3][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule3[read_ptr_ff_fifomodule3[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[36:3][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer3), .Y(full_vc_buffer3_not_fifomodule) );
+	AND2X1 U8 ( .A(write_flit3_vc_buffer3), .B(full_vc_buffer3_not_fifomodule), .Y(u7temp_fifomodule3) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule3), .Q(u9temp_fifomodule3));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule3[0]), .B0(u9temp_fifomodule3), .C1(u10carry_fifomodule3), .SO(next_write_ptr_fifomodule3[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule3), .B0(write_ptr_ff_fifomodule3[1]), .C1(u11carry_fifomodule3), .SO(next_write_ptr_fifomodule3[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer3), .Y(empty_vc_buffer3_not_fifomodule) );
+	AND2X1 U13 ( .A(read_flit3_vc_buffer3), .B(empty_vc_buffer3_not_fifomodule), .Y(u13temp_fifomodule3) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule3), .Q(u14temp_fifomodule3));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule3[0]), .B0(u14temp_fifomodule3), .C1(u15carry_fifomodule3), .SO(next_read_ptr_fifomodule3[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule3), .B0(read_ptr_ff_fifomodule3[1]), .C1(u16carry_fifomodule3), .SO(next_read_ptr_fifomodule3[1]) );
+
+	AND2X1 U17 ( .A(write_flit3_vc_buffer3), .B(full_vc_buffer3), .Y(u17res_fifomodule3) );
+	AND2X1 U18 ( .A(read_flit3_vc_buffer3), .B(empty_vc_buffer3), .Y(u18res_fifomodule3) );
+    OR2X1 U19 ( .A(u17res_fifomodule3), .B(u18res_fifomodule3), .Y(error_vc_buffer3) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule3[0]), .B(read_ptr_ff_fifomodule3[0]), .Y(fifo_ocup_fifomodule3[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule3[0]), .Y(write_ptr_ff_fifomodule3_0_not3) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule3_0_not3), .B(read_ptr_ff_fifomodule3[0]), .Y(b0wire_fifomodule3) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule3[1]), .B(read_ptr_ff_fifomodule3[1]), .Y(u23temp_fifomodule3) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule3[1]), .Y(write_ptr_ff_fifomodule3_1_not3) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule3[1]), .B(write_ptr_ff_fifomodule3_1_not3), .Y(boutb_fifomodule3) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule3), .B(b0wire_fifomodule3), .Y(fifo_ocup_fifomodule3[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule3), .Y(u23temp_fifomodule3_not_fifomodule3) );
+	AND2X1 U26 ( .A(b0wire_fifomodule3), .B(u23temp_fifomodule3_not_fifomodule3), .Y(bouta_fifomodule3) );
+	OR2X1 U27 ( .A(bouta_fifomodule3), .B(boutb_fifomodule3), .Y(boutmain_fifomodule3) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule3[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule3[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule3) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule3) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule3), .D(1'b0), .Q(write_ptr_ff_fifomodule3[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule3), .D(1'b0), .Q(read_ptr_ff_fifomodule3[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule3), .D(1'b0), .Q(fifo_ff_fifomodule3[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule3), .D(1'b0), .Q(write_ptr_ff_fifomodule3[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule3), .D(1'b0), .Q(read_ptr_ff_fifomodule3[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule3), .D(1'b0), .Q(fifo_ff_fifomodule3[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule3[0]), .Q(write_ptr_ff_fifomodule3[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule3[1]), .Q(write_ptr_ff_fifomodule3[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule3[0]), .Q(read_ptr_ff_fifomodule3[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule3[1]), .Q(read_ptr_ff_fifomodule3[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule3), .D(from_input_req_in_jump_input_datapath3put_datapath3[36:3][0]), .Q(fifo_ff_fifomodule3[write_ptr_ff_fifomodule3[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule3), .D(from_input_req_in_jump_input_datapath3put_datapath3[36:3][1]), .Q(fifo_ff_fifomodule3[write_ptr_ff_fifomodule3[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule3), .D(from_input_req_in_jump_input_datapath3put_datapath3[36:3][2]), .Q(fifo_ff_fifomodule3[write_ptr_ff_fifomodule3[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule3), .D(from_input_req_in_jump_input_datapath3put_datapath3[36:3][3]), .Q(fifo_ff_fifomodule3[write_ptr_ff_fifomodule3[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule3), .D(from_input_req_in_jump_input_datapath3put_datapath3[36:3][4]), .Q(fifo_ff_fifomodule3[write_ptr_ff_fifomodule3[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule3), .D(from_input_req_in_jump_input_datapath3put_datapath3[36:3][5]), .Q(fifo_ff_fifomodule3[write_ptr_ff_fifomodule3[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule3), .D(from_input_req_in_jump_input_datapath3put_datapath3[36:3][6]), .Q(fifo_ff_fifomodule3[write_ptr_ff_fifomodule3[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule3), .D(from_input_req_in_jump_input_datapath3put_datapath3[36:3][7]), .Q(fifo_ff_fifomodule3[write_ptr_ff_fifomodule3[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer3), .Y(next_locked_vc_buffer3) );
+    BUFX1 U0(.A(flit3[0]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][0]));
+	BUFX1 U1(.A(flit3[1]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][1]));
+	BUFX1 U2(.A(flit3[2]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][2]));
+	BUFX1 U3(.A(flit3[3]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][3]));
+	BUFX1 U4(.A(flit3[4]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][4]));
+	BUFX1 U5(.A(flit3[5]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][5]));
+	BUFX1 U6(.A(flit3[6]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][6]));
+	BUFX1 U7(.A(flit3[7]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][7]));
+	BUFX1 U8(.A(flit3[8]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][8]));
+	BUFX1 U9(.A(flit3[9]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][9]));
+	BUFX1 U10(.A(flit3[10]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][10]));
+	BUFX1 U11(.A(flit3[11]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][11]));
+	BUFX1 U12(.A(flit3[12]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][12]));
+	BUFX1 U13(.A(flit3[13]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][13]));
+	BUFX1 U14(.A(flit3[14]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][14]));
+	BUFX1 U15(.A(flit3[15]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][15]));
+	BUFX1 U16(.A(flit3[16]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][16]));
+	BUFX1 U17(.A(flit3[17]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][17]));
+	BUFX1 U18(.A(flit3[18]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][18]));
+	BUFX1 U19(.A(flit3[19]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][19]));
+	BUFX1 U20(.A(flit3[20]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][20]));
+	BUFX1 U21(.A(flit3[21]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][21]));
+	BUFX1 U22(.A(flit3[22]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][22]));
+	BUFX1 U23(.A(flit3[23]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][23]));
+	BUFX1 U24(.A(flit3[24]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][24]));
+	BUFX1 U25(.A(flit3[25]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][25]));
+	BUFX1 U26(.A(flit3[26]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][26]));
+	BUFX1 U27(.A(flit3[27]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][27]));
+	BUFX1 U28(.A(flit3[28]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][28]));
+	BUFX1 U29(.A(flit3[29]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][29]));
+	BUFX1 U30(.A(flit3[30]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][30]));
+	BUFX1 U31(.A(flit3[31]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][31]));
+	BUFX1 U32(.A(flit3[32]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][32]));
+	BUFX1 U33(.A(flit3[33]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[36:3][33]));
+    NOR2X1 U34 ( .IN1(flit3[33]), .IN2(flit3[32]), .QN(norres_vc_buffer3_vc_buffer3) );
+    OR4X1 U35 ( .IN1(flit3[29]), .IN2(flit3[28]), .IN3(flit3[27]), .IN4(flit3[26]), .Y(or1res_vc_buffer3) );
+    OR4X1 U35 ( .IN1(flit3[25]), .IN2(flit3[24]), .IN3(flit3[23]), .IN4(flit3[22]), .Y(or2res_vc_buffer3) );
+    OR2X1 U36 ( .A(or1res_vc_buffer3), .B(or2res_vc_buffer3), .Y(orres_vc_buffer3) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath3put_datapath3[0]), .IN2(norres_vc_buffer3_vc_buffer3), .IN3(orres_vc_buffer3), .Q(finres1_vc_buffer3) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer3), .IN2(1'b1), .S(finres1_vc_buffer3), .Q(next_locked_vc_buffer3);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath3put_datapath3[0]), .IN2(flit3[33]), .IN3(flit3[32]), .Q(andres1_vc_buffer3) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer3), .IN2(1'b0), .S(andres1_vc_buffer3), .Q(next_locked_vc_buffer3);
+
+    INVX1 U41 ( .A(full_vc_buffer3), .Y(full_vc_buffer3_not) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer3), .Y(locked_by_route_ff_vc_buffer3_not) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer3_not), .S(norres_vc_buffer3_vc_buffer3), .Q(thirdand_vc_buffer3);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath3put_datapath3[0]), .IN2(full_vc_buffer3_not), .IN3(thirdand_vc_buffer3), .Q(write_flit3_vc_buffer3) );
+    AND2X1 U45 ( .IN1(full_vc_buffer3_not), .IN2(norres_vc_buffer3_vc_buffer3), .Q(from_input_resp_input_datapath3[0]) );
+    INVX1 U46 ( .A(empty_vc_buffer3), .Y(to_output_req_in_jump_input_datapath3put_datapath3[0]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath3put_datapath3[0]), .IN2(to_output_resp_input_datapath3[0]), .Q(read_flit3_vc_buffer3) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath3put_datapath3[2:1]), .Y(2'b00));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer3), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer3);
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule31[0]), .Y(next_read_ptr_fifomodule31[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule31[1]), .Y(next_read_ptr_fifomodule31[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule31[0]), .Y(next_write_ptr_fifomodule31[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule31[1]), .Y(next_write_ptr_fifomodule31[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule31[0]), .IN2(read_ptr_ff_fifomodule31[0]), .Q(u1temp_fifomodule31) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule31[1]), .IN2(read_ptr_ff_fifomodule31[1]), .Q(u2temp_fifomodule31) );
+	AND2X1 U3 ( .A(u1temp_fifomodule31), .B(u2temp_fifomodule31), .Y(empty_vc_buffer31) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule31[1]), .B(read_ptr_ff_fifomodule31[1]), .Y(u4temp_fifomodule31) );
+	AND2X1 U5 ( .A(u1temp_fifomodule31), .B(u4temp_fifomodule31), .Y(full_vc_buffer31) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule31[read_ptr_ff_fifomodule31[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer31), .Q(to_output_req_in_jump_input_datapath3put_datapath3[73:40][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule31[read_ptr_ff_fifomodule31[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer31), .Q(to_output_req_in_jump_input_datapath3put_datapath3[73:40][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule31[read_ptr_ff_fifomodule31[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer31), .Q(to_output_req_in_jump_input_datapath3put_datapath3[73:40][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule31[read_ptr_ff_fifomodule31[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer31), .Q(to_output_req_in_jump_input_datapath3put_datapath3[73:40][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule31[read_ptr_ff_fifomodule31[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer31), .Q(to_output_req_in_jump_input_datapath3put_datapath3[73:40][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule31[read_ptr_ff_fifomodule31[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer31), .Q(to_output_req_in_jump_input_datapath3put_datapath3[73:40][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule31[read_ptr_ff_fifomodule31[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer31), .Q(to_output_req_in_jump_input_datapath3put_datapath3[73:40][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule31[read_ptr_ff_fifomodule31[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer31), .Q(to_output_req_in_jump_input_datapath3put_datapath3[73:40][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer31), .Y(full_vc_buffer31_not1_fifomodule1) );
+	AND2X1 U8 ( .A(write_flit31_vc_buffer13), .B(full_vc_buffer31_not1_fifomodule1), .Y(u7temp_fifomodule31) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule31), .Q(u9temp_fifomodule31));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule31[0]), .B0(u9temp_fifomodule31), .C1(u10carry_fifomodule31), .SO(next_write_ptr_fifomodule31[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule31), .B0(write_ptr_ff_fifomodule31[1]), .C1(u11carry_fifomodule31), .SO(next_write_ptr_fifomodule31[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer31), .Y(empty_vc_buffer31_not_fifomodule1) );
+	AND2X1 U13 ( .A(read_flit31_vc_buffer13), .B(empty_vc_buffer31_not_fifomodule1), .Y(u13temp_fifomodule31) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule31), .Q(u14temp_fifomodule31));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule31[0]), .B0(u14temp_fifomodule31), .C1(u15carry_fifomodule31), .SO(next_read_ptr_fifomodule31[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule31), .B0(read_ptr_ff_fifomodule31[1]), .C1(u16carry_fifomodule31), .SO(next_read_ptr_fifomodule31[1]) );
+
+	AND2X1 U17 ( .A(write_flit31_vc_buffer13), .B(full_vc_buffer31), .Y(u17res_fifomodule31) );
+	AND2X1 U18 ( .A(read_flit31_vc_buffer13), .B(empty_vc_buffer31), .Y(u18res_fifomodule31) );
+    OR2X1 U19 ( .A(u17res_fifomodule31), .B(u18res_fifomodule31), .Y(error_vc_buffer31) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule31[0]), .B(read_ptr_ff_fifomodule31[0]), .Y(fifo_ocup_fifomodule31[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule31[0]), .Y(write_ptr_ff_fifomodule31_0_not13) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule31_0_not13), .B(read_ptr_ff_fifomodule31[0]), .Y(b0wire_fifomodule31) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule31[1]), .B(read_ptr_ff_fifomodule31[1]), .Y(u23temp_fifomodule31) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule31[1]), .Y(write_ptr_ff_fifomodule31_1_not13) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule31[1]), .B(write_ptr_ff_fifomodule31_1_not13), .Y(boutb_fifomodule31) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule31), .B(b0wire_fifomodule31), .Y(fifo_ocup_fifomodule31[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule31), .Y(u23temp_fifomodule31_not_fifomodule1) );
+	AND2X1 U26 ( .A(b0wire_fifomodule31), .B(u23temp_fifomodule31_not_fifomodule1), .Y(bouta_fifomodule31) );
+	OR2X1 U27 ( .A(bouta_fifomodule31), .B(boutb_fifomodule31), .Y(boutmain_fifomodule31) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule31[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule31[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule31) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule31) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule31), .D(1'b0), .Q(write_ptr_ff_fifomodule31[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule31), .D(1'b0), .Q(read_ptr_ff_fifomodule31[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule31), .D(1'b0), .Q(fifo_ff_fifomodule31[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule31), .D(1'b0), .Q(write_ptr_ff_fifomodule31[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule31), .D(1'b0), .Q(read_ptr_ff_fifomodule31[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule31), .D(1'b0), .Q(fifo_ff_fifomodule31[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule31[0]), .Q(write_ptr_ff_fifomodule31[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule31[1]), .Q(write_ptr_ff_fifomodule31[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule31[0]), .Q(read_ptr_ff_fifomodule31[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule31[1]), .Q(read_ptr_ff_fifomodule31[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule31), .D(from_input_req_in_jump_input_datapath3put_datapath3[73:40][0]), .Q(fifo_ff_fifomodule31[write_ptr_ff_fifomodule31[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule31), .D(from_input_req_in_jump_input_datapath3put_datapath3[73:40][1]), .Q(fifo_ff_fifomodule31[write_ptr_ff_fifomodule31[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule31), .D(from_input_req_in_jump_input_datapath3put_datapath3[73:40][2]), .Q(fifo_ff_fifomodule31[write_ptr_ff_fifomodule31[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule31), .D(from_input_req_in_jump_input_datapath3put_datapath3[73:40][3]), .Q(fifo_ff_fifomodule31[write_ptr_ff_fifomodule31[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule31), .D(from_input_req_in_jump_input_datapath3put_datapath3[73:40][4]), .Q(fifo_ff_fifomodule31[write_ptr_ff_fifomodule31[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule31), .D(from_input_req_in_jump_input_datapath3put_datapath3[73:40][5]), .Q(fifo_ff_fifomodule31[write_ptr_ff_fifomodule31[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule31), .D(from_input_req_in_jump_input_datapath3put_datapath3[73:40][6]), .Q(fifo_ff_fifomodule31[write_ptr_ff_fifomodule31[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule31), .D(from_input_req_in_jump_input_datapath3put_datapath3[73:40][7]), .Q(fifo_ff_fifomodule31[write_ptr_ff_fifomodule31[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer31), .Y(next_locked_vc_buffer31) );
+    BUFX1 U0(.A(flit31[0]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][0]));
+	BUFX1 U1(.A(flit31[1]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][1]));
+	BUFX1 U2(.A(flit31[2]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][2]));
+	BUFX1 U3(.A(flit31[3]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][3]));
+	BUFX1 U4(.A(flit31[4]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][4]));
+	BUFX1 U5(.A(flit31[5]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][5]));
+	BUFX1 U6(.A(flit31[6]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][6]));
+	BUFX1 U7(.A(flit31[7]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][7]));
+	BUFX1 U8(.A(flit31[8]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][8]));
+	BUFX1 U9(.A(flit31[9]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][9]));
+	BUFX1 U10(.A(flit31[10]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][10]));
+	BUFX1 U11(.A(flit31[11]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][11]));
+	BUFX1 U12(.A(flit31[12]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][12]));
+	BUFX1 U13(.A(flit31[13]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][13]));
+	BUFX1 U14(.A(flit31[14]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][14]));
+	BUFX1 U15(.A(flit31[15]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][15]));
+	BUFX1 U16(.A(flit31[16]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][16]));
+	BUFX1 U17(.A(flit31[17]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][17]));
+	BUFX1 U18(.A(flit31[18]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][18]));
+	BUFX1 U19(.A(flit31[19]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][19]));
+	BUFX1 U20(.A(flit31[20]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][20]));
+	BUFX1 U21(.A(flit31[21]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][21]));
+	BUFX1 U22(.A(flit31[22]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][22]));
+	BUFX1 U23(.A(flit31[23]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][23]));
+	BUFX1 U24(.A(flit31[24]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][24]));
+	BUFX1 U25(.A(flit31[25]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][25]));
+	BUFX1 U26(.A(flit31[26]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][26]));
+	BUFX1 U27(.A(flit31[27]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][27]));
+	BUFX1 U28(.A(flit31[28]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][28]));
+	BUFX1 U29(.A(flit31[29]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][29]));
+	BUFX1 U30(.A(flit31[30]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][30]));
+	BUFX1 U31(.A(flit31[31]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][31]));
+	BUFX1 U32(.A(flit31[32]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][32]));
+	BUFX1 U33(.A(flit31[33]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[73:40][33]));
+    NOR2X1 U34 ( .IN1(flit31[33]), .IN2(flit31[32]), .QN(norres_vc_buffer31_vc_buffer1) );
+    OR4X1 U35 ( .IN1(flit31[29]), .IN2(flit31[28]), .IN3(flit31[27]), .IN4(flit31[26]), .Y(or1res_vc_buffer31) );
+    OR4X1 U35 ( .IN1(flit31[25]), .IN2(flit31[24]), .IN3(flit31[23]), .IN4(flit31[22]), .Y(or2res_vc_buffer31) );
+    OR2X1 U36 ( .A(or1res_vc_buffer31), .B(or2res_vc_buffer31), .Y(orres_vc_buffer31) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath3put_datapath3[37]), .IN2(norres_vc_buffer31_vc_buffer1), .IN3(orres_vc_buffer31), .Q(finres1_vc_buffer31) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer31), .IN2(1'b1), .S(finres1_vc_buffer31), .Q(next_locked_vc_buffer31);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath3put_datapath3[37]), .IN2(flit31[33]), .IN3(flit31[32]), .Q(andres1_vc_buffer31) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer31), .IN2(1'b0), .S(andres1_vc_buffer31), .Q(next_locked_vc_buffer31);
+
+    INVX1 U41 ( .A(full_vc_buffer31), .Y(full_vc_buffer31_not1) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer31), .Y(locked_by_route_ff_vc_buffer31_not1) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer31_not1), .S(norres_vc_buffer31_vc_buffer1), .Q(thirdand_vc_buffer31);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath3put_datapath3[37]), .IN2(full_vc_buffer31_not1), .IN3(thirdand_vc_buffer31), .Q(write_flit31_vc_buffer13) );
+    AND2X1 U45 ( .IN1(full_vc_buffer31_not1), .IN2(norres_vc_buffer31_vc_buffer1), .Q(from_input_resp_input_datapath3[1]) );
+    INVX1 U46 ( .A(empty_vc_buffer31), .Y(to_output_req_in_jump_input_datapath3put_datapath3[37]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath3put_datapath3[37]), .IN2(to_output_resp_input_datapath3[1]), .Q(read_flit31_vc_buffer13) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath3put_datapath3[39:38]), .Y(2'b01));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer31), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer31);
+
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule32[0]), .Y(next_read_ptr_fifomodule32[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule32[1]), .Y(next_read_ptr_fifomodule32[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule32[0]), .Y(next_write_ptr_fifomodule32[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule32[1]), .Y(next_write_ptr_fifomodule32[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule32[0]), .IN2(read_ptr_ff_fifomodule32[0]), .Q(u1temp_fifomodule32) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule32[1]), .IN2(read_ptr_ff_fifomodule32[1]), .Q(u2temp_fifomodule32) );
+	AND2X1 U3 ( .A(u1temp_fifomodule32), .B(u2temp_fifomodule32), .Y(empty_vc_buffer32) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule32[1]), .B(read_ptr_ff_fifomodule32[1]), .Y(u4temp_fifomodule32) );
+	AND2X1 U5 ( .A(u1temp_fifomodule32), .B(u4temp_fifomodule32), .Y(full_vc_buffer32) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule32[read_ptr_ff_fifomodule32[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer32), .Q(to_output_req_in_jump_input_datapath3put_datapath3[110:77][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule32[read_ptr_ff_fifomodule32[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer32), .Q(to_output_req_in_jump_input_datapath3put_datapath3[110:77][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule32[read_ptr_ff_fifomodule32[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer32), .Q(to_output_req_in_jump_input_datapath3put_datapath3[110:77][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule32[read_ptr_ff_fifomodule32[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer32), .Q(to_output_req_in_jump_input_datapath3put_datapath3[110:77][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule32[read_ptr_ff_fifomodule32[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer32), .Q(to_output_req_in_jump_input_datapath3put_datapath3[110:77][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule32[read_ptr_ff_fifomodule32[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer32), .Q(to_output_req_in_jump_input_datapath3put_datapath3[110:77][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule32[read_ptr_ff_fifomodule32[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer32), .Q(to_output_req_in_jump_input_datapath3put_datapath3[110:77][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule32[read_ptr_ff_fifomodule32[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer32), .Q(to_output_req_in_jump_input_datapath3put_datapath3[110:77][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer32), .Y(full_vc_buffer32_not2_fifomodule2) );
+	AND2X1 U8 ( .A(write_flit32_vc_buffer23), .B(full_vc_buffer32_not2_fifomodule2), .Y(u7temp_fifomodule32) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule32), .Q(u9temp_fifomodule32));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule32[0]), .B0(u9temp_fifomodule32), .C1(u10carry_fifomodule32), .SO(next_write_ptr_fifomodule32[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule32), .B0(write_ptr_ff_fifomodule32[1]), .C1(u11carry_fifomodule32), .SO(next_write_ptr_fifomodule32[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer32), .Y(empty_vc_buffer32_not_fifomodule2) );
+	AND2X1 U13 ( .A(read_flit32_vc_buffer23), .B(empty_vc_buffer32_not_fifomodule2), .Y(u13temp_fifomodule32) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule32), .Q(u14temp_fifomodule32));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule32[0]), .B0(u14temp_fifomodule32), .C1(u15carry_fifomodule32), .SO(next_read_ptr_fifomodule32[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule32), .B0(read_ptr_ff_fifomodule32[1]), .C1(u16carry_fifomodule32), .SO(next_read_ptr_fifomodule32[1]) );
+
+	AND2X1 U17 ( .A(write_flit32_vc_buffer23), .B(full_vc_buffer32), .Y(u17res_fifomodule32) );
+	AND2X1 U18 ( .A(read_flit32_vc_buffer23), .B(empty_vc_buffer32), .Y(u18res_fifomodule32) );
+    OR2X1 U19 ( .A(u17res_fifomodule32), .B(u18res_fifomodule32), .Y(error_vc_buffer32) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule32[0]), .B(read_ptr_ff_fifomodule32[0]), .Y(fifo_ocup_fifomodule32[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule32[0]), .Y(write_ptr_ff_fifomodule32_0_not23) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule32_0_not23), .B(read_ptr_ff_fifomodule32[0]), .Y(b0wire_fifomodule32) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule32[1]), .B(read_ptr_ff_fifomodule32[1]), .Y(u23temp_fifomodule32) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule32[1]), .Y(write_ptr_ff_fifomodule32_1_not23) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule32[1]), .B(write_ptr_ff_fifomodule32_1_not23), .Y(boutb_fifomodule32) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule32), .B(b0wire_fifomodule32), .Y(fifo_ocup_fifomodule32[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule32), .Y(u23temp_fifomodule32_not_fifomodule2) );
+	AND2X1 U26 ( .A(b0wire_fifomodule32), .B(u23temp_fifomodule32_not_fifomodule2), .Y(bouta_fifomodule32) );
+	OR2X1 U27 ( .A(bouta_fifomodule32), .B(boutb_fifomodule32), .Y(boutmain_fifomodule32) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule32[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule32[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule32) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule32) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule32), .D(1'b0), .Q(write_ptr_ff_fifomodule32[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule32), .D(1'b0), .Q(read_ptr_ff_fifomodule32[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule32), .D(1'b0), .Q(fifo_ff_fifomodule32[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule32), .D(1'b0), .Q(write_ptr_ff_fifomodule32[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule32), .D(1'b0), .Q(read_ptr_ff_fifomodule32[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule32), .D(1'b0), .Q(fifo_ff_fifomodule32[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule32[0]), .Q(write_ptr_ff_fifomodule32[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule32[1]), .Q(write_ptr_ff_fifomodule32[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule32[0]), .Q(read_ptr_ff_fifomodule32[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule32[1]), .Q(read_ptr_ff_fifomodule32[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule32), .D(from_input_req_in_jump_input_datapath3put_datapath3[110:77][0]), .Q(fifo_ff_fifomodule32[write_ptr_ff_fifomodule32[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule32), .D(from_input_req_in_jump_input_datapath3put_datapath3[110:77][1]), .Q(fifo_ff_fifomodule32[write_ptr_ff_fifomodule32[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule32), .D(from_input_req_in_jump_input_datapath3put_datapath3[110:77][2]), .Q(fifo_ff_fifomodule32[write_ptr_ff_fifomodule32[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule32), .D(from_input_req_in_jump_input_datapath3put_datapath3[110:77][3]), .Q(fifo_ff_fifomodule32[write_ptr_ff_fifomodule32[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule32), .D(from_input_req_in_jump_input_datapath3put_datapath3[110:77][4]), .Q(fifo_ff_fifomodule32[write_ptr_ff_fifomodule32[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule32), .D(from_input_req_in_jump_input_datapath3put_datapath3[110:77][5]), .Q(fifo_ff_fifomodule32[write_ptr_ff_fifomodule32[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule32), .D(from_input_req_in_jump_input_datapath3put_datapath3[110:77][6]), .Q(fifo_ff_fifomodule32[write_ptr_ff_fifomodule32[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule32), .D(from_input_req_in_jump_input_datapath3put_datapath3[110:77][7]), .Q(fifo_ff_fifomodule32[write_ptr_ff_fifomodule32[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer32), .Y(next_locked_vc_buffer32) );
+    BUFX1 U0(.A(flit32[0]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][0]));
+	BUFX1 U1(.A(flit32[1]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][1]));
+	BUFX1 U2(.A(flit32[2]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][2]));
+	BUFX1 U3(.A(flit32[3]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][3]));
+	BUFX1 U4(.A(flit32[4]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][4]));
+	BUFX1 U5(.A(flit32[5]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][5]));
+	BUFX1 U6(.A(flit32[6]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][6]));
+	BUFX1 U7(.A(flit32[7]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][7]));
+	BUFX1 U8(.A(flit32[8]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][8]));
+	BUFX1 U9(.A(flit32[9]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][9]));
+	BUFX1 U10(.A(flit32[10]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][10]));
+	BUFX1 U11(.A(flit32[11]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][11]));
+	BUFX1 U12(.A(flit32[12]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][12]));
+	BUFX1 U13(.A(flit32[13]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][13]));
+	BUFX1 U14(.A(flit32[14]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][14]));
+	BUFX1 U15(.A(flit32[15]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][15]));
+	BUFX1 U16(.A(flit32[16]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][16]));
+	BUFX1 U17(.A(flit32[17]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][17]));
+	BUFX1 U18(.A(flit32[18]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][18]));
+	BUFX1 U19(.A(flit32[19]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][19]));
+	BUFX1 U20(.A(flit32[20]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][20]));
+	BUFX1 U21(.A(flit32[21]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][21]));
+	BUFX1 U22(.A(flit32[22]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][22]));
+	BUFX1 U23(.A(flit32[23]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][23]));
+	BUFX1 U24(.A(flit32[24]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][24]));
+	BUFX1 U25(.A(flit32[25]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][25]));
+	BUFX1 U26(.A(flit32[26]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][26]));
+	BUFX1 U27(.A(flit32[27]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][27]));
+	BUFX1 U28(.A(flit32[28]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][28]));
+	BUFX1 U29(.A(flit32[29]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][29]));
+	BUFX1 U30(.A(flit32[30]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][30]));
+	BUFX1 U31(.A(flit32[31]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][31]));
+	BUFX1 U32(.A(flit32[32]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][32]));
+	BUFX1 U33(.A(flit32[33]), .Y(from_input_req_in_jump_input_datapath3put_datapath3[110:77][33]));
+    NOR2X1 U34 ( .IN1(flit32[33]), .IN2(flit32[32]), .QN(norres_vc_buffer32_vc_buffer2) );
+    OR4X1 U35 ( .IN1(flit32[29]), .IN2(flit32[28]), .IN3(flit32[27]), .IN4(flit32[26]), .Y(or1res_vc_buffer32) );
+    OR4X1 U35 ( .IN1(flit32[25]), .IN2(flit32[24]), .IN3(flit32[23]), .IN4(flit32[22]), .Y(or2res_vc_buffer32) );
+    OR2X1 U36 ( .A(or1res_vc_buffer32), .B(or2res_vc_buffer32), .Y(orres_vc_buffer32) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath3put_datapath3[74]), .IN2(norres_vc_buffer32_vc_buffer2), .IN3(orres_vc_buffer32), .Q(finres1_vc_buffer32) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer32), .IN2(1'b1), .S(finres1_vc_buffer32), .Q(next_locked_vc_buffer32);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath3put_datapath3[74]), .IN2(flit32[33]), .IN3(flit32[32]), .Q(andres1_vc_buffer32) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer32), .IN2(1'b0), .S(andres1_vc_buffer32), .Q(next_locked_vc_buffer32);
+
+    INVX1 U41 ( .A(full_vc_buffer32), .Y(full_vc_buffer32_not2) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer32), .Y(locked_by_route_ff_vc_buffer32_not2) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer32_not2), .S(norres_vc_buffer32_vc_buffer2), .Q(thirdand_vc_buffer32);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath3put_datapath3[74]), .IN2(full_vc_buffer32_not2), .IN3(thirdand_vc_buffer32), .Q(write_flit32_vc_buffer23) );
+    AND2X1 U45 ( .IN1(full_vc_buffer32_not2), .IN2(norres_vc_buffer32_vc_buffer2), .Q(from_input_resp_input_datapath3[2]) );
+    INVX1 U46 ( .A(empty_vc_buffer32), .Y(to_output_req_in_jump_input_datapath3put_datapath3[74]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath3put_datapath3[74]), .IN2(to_output_resp_input_datapath3[2]), .Q(read_flit32_vc_buffer23) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath3put_datapath3[76:75]), .Y(2'b10));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer32), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer32);
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath3put_datapath3[77]), .Y(ext_req_v_i[147:111][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath3put_datapath3[78]), .Y(ext_req_v_i[147:111][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath3put_datapath3[79]), .Y(ext_req_v_i[147:111][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath3put_datapath3[80]), .Y(ext_req_v_i[147:111][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath3put_datapath3[81]), .Y(ext_req_v_i[147:111][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath3put_datapath3[82]), .Y(ext_req_v_i[147:111][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath3put_datapath3[83]), .Y(ext_req_v_i[147:111][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath3put_datapath3[84]), .Y(ext_req_v_i[147:111][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath3put_datapath3[85]), .Y(ext_req_v_i[147:111][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath3put_datapath3[86]), .Y(ext_req_v_i[147:111][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath3put_datapath3[87]), .Y(ext_req_v_i[147:111][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath3put_datapath3[88]), .Y(ext_req_v_i[147:111][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath3put_datapath3[89]), .Y(ext_req_v_i[147:111][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath3put_datapath3[90]), .Y(ext_req_v_i[147:111][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath3put_datapath3[91]), .Y(ext_req_v_i[147:111][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath3put_datapath3[92]), .Y(ext_req_v_i[147:111][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath3put_datapath3[93]), .Y(ext_req_v_i[147:111][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath3put_datapath3[94]), .Y(ext_req_v_i[147:111][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath3put_datapath3[95]), .Y(ext_req_v_i[147:111][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath3put_datapath3[96]), .Y(ext_req_v_i[147:111][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath3put_datapath3[97]), .Y(ext_req_v_i[147:111][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath3put_datapath3[98]), .Y(ext_req_v_i[147:111][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath3put_datapath3[99]), .Y(ext_req_v_i[147:111][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath3put_datapath3[100]), .Y(ext_req_v_i[147:111][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath3put_datapath3[101]), .Y(ext_req_v_i[147:111][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath3put_datapath3[102]), .Y(ext_req_v_i[147:111][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath3put_datapath3[103]), .Y(ext_req_v_i[147:111][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath3put_datapath3[104]), .Y(ext_req_v_i[147:111][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath3put_datapath3[105]), .Y(ext_req_v_i[147:111][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath3put_datapath3[106]), .Y(ext_req_v_i[147:111][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath3put_datapath3[107]), .Y(ext_req_v_i[147:111][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath3put_datapath3[108]), .Y(ext_req_v_i[147:111][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath3put_datapath3[109]), .Y(ext_req_v_i[147:111][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath3put_datapath3[110]), .Y(ext_req_v_i[147:111][36]));
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[147:111][1]), .IN2(i_input_datapath3[0]), .QN(xnor1resu_input_datapath3) );
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[147:111][2]), .IN2(i_input_datapath3[1]), .QN(xnor2resu_input_datapath3) );
+    AND2X1 U128 ( .IN1(xnor1resu_input_datapath3), .IN2(xnor2resu_input_datapath3), .Q(and1resu_input_datapath3) );
+    AND3X1 U128 ( .IN1(and1resu_input_datapath3), .IN2(ext_req_v_i[147:111][0]), .IN2(ext_req_v_i[147:111][0]), .Q(cond1line_input_datapath3) );
+    MUX21X1 U0009 (.IN1(vc_ch_act_in_input_datapath3[0]), .IN2(i_input_datapath3[0]), .S(cond1line_input_datapath3), .Q(vc_ch_act_in_input_datapath3[0]));
+    MUX21X1 U0010 (.IN1(vc_ch_act_in_input_datapath3[1]), .IN2(i_input_datapath3[1]), .S(cond1line_input_datapath3), .Q(vc_ch_act_in_input_datapath3[1]));
+    MUX21X1 U0011 (.IN1(req_in_jump_input_datapath3), .IN2(1), .S(cond1line_input_datapath3), .Q(req_in_jump_input_datapath3));
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath3put_datapath3[40]), .Y(ext_req_v_i[147:111][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath3put_datapath3[41]), .Y(ext_req_v_i[147:111][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath3put_datapath3[42]), .Y(ext_req_v_i[147:111][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath3put_datapath3[43]), .Y(ext_req_v_i[147:111][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath3put_datapath3[44]), .Y(ext_req_v_i[147:111][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath3put_datapath3[45]), .Y(ext_req_v_i[147:111][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath3put_datapath3[46]), .Y(ext_req_v_i[147:111][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath3put_datapath3[47]), .Y(ext_req_v_i[147:111][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath3put_datapath3[48]), .Y(ext_req_v_i[147:111][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath3put_datapath3[49]), .Y(ext_req_v_i[147:111][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath3put_datapath3[50]), .Y(ext_req_v_i[147:111][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath3put_datapath3[51]), .Y(ext_req_v_i[147:111][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath3put_datapath3[52]), .Y(ext_req_v_i[147:111][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath3put_datapath3[53]), .Y(ext_req_v_i[147:111][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath3put_datapath3[54]), .Y(ext_req_v_i[147:111][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath3put_datapath3[55]), .Y(ext_req_v_i[147:111][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath3put_datapath3[56]), .Y(ext_req_v_i[147:111][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath3put_datapath3[57]), .Y(ext_req_v_i[147:111][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath3put_datapath3[58]), .Y(ext_req_v_i[147:111][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath3put_datapath3[59]), .Y(ext_req_v_i[147:111][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath3put_datapath3[60]), .Y(ext_req_v_i[147:111][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath3put_datapath3[61]), .Y(ext_req_v_i[147:111][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath3put_datapath3[62]), .Y(ext_req_v_i[147:111][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath3put_datapath3[63]), .Y(ext_req_v_i[147:111][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath3put_datapath3[64]), .Y(ext_req_v_i[147:111][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath3put_datapath3[65]), .Y(ext_req_v_i[147:111][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath3put_datapath3[66]), .Y(ext_req_v_i[147:111][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath3put_datapath3[67]), .Y(ext_req_v_i[147:111][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath3put_datapath3[68]), .Y(ext_req_v_i[147:111][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath3put_datapath3[69]), .Y(ext_req_v_i[147:111][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath3put_datapath3[70]), .Y(ext_req_v_i[147:111][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath3put_datapath3[71]), .Y(ext_req_v_i[147:111][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath3put_datapath3[72]), .Y(ext_req_v_i[147:111][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath3put_datapath3[73]), .Y(ext_req_v_i[147:111][36]));
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath3put_datapath3[3]), .Y(ext_req_v_i[147:111][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath3put_datapath3[4]), .Y(ext_req_v_i[147:111][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath3put_datapath3[5]), .Y(ext_req_v_i[147:111][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath3put_datapath3[6]), .Y(ext_req_v_i[147:111][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath3put_datapath3[7]), .Y(ext_req_v_i[147:111][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath3put_datapath3[8]), .Y(ext_req_v_i[147:111][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath3put_datapath3[9]), .Y(ext_req_v_i[147:111][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath3put_datapath3[10]), .Y(ext_req_v_i[147:111][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath3put_datapath3[11]), .Y(ext_req_v_i[147:111][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath3put_datapath3[12]), .Y(ext_req_v_i[147:111][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath3put_datapath3[13]), .Y(ext_req_v_i[147:111][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath3put_datapath3[14]), .Y(ext_req_v_i[147:111][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath3put_datapath3[15]), .Y(ext_req_v_i[147:111][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath3put_datapath3[16]), .Y(ext_req_v_i[147:111][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath3put_datapath3[17]), .Y(ext_req_v_i[147:111][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath3put_datapath3[18]), .Y(ext_req_v_i[147:111][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath3put_datapath3[19]), .Y(ext_req_v_i[147:111][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath3put_datapath3[20]), .Y(ext_req_v_i[147:111][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath3put_datapath3[21]), .Y(ext_req_v_i[147:111][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath3put_datapath3[22]), .Y(ext_req_v_i[147:111][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath3put_datapath3[23]), .Y(ext_req_v_i[147:111][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath3put_datapath3[24]), .Y(ext_req_v_i[147:111][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath3put_datapath3[25]), .Y(ext_req_v_i[147:111][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath3put_datapath3[26]), .Y(ext_req_v_i[147:111][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath3put_datapath3[27]), .Y(ext_req_v_i[147:111][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath3put_datapath3[28]), .Y(ext_req_v_i[147:111][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath3put_datapath3[29]), .Y(ext_req_v_i[147:111][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath3put_datapath3[30]), .Y(ext_req_v_i[147:111][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath3put_datapath3[31]), .Y(ext_req_v_i[147:111][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath3put_datapath3[32]), .Y(ext_req_v_i[147:111][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath3put_datapath3[33]), .Y(ext_req_v_i[147:111][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath3put_datapath3[34]), .Y(ext_req_v_i[147:111][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath3put_datapath3[35]), .Y(ext_req_v_i[147:111][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath3put_datapath3[36]), .Y(ext_req_v_i[147:111][36]));
+
+    MUX21X1 U0012 (.IN1(from_input_req_in_jump_input_datapath3put_datapath3[vc_ch_act_in_input_datapath3 * 37]), .IN2(ext_req_v_i[147:111][0]), .S(req_in_jump_input_datapath3), .Q(from_input_req_in_jump_input_datapath3put_datapath3[vc_ch_act_in_input_datapath3 * 37]));
+    MUX21X1 U0013 (.IN1(from_input_req_in_jump_input_datapath3put_datapath3[vc_ch_act_in_input_datapath3*37+2]), .IN2(vc_ch_act_in_input_datapath3[1]), .S(req_in_jump_input_datapath3), .Q(from_input_req_in_jump_input_datapath3put_datapath3[vc_ch_act_in_input_datapath3*37+2]));
+    MUX21X1 U0014 (.IN1(from_input_req_in_jump_input_datapath3put_datapath3[vc_ch_act_in_input_datapath3*37+1]), .IN2(vc_ch_act_in_input_datapath3[0]), .S(req_in_jump_input_datapath3), .Q(from_input_req_in_jump_input_datapath3put_datapath3[vc_ch_act_in_input_datapath3*37+1]));
+    MUX21X1 U0015 (.IN1(ext_resp_v_o[4:3][0]), .IN2(from_input_resp_input_datapath3[vc_ch_act_in_input_datapath3]), .S(req_in_jump_input_datapath3), .Q(ext_resp_v_o[4:3][0]));
+
+    INVX1 U041 ( .A(req_in_jump_input_datapath3), .Y(req_in_jump_input_datapath3_not) );
+    MUX21X1 U0016 (.IN1(ext_resp_v_o[4:3][0]), .IN2(1'sb1), .S(req_in_jump_input_datapath3_not), .Q(ext_resp_v_o[4:3][0]));
+    BUFX1 U34(.A(from_input_req_in_jump_input_datapath3put_datapath3[34]), .Y(ext_req_v_i[147:111][34]));
+
+    XOR2X1 U0222 ( .IN1(_sv2v_jump_input_datapath3[1]), .IN2(1'b1), .Q(xor1resu_input_datapath3) );
+    MUX21X1 U0017 (.IN1(_sv2v_jump_input_datapath3[0]), .IN2(1'b0), .S(xor1resu_input_datapath3), .Q(_sv2v_jump_input_datapath3[0]));
+    MUX21X1 U0018 (.IN1(_sv2v_jump_input_datapath3[1]), .IN2(1'b0), .S(xor1resu_input_datapath3), .Q(_sv2v_jump_input_datapath3[1]));
+    AND2X1 U38123 ( .IN1(xor1resu_input_datapath3), .IN2(to_output_req_in_jump_input_datapath3put_datapath3[j_input_datapath3*37]), .Q(and2resu_input_datapath3) );
+    MUX21X1 U0019 (.IN1(vc_ch_act_out_input_datapath3[0]), .IN2(j_input_datapath3[0]), .S(and2resu_input_datapath3), .Q(vc_ch_act_out_input_datapath3[0]));
+    MUX21X1 U0020 (.IN1(vc_ch_act_out_input_datapath3[1]), .IN2(j_input_datapath3[1]), .S(and2resu_input_datapath3), .Q(vc_ch_act_out_input_datapath3[1]));
+    MUX21X1 U0021 (.IN1(req_out_jump_input_datapath3), .IN2(1'b1), .S(and2resu_input_datapath3), .Q(req_out_jump_input_datapath3));
+    MUX21X1 U0022 (.IN1(_sv2v_jump_input_datapath3[0]), .IN2(1'b0), .S(and2resu_input_datapath3), .Q(_sv2v_jump_input_datapath3[0]));
+    MUX21X1 U0023 (.IN1(_sv2v_jump_input_datapath3[1]), .IN2(1'b1), .S(and2resu_input_datapath3), .Q(_sv2v_jump_input_datapath3[1]));
+    HADDX1 U00021 ( .A0(j_input_datapath3[0]), .B0(1'b1), .C1(j_input_datapath3[1]), .SO(j_input_datapath3[0]) );
+    HADDX1 U00022 ( .A0(j_input_datapath3[0]), .B0(1'b1), .C1(j_input_datapath3[1]), .SO(j_input_datapath3[0]) );
+    AND2X1 U38111 ( .IN1(xor1resu_input_datapath3), .IN2(to_output_req_in_jump_input_datapath3put_datapath3[j_input_datapath3*37]), .Q(and3resu) );
+    NAND2X1 U29311(.A(_sv2v_jump_input_datapath3[0]),.B(_sv2v_jump_input_datapath3[1]),.Y(nand1resu_input_datapath33));
+    MUX21X1 U00212 (.IN1(_sv2v_jump_input_datapath3[0]), .IN2(1'b0), .S(nand1resu_input_datapath33), .Q(_sv2v_jump_input_datapath3[0]));
+    MUX21X1 U00213 (.IN1(_sv2v_jump_input_datapath3[1]), .IN2(1'b0), .S(nand1resu_input_datapath33), .Q(_sv2v_jump_input_datapath3[1]));
+    XNOR2X1 U17581 (.IN1(_sv2v_jump_input_datapath3[0]), .IN2(_sv2v_jump_input_datapath3[1]), .Q(xnor23resu_input_datapath3) );
+    AND2X1 U38111 ( .IN1(xnor23resu_input_datapath3), .IN2(req_out_jump_input_datapath3), .Q(and4resu_input_datapath3) );
+
+    MUX21X1 U3(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+3]),.IN2(int_req_v[147:111][3]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+3]));
+	MUX21X1 U4(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+4]),.IN2(int_req_v[147:111][4]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+4]));
+	MUX21X1 U5(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+5]),.IN2(int_req_v[147:111][5]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+5]));
+	MUX21X1 U6(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+6]),.IN2(int_req_v[147:111][6]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+6]));
+	MUX21X1 U7(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+7]),.IN2(int_req_v[147:111][7]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+7]));
+	MUX21X1 U8(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+8]),.IN2(int_req_v[147:111][8]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+8]));
+	MUX21X1 U9(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+9]),.IN2(int_req_v[147:111][9]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+9]));
+	MUX21X1 U10(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+10]),.IN2(int_req_v[147:111][10]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+10]));
+	MUX21X1 U11(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+11]),.IN2(int_req_v[147:111][11]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+11]));
+	MUX21X1 U12(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+12]),.IN2(int_req_v[147:111][12]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+12]));
+	MUX21X1 U13(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+13]),.IN2(int_req_v[147:111][13]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+13]));
+	MUX21X1 U14(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+14]),.IN2(int_req_v[147:111][14]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+14]));
+	MUX21X1 U15(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+15]),.IN2(int_req_v[147:111][15]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+15]));
+	MUX21X1 U16(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+16]),.IN2(int_req_v[147:111][16]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+16]));
+	MUX21X1 U17(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+17]),.IN2(int_req_v[147:111][17]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+17]));
+	MUX21X1 U18(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+18]),.IN2(int_req_v[147:111][18]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+18]));
+	MUX21X1 U19(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+19]),.IN2(int_req_v[147:111][19]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+19]));
+	MUX21X1 U20(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+20]),.IN2(int_req_v[147:111][20]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+20]));
+	MUX21X1 U21(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+21]),.IN2(int_req_v[147:111][21]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+21]));
+	MUX21X1 U22(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+22]),.IN2(int_req_v[147:111][22]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+22]));
+	MUX21X1 U23(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+23]),.IN2(int_req_v[147:111][23]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+23]));
+	MUX21X1 U24(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+24]),.IN2(int_req_v[147:111][24]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+24]));
+	MUX21X1 U25(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+25]),.IN2(int_req_v[147:111][25]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+25]));
+	MUX21X1 U26(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+26]),.IN2(int_req_v[147:111][26]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+26]));
+	MUX21X1 U27(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+27]),.IN2(int_req_v[147:111][27]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+27]));
+	MUX21X1 U28(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+28]),.IN2(int_req_v[147:111][28]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+28]));
+	MUX21X1 U29(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+29]),.IN2(int_req_v[147:111][29]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+29]));
+	MUX21X1 U30(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+30]),.IN2(int_req_v[147:111][30]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+30]));
+	MUX21X1 U31(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+31]),.IN2(int_req_v[147:111][31]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+31]));
+	MUX21X1 U32(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+32]),.IN2(int_req_v[147:111][32]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+32]));
+	MUX21X1 U33(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+33]),.IN2(int_req_v[147:111][33]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+33]));
+	MUX21X1 U34(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+34]),.IN2(int_req_v[147:111][34]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+34]));
+	MUX21X1 U35(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+35]),.IN2(int_req_v[147:111][35]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+35]));
+	MUX21X1 U36(.IN1(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+36]),.IN2(int_req_v[147:111][36]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_ouot*37)+36]));
+
+	MUX21X1 U321111(.IN1(int_req_v[147:111][0]),.IN2(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_out_input_datapath3 * 37)]), .S(and4resu_input_datapath3), .Q(int_req_v[147:111][0]));
+	MUX21X1 U331112(.IN1(int_req_v[147:111][1]),.IN2(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_out_input_datapath3*37)+1]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_out_input_datapath3*37)+1]));
+	MUX21X1 U331122(.IN1(int_req_v[147:111][2]),.IN2(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_out_input_datapath3*37)+2]), .S(and4resu_input_datapath3), .Q(to_output_req_in_jump_input_datapath3put_datapath3[(vc_ch_act_out_input_datapath3*37)+2]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath3[vc_ch_act_out_input_datapath3]),.IN2(int_resp_v[4:3]), .S(and4resu_input_datapath3), .Q(to_output_resp_input_datapath3[vc_ch_act_out_input_datapath3]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath3[vc_ch_act_out_input_datapath3+1]),.IN2(int_resp_v[4:3]), .S(and4resu_input_datapath3), .Q(to_output_resp_input_datapath3[vc_ch_act_out_input_datapath3+1]));
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule4[0]), .Y(next_read_ptr_fifomodule4[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule4[1]), .Y(next_read_ptr_fifomodule4[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule4[0]), .Y(next_write_ptr_fifomodule4[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule4[1]), .Y(next_write_ptr_fifomodule4[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule4[0]), .IN2(read_ptr_ff_fifomodule4[0]), .Q(u1temp_fifomodule4) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule4[1]), .IN2(read_ptr_ff_fifomodule4[1]), .Q(u2temp_fifomodule4) );
+	AND2X1 U3 ( .A(u1temp_fifomodule4), .B(u2temp_fifomodule4), .Y(empty_vc_buffer4) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule4[1]), .B(read_ptr_ff_fifomodule4[1]), .Y(u4temp_fifomodule4) );
+	AND2X1 U5 ( .A(u1temp_fifomodule4), .B(u4temp_fifomodule4), .Y(full_vc_buffer4) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule4[read_ptr_ff_fifomodule4[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[36:3][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule4[read_ptr_ff_fifomodule4[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[36:3][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule4[read_ptr_ff_fifomodule4[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[36:3][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule4[read_ptr_ff_fifomodule4[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[36:3][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule4[read_ptr_ff_fifomodule4[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[36:3][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule4[read_ptr_ff_fifomodule4[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[36:3][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule4[read_ptr_ff_fifomodule4[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[36:3][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule4[read_ptr_ff_fifomodule4[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[36:3][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer4), .Y(full_vc_buffer4_not_fifomodule) );
+	AND2X1 U8 ( .A(write_flit4_vc_buffer4), .B(full_vc_buffer4_not_fifomodule), .Y(u7temp_fifomodule4) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule4), .Q(u9temp_fifomodule4));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule4[0]), .B0(u9temp_fifomodule4), .C1(u10carry_fifomodule4), .SO(next_write_ptr_fifomodule4[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule4), .B0(write_ptr_ff_fifomodule4[1]), .C1(u11carry_fifomodule4), .SO(next_write_ptr_fifomodule4[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer4), .Y(empty_vc_buffer4_not_fifomodule) );
+	AND2X1 U13 ( .A(read_flit4_vc_buffer4), .B(empty_vc_buffer4_not_fifomodule), .Y(u13temp_fifomodule4) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule4), .Q(u14temp_fifomodule4));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule4[0]), .B0(u14temp_fifomodule4), .C1(u15carry_fifomodule4), .SO(next_read_ptr_fifomodule4[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule4), .B0(read_ptr_ff_fifomodule4[1]), .C1(u16carry_fifomodule4), .SO(next_read_ptr_fifomodule4[1]) );
+
+	AND2X1 U17 ( .A(write_flit4_vc_buffer4), .B(full_vc_buffer4), .Y(u17res_fifomodule4) );
+	AND2X1 U18 ( .A(read_flit4_vc_buffer4), .B(empty_vc_buffer4), .Y(u18res_fifomodule4) );
+    OR2X1 U19 ( .A(u17res_fifomodule4), .B(u18res_fifomodule4), .Y(error_vc_buffer4) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule4[0]), .B(read_ptr_ff_fifomodule4[0]), .Y(fifo_ocup_fifomodule4[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule4[0]), .Y(write_ptr_ff_fifomodule4_0_not4) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule4_0_not4), .B(read_ptr_ff_fifomodule4[0]), .Y(b0wire_fifomodule4) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule4[1]), .B(read_ptr_ff_fifomodule4[1]), .Y(u23temp_fifomodule4) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule4[1]), .Y(write_ptr_ff_fifomodule4_1_not4) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule4[1]), .B(write_ptr_ff_fifomodule4_1_not4), .Y(boutb_fifomodule4) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule4), .B(b0wire_fifomodule4), .Y(fifo_ocup_fifomodule4[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule4), .Y(u23temp_fifomodule4_not_fifomodule4) );
+	AND2X1 U26 ( .A(b0wire_fifomodule4), .B(u23temp_fifomodule4_not_fifomodule4), .Y(bouta_fifomodule4) );
+	OR2X1 U27 ( .A(bouta_fifomodule4), .B(boutb_fifomodule4), .Y(boutmain_fifomodule4) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule4[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule4[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule4) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule4) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule4), .D(1'b0), .Q(write_ptr_ff_fifomodule4[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule4), .D(1'b0), .Q(read_ptr_ff_fifomodule4[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule4), .D(1'b0), .Q(fifo_ff_fifomodule4[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule4), .D(1'b0), .Q(write_ptr_ff_fifomodule4[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule4), .D(1'b0), .Q(read_ptr_ff_fifomodule4[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule4), .D(1'b0), .Q(fifo_ff_fifomodule4[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule4[0]), .Q(write_ptr_ff_fifomodule4[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule4[1]), .Q(write_ptr_ff_fifomodule4[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule4[0]), .Q(read_ptr_ff_fifomodule4[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule4[1]), .Q(read_ptr_ff_fifomodule4[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule4), .D(from_input_req_in_jump_input_datapath4put_datapath4[36:3][0]), .Q(fifo_ff_fifomodule4[write_ptr_ff_fifomodule4[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule4), .D(from_input_req_in_jump_input_datapath4put_datapath4[36:3][1]), .Q(fifo_ff_fifomodule4[write_ptr_ff_fifomodule4[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule4), .D(from_input_req_in_jump_input_datapath4put_datapath4[36:3][2]), .Q(fifo_ff_fifomodule4[write_ptr_ff_fifomodule4[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule4), .D(from_input_req_in_jump_input_datapath4put_datapath4[36:3][3]), .Q(fifo_ff_fifomodule4[write_ptr_ff_fifomodule4[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule4), .D(from_input_req_in_jump_input_datapath4put_datapath4[36:3][4]), .Q(fifo_ff_fifomodule4[write_ptr_ff_fifomodule4[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule4), .D(from_input_req_in_jump_input_datapath4put_datapath4[36:3][5]), .Q(fifo_ff_fifomodule4[write_ptr_ff_fifomodule4[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule4), .D(from_input_req_in_jump_input_datapath4put_datapath4[36:3][6]), .Q(fifo_ff_fifomodule4[write_ptr_ff_fifomodule4[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule4), .D(from_input_req_in_jump_input_datapath4put_datapath4[36:3][7]), .Q(fifo_ff_fifomodule4[write_ptr_ff_fifomodule4[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer4), .Y(next_locked_vc_buffer4) );
+    BUFX1 U0(.A(flit4[0]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][0]));
+	BUFX1 U1(.A(flit4[1]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][1]));
+	BUFX1 U2(.A(flit4[2]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][2]));
+	BUFX1 U3(.A(flit4[3]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][3]));
+	BUFX1 U4(.A(flit4[4]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][4]));
+	BUFX1 U5(.A(flit4[5]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][5]));
+	BUFX1 U6(.A(flit4[6]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][6]));
+	BUFX1 U7(.A(flit4[7]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][7]));
+	BUFX1 U8(.A(flit4[8]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][8]));
+	BUFX1 U9(.A(flit4[9]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][9]));
+	BUFX1 U10(.A(flit4[10]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][10]));
+	BUFX1 U11(.A(flit4[11]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][11]));
+	BUFX1 U12(.A(flit4[12]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][12]));
+	BUFX1 U13(.A(flit4[13]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][13]));
+	BUFX1 U14(.A(flit4[14]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][14]));
+	BUFX1 U15(.A(flit4[15]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][15]));
+	BUFX1 U16(.A(flit4[16]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][16]));
+	BUFX1 U17(.A(flit4[17]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][17]));
+	BUFX1 U18(.A(flit4[18]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][18]));
+	BUFX1 U19(.A(flit4[19]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][19]));
+	BUFX1 U20(.A(flit4[20]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][20]));
+	BUFX1 U21(.A(flit4[21]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][21]));
+	BUFX1 U22(.A(flit4[22]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][22]));
+	BUFX1 U23(.A(flit4[23]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][23]));
+	BUFX1 U24(.A(flit4[24]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][24]));
+	BUFX1 U25(.A(flit4[25]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][25]));
+	BUFX1 U26(.A(flit4[26]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][26]));
+	BUFX1 U27(.A(flit4[27]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][27]));
+	BUFX1 U28(.A(flit4[28]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][28]));
+	BUFX1 U29(.A(flit4[29]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][29]));
+	BUFX1 U30(.A(flit4[30]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][30]));
+	BUFX1 U31(.A(flit4[31]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][31]));
+	BUFX1 U32(.A(flit4[32]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][32]));
+	BUFX1 U33(.A(flit4[33]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[36:3][33]));
+    NOR2X1 U34 ( .IN1(flit4[33]), .IN2(flit4[32]), .QN(norres_vc_buffer4_vc_buffer4) );
+    OR4X1 U35 ( .IN1(flit4[29]), .IN2(flit4[28]), .IN3(flit4[27]), .IN4(flit4[26]), .Y(or1res_vc_buffer4) );
+    OR4X1 U35 ( .IN1(flit4[25]), .IN2(flit4[24]), .IN3(flit4[23]), .IN4(flit4[22]), .Y(or2res_vc_buffer4) );
+    OR2X1 U36 ( .A(or1res_vc_buffer4), .B(or2res_vc_buffer4), .Y(orres_vc_buffer4) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath4put_datapath4[0]), .IN2(norres_vc_buffer4_vc_buffer4), .IN3(orres_vc_buffer4), .Q(finres1_vc_buffer4) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer4), .IN2(1'b1), .S(finres1_vc_buffer4), .Q(next_locked_vc_buffer4);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath4put_datapath4[0]), .IN2(flit4[33]), .IN3(flit4[32]), .Q(andres1_vc_buffer4) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer4), .IN2(1'b0), .S(andres1_vc_buffer4), .Q(next_locked_vc_buffer4);
+
+    INVX1 U41 ( .A(full_vc_buffer4), .Y(full_vc_buffer4_not) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer4), .Y(locked_by_route_ff_vc_buffer4_not) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer4_not), .S(norres_vc_buffer4_vc_buffer4), .Q(thirdand_vc_buffer4);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath4put_datapath4[0]), .IN2(full_vc_buffer4_not), .IN3(thirdand_vc_buffer4), .Q(write_flit4_vc_buffer4) );
+    AND2X1 U45 ( .IN1(full_vc_buffer4_not), .IN2(norres_vc_buffer4_vc_buffer4), .Q(from_input_resp_input_datapath4[0]) );
+    INVX1 U46 ( .A(empty_vc_buffer4), .Y(to_output_req_in_jump_input_datapath4put_datapath4[0]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath4put_datapath4[0]), .IN2(to_output_resp_input_datapath4[0]), .Q(read_flit4_vc_buffer4) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath4put_datapath4[2:1]), .Y(2'b00));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer4), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer4);
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule41[0]), .Y(next_read_ptr_fifomodule41[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule41[1]), .Y(next_read_ptr_fifomodule41[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule41[0]), .Y(next_write_ptr_fifomodule41[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule41[1]), .Y(next_write_ptr_fifomodule41[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule41[0]), .IN2(read_ptr_ff_fifomodule41[0]), .Q(u1temp_fifomodule41) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule41[1]), .IN2(read_ptr_ff_fifomodule41[1]), .Q(u2temp_fifomodule41) );
+	AND2X1 U3 ( .A(u1temp_fifomodule41), .B(u2temp_fifomodule41), .Y(empty_vc_buffer41) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule41[1]), .B(read_ptr_ff_fifomodule41[1]), .Y(u4temp_fifomodule41) );
+	AND2X1 U5 ( .A(u1temp_fifomodule41), .B(u4temp_fifomodule41), .Y(full_vc_buffer41) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule41[read_ptr_ff_fifomodule41[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer41), .Q(to_output_req_in_jump_input_datapath4put_datapath4[73:40][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule41[read_ptr_ff_fifomodule41[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer41), .Q(to_output_req_in_jump_input_datapath4put_datapath4[73:40][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule41[read_ptr_ff_fifomodule41[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer41), .Q(to_output_req_in_jump_input_datapath4put_datapath4[73:40][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule41[read_ptr_ff_fifomodule41[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer41), .Q(to_output_req_in_jump_input_datapath4put_datapath4[73:40][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule41[read_ptr_ff_fifomodule41[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer41), .Q(to_output_req_in_jump_input_datapath4put_datapath4[73:40][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule41[read_ptr_ff_fifomodule41[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer41), .Q(to_output_req_in_jump_input_datapath4put_datapath4[73:40][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule41[read_ptr_ff_fifomodule41[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer41), .Q(to_output_req_in_jump_input_datapath4put_datapath4[73:40][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule41[read_ptr_ff_fifomodule41[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer41), .Q(to_output_req_in_jump_input_datapath4put_datapath4[73:40][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer41), .Y(full_vc_buffer41_not1_fifomodule1) );
+	AND2X1 U8 ( .A(write_flit41_vc_buffer14), .B(full_vc_buffer41_not1_fifomodule1), .Y(u7temp_fifomodule41) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule41), .Q(u9temp_fifomodule41));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule41[0]), .B0(u9temp_fifomodule41), .C1(u10carry_fifomodule41), .SO(next_write_ptr_fifomodule41[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule41), .B0(write_ptr_ff_fifomodule41[1]), .C1(u11carry_fifomodule41), .SO(next_write_ptr_fifomodule41[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer41), .Y(empty_vc_buffer41_not_fifomodule1) );
+	AND2X1 U13 ( .A(read_flit41_vc_buffer14), .B(empty_vc_buffer41_not_fifomodule1), .Y(u13temp_fifomodule41) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule41), .Q(u14temp_fifomodule41));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule41[0]), .B0(u14temp_fifomodule41), .C1(u15carry_fifomodule41), .SO(next_read_ptr_fifomodule41[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule41), .B0(read_ptr_ff_fifomodule41[1]), .C1(u16carry_fifomodule41), .SO(next_read_ptr_fifomodule41[1]) );
+
+	AND2X1 U17 ( .A(write_flit41_vc_buffer14), .B(full_vc_buffer41), .Y(u17res_fifomodule41) );
+	AND2X1 U18 ( .A(read_flit41_vc_buffer14), .B(empty_vc_buffer41), .Y(u18res_fifomodule41) );
+    OR2X1 U19 ( .A(u17res_fifomodule41), .B(u18res_fifomodule41), .Y(error_vc_buffer41) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule41[0]), .B(read_ptr_ff_fifomodule41[0]), .Y(fifo_ocup_fifomodule41[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule41[0]), .Y(write_ptr_ff_fifomodule41_0_not14) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule41_0_not14), .B(read_ptr_ff_fifomodule41[0]), .Y(b0wire_fifomodule41) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule41[1]), .B(read_ptr_ff_fifomodule41[1]), .Y(u23temp_fifomodule41) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule41[1]), .Y(write_ptr_ff_fifomodule41_1_not14) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule41[1]), .B(write_ptr_ff_fifomodule41_1_not14), .Y(boutb_fifomodule41) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule41), .B(b0wire_fifomodule41), .Y(fifo_ocup_fifomodule41[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule41), .Y(u23temp_fifomodule41_not_fifomodule1) );
+	AND2X1 U26 ( .A(b0wire_fifomodule41), .B(u23temp_fifomodule41_not_fifomodule1), .Y(bouta_fifomodule41) );
+	OR2X1 U27 ( .A(bouta_fifomodule41), .B(boutb_fifomodule41), .Y(boutmain_fifomodule41) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule41[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule41[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule41) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule41) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule41), .D(1'b0), .Q(write_ptr_ff_fifomodule41[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule41), .D(1'b0), .Q(read_ptr_ff_fifomodule41[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule41), .D(1'b0), .Q(fifo_ff_fifomodule41[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule41), .D(1'b0), .Q(write_ptr_ff_fifomodule41[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule41), .D(1'b0), .Q(read_ptr_ff_fifomodule41[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule41), .D(1'b0), .Q(fifo_ff_fifomodule41[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule41[0]), .Q(write_ptr_ff_fifomodule41[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule41[1]), .Q(write_ptr_ff_fifomodule41[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule41[0]), .Q(read_ptr_ff_fifomodule41[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule41[1]), .Q(read_ptr_ff_fifomodule41[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule41), .D(from_input_req_in_jump_input_datapath4put_datapath4[73:40][0]), .Q(fifo_ff_fifomodule41[write_ptr_ff_fifomodule41[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule41), .D(from_input_req_in_jump_input_datapath4put_datapath4[73:40][1]), .Q(fifo_ff_fifomodule41[write_ptr_ff_fifomodule41[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule41), .D(from_input_req_in_jump_input_datapath4put_datapath4[73:40][2]), .Q(fifo_ff_fifomodule41[write_ptr_ff_fifomodule41[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule41), .D(from_input_req_in_jump_input_datapath4put_datapath4[73:40][3]), .Q(fifo_ff_fifomodule41[write_ptr_ff_fifomodule41[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule41), .D(from_input_req_in_jump_input_datapath4put_datapath4[73:40][4]), .Q(fifo_ff_fifomodule41[write_ptr_ff_fifomodule41[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule41), .D(from_input_req_in_jump_input_datapath4put_datapath4[73:40][5]), .Q(fifo_ff_fifomodule41[write_ptr_ff_fifomodule41[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule41), .D(from_input_req_in_jump_input_datapath4put_datapath4[73:40][6]), .Q(fifo_ff_fifomodule41[write_ptr_ff_fifomodule41[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule41), .D(from_input_req_in_jump_input_datapath4put_datapath4[73:40][7]), .Q(fifo_ff_fifomodule41[write_ptr_ff_fifomodule41[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer41), .Y(next_locked_vc_buffer41) );
+    BUFX1 U0(.A(flit41[0]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][0]));
+	BUFX1 U1(.A(flit41[1]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][1]));
+	BUFX1 U2(.A(flit41[2]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][2]));
+	BUFX1 U3(.A(flit41[3]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][3]));
+	BUFX1 U4(.A(flit41[4]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][4]));
+	BUFX1 U5(.A(flit41[5]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][5]));
+	BUFX1 U6(.A(flit41[6]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][6]));
+	BUFX1 U7(.A(flit41[7]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][7]));
+	BUFX1 U8(.A(flit41[8]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][8]));
+	BUFX1 U9(.A(flit41[9]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][9]));
+	BUFX1 U10(.A(flit41[10]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][10]));
+	BUFX1 U11(.A(flit41[11]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][11]));
+	BUFX1 U12(.A(flit41[12]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][12]));
+	BUFX1 U13(.A(flit41[13]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][13]));
+	BUFX1 U14(.A(flit41[14]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][14]));
+	BUFX1 U15(.A(flit41[15]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][15]));
+	BUFX1 U16(.A(flit41[16]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][16]));
+	BUFX1 U17(.A(flit41[17]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][17]));
+	BUFX1 U18(.A(flit41[18]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][18]));
+	BUFX1 U19(.A(flit41[19]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][19]));
+	BUFX1 U20(.A(flit41[20]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][20]));
+	BUFX1 U21(.A(flit41[21]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][21]));
+	BUFX1 U22(.A(flit41[22]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][22]));
+	BUFX1 U23(.A(flit41[23]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][23]));
+	BUFX1 U24(.A(flit41[24]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][24]));
+	BUFX1 U25(.A(flit41[25]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][25]));
+	BUFX1 U26(.A(flit41[26]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][26]));
+	BUFX1 U27(.A(flit41[27]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][27]));
+	BUFX1 U28(.A(flit41[28]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][28]));
+	BUFX1 U29(.A(flit41[29]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][29]));
+	BUFX1 U30(.A(flit41[30]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][30]));
+	BUFX1 U31(.A(flit41[31]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][31]));
+	BUFX1 U32(.A(flit41[32]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][32]));
+	BUFX1 U33(.A(flit41[33]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[73:40][33]));
+    NOR2X1 U34 ( .IN1(flit41[33]), .IN2(flit41[32]), .QN(norres_vc_buffer41_vc_buffer1) );
+    OR4X1 U35 ( .IN1(flit41[29]), .IN2(flit41[28]), .IN3(flit41[27]), .IN4(flit41[26]), .Y(or1res_vc_buffer41) );
+    OR4X1 U35 ( .IN1(flit41[25]), .IN2(flit41[24]), .IN3(flit41[23]), .IN4(flit41[22]), .Y(or2res_vc_buffer41) );
+    OR2X1 U36 ( .A(or1res_vc_buffer41), .B(or2res_vc_buffer41), .Y(orres_vc_buffer41) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath4put_datapath4[37]), .IN2(norres_vc_buffer41_vc_buffer1), .IN3(orres_vc_buffer41), .Q(finres1_vc_buffer41) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer41), .IN2(1'b1), .S(finres1_vc_buffer41), .Q(next_locked_vc_buffer41);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath4put_datapath4[37]), .IN2(flit41[33]), .IN3(flit41[32]), .Q(andres1_vc_buffer41) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer41), .IN2(1'b0), .S(andres1_vc_buffer41), .Q(next_locked_vc_buffer41);
+
+    INVX1 U41 ( .A(full_vc_buffer41), .Y(full_vc_buffer41_not1) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer41), .Y(locked_by_route_ff_vc_buffer41_not1) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer41_not1), .S(norres_vc_buffer41_vc_buffer1), .Q(thirdand_vc_buffer41);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath4put_datapath4[37]), .IN2(full_vc_buffer41_not1), .IN3(thirdand_vc_buffer41), .Q(write_flit41_vc_buffer14) );
+    AND2X1 U45 ( .IN1(full_vc_buffer41_not1), .IN2(norres_vc_buffer41_vc_buffer1), .Q(from_input_resp_input_datapath4[1]) );
+    INVX1 U46 ( .A(empty_vc_buffer41), .Y(to_output_req_in_jump_input_datapath4put_datapath4[37]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath4put_datapath4[37]), .IN2(to_output_resp_input_datapath4[1]), .Q(read_flit41_vc_buffer14) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath4put_datapath4[39:38]), .Y(2'b01));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer41), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer41);
+
+
+	BUFX1 U00 ( .A(read_ptr_ff_fifomodule42[0]), .Y(next_read_ptr_fifomodule42[0]) );
+	BUFX1 U01 ( .A(read_ptr_ff_fifomodule42[1]), .Y(next_read_ptr_fifomodule42[1]) );
+	BUFX1 U02 ( .A(write_ptr_ff_fifomodule42[0]), .Y(next_write_ptr_fifomodule42[0]) );
+	BUFX1 U03 ( .A(write_ptr_ff_fifomodule42[1]), .Y(next_write_ptr_fifomodule42[1]) );
+
+	XNOR2X1 U1 ( .IN1(write_ptr_ff_fifomodule42[0]), .IN2(read_ptr_ff_fifomodule42[0]), .Q(u1temp_fifomodule42) );
+	XNOR2X1 U2 ( .IN1(write_ptr_ff_fifomodule42[1]), .IN2(read_ptr_ff_fifomodule42[1]), .Q(u2temp_fifomodule42) );
+	AND2X1 U3 ( .A(u1temp_fifomodule42), .B(u2temp_fifomodule42), .Y(empty_vc_buffer42) );
+	XOR2X1 U4 ( .A(write_ptr_ff_fifomodule42[1]), .B(read_ptr_ff_fifomodule42[1]), .Y(u4temp_fifomodule42) );
+	AND2X1 U5 ( .A(u1temp_fifomodule42), .B(u4temp_fifomodule42), .Y(full_vc_buffer42) );
+	MUX21X1 U6 (.IN1(fifo_ff_fifomodule42[read_ptr_ff_fifomodule42[0] * 8]), .IN2(1'b0), .S(empty_vc_buffer42), .Q(to_output_req_in_jump_input_datapath4put_datapath4[110:77][0]));
+	MUX21X1 U61 (.IN1(fifo_ff_fifomodule42[read_ptr_ff_fifomodule42[0] * 8+1]), .IN2(1'b0), .S(empty_vc_buffer42), .Q(to_output_req_in_jump_input_datapath4put_datapath4[110:77][1]));
+	MUX21X1 U62 (.IN1(fifo_ff_fifomodule42[read_ptr_ff_fifomodule42[0] * 8+2]), .IN2(1'b0), .S(empty_vc_buffer42), .Q(to_output_req_in_jump_input_datapath4put_datapath4[110:77][2]));
+	MUX21X1 U63 (.IN1(fifo_ff_fifomodule42[read_ptr_ff_fifomodule42[0] * 8+3]), .IN2(1'b0), .S(empty_vc_buffer42), .Q(to_output_req_in_jump_input_datapath4put_datapath4[110:77][3]));
+	MUX21X1 U64 (.IN1(fifo_ff_fifomodule42[read_ptr_ff_fifomodule42[0] * 8+4]), .IN2(1'b0), .S(empty_vc_buffer42), .Q(to_output_req_in_jump_input_datapath4put_datapath4[110:77][4]));
+	MUX21X1 U65 (.IN1(fifo_ff_fifomodule42[read_ptr_ff_fifomodule42[0] * 8+5]), .IN2(1'b0), .S(empty_vc_buffer42), .Q(to_output_req_in_jump_input_datapath4put_datapath4[110:77][5]));
+	MUX21X1 U66 (.IN1(fifo_ff_fifomodule42[read_ptr_ff_fifomodule42[0] * 8+6]), .IN2(1'b0), .S(empty_vc_buffer42), .Q(to_output_req_in_jump_input_datapath4put_datapath4[110:77][6]));
+	MUX21X1 U67 (.IN1(fifo_ff_fifomodule42[read_ptr_ff_fifomodule42[0] * 8+7]), .IN2(1'b0), .S(empty_vc_buffer42), .Q(to_output_req_in_jump_input_datapath4put_datapath4[110:77][7]));
+
+	INVX1 U7 ( .A(full_vc_buffer42), .Y(full_vc_buffer42_not2_fifomodule2) );
+	AND2X1 U8 ( .A(write_flit42_vc_buffer24), .B(full_vc_buffer42_not2_fifomodule2), .Y(u7temp_fifomodule42) );
+	MUX21X1 U9 (.IN1(1'b0), .IN2(1'b1), .S(u7temp_fifomodule42), .Q(u9temp_fifomodule42));
+	HADDX1 U10 ( .A0(write_ptr_ff_fifomodule42[0]), .B0(u9temp_fifomodule42), .C1(u10carry_fifomodule42), .SO(next_write_ptr_fifomodule42[0]) );
+	HADDX1 U11 ( .A0(u10carry_fifomodule42), .B0(write_ptr_ff_fifomodule42[1]), .C1(u11carry_fifomodule42), .SO(next_write_ptr_fifomodule42[1]) );
+
+	INVX1 U12 ( .A(empty_vc_buffer42), .Y(empty_vc_buffer42_not_fifomodule2) );
+	AND2X1 U13 ( .A(read_flit42_vc_buffer24), .B(empty_vc_buffer42_not_fifomodule2), .Y(u13temp_fifomodule42) );
+	MUX21X1 U14 (.IN1(1'b0), .IN2(1'b1), .S(u13temp_fifomodule42), .Q(u14temp_fifomodule42));
+	HADDX1 U15 ( .A0(read_ptr_ff_fifomodule42[0]), .B0(u14temp_fifomodule42), .C1(u15carry_fifomodule42), .SO(next_read_ptr_fifomodule42[0]) );
+	HADDX1 U16 ( .A0(u15carry_fifomodule42), .B0(read_ptr_ff_fifomodule42[1]), .C1(u16carry_fifomodule42), .SO(next_read_ptr_fifomodule42[1]) );
+
+	AND2X1 U17 ( .A(write_flit42_vc_buffer24), .B(full_vc_buffer42), .Y(u17res_fifomodule42) );
+	AND2X1 U18 ( .A(read_flit42_vc_buffer24), .B(empty_vc_buffer42), .Y(u18res_fifomodule42) );
+    OR2X1 U19 ( .A(u17res_fifomodule42), .B(u18res_fifomodule42), .Y(error_vc_buffer42) );
+	XOR2X1 U20 ( .A(write_ptr_ff_fifomodule42[0]), .B(read_ptr_ff_fifomodule42[0]), .Y(fifo_ocup_fifomodule42[0]) );
+	INVX1 U21 ( .A(write_ptr_ff_fifomodule42[0]), .Y(write_ptr_ff_fifomodule42_0_not24) );
+	AND2X1 U22 ( .A(write_ptr_ff_fifomodule42_0_not24), .B(read_ptr_ff_fifomodule42[0]), .Y(b0wire_fifomodule42) );
+	XOR2X1 U23 ( .A(write_ptr_ff_fifomodule42[1]), .B(read_ptr_ff_fifomodule42[1]), .Y(u23temp_fifomodule42) );
+	INVX1 U24 ( .A(write_ptr_ff_fifomodule42[1]), .Y(write_ptr_ff_fifomodule42_1_not24) );
+	AND2X1 U25 ( .A(read_ptr_ff_fifomodule42[1]), .B(write_ptr_ff_fifomodule42_1_not24), .Y(boutb_fifomodule42) );
+	XOR2X1 U24 ( .A(u23temp_fifomodule42), .B(b0wire_fifomodule42), .Y(fifo_ocup_fifomodule42[1]) );
+	INVX1 U25 ( .A(u23temp_fifomodule42), .Y(u23temp_fifomodule42_not_fifomodule2) );
+	AND2X1 U26 ( .A(b0wire_fifomodule42), .B(u23temp_fifomodule42_not_fifomodule2), .Y(bouta_fifomodule42) );
+	OR2X1 U27 ( .A(bouta_fifomodule42), .B(boutb_fifomodule42), .Y(boutmain_fifomodule42) );
+	DFFX2 U28 ( .CLK(clk), .D(fifo_ocup_fifomodule42[0]), .Q(ocup_o[0]) );
+	DFFX2 U29 ( .CLK(clk), .D(fifo_ocup_fifomodule42[1]), .Q(ocup_o[1]) );
+	DFFX2 U30 ( .CLK(clk), .D(arst), .Q(arst_value_fifomodule42) );
+	DFFX2 U31 ( .CLK(arst), .D(arst), .Q(arst_value_fifomodule42) );
+	DFFX2 U32 ( .CLK(arst_value_fifomodule42), .D(1'b0), .Q(write_ptr_ff_fifomodule42[0]) );
+	DFFX2 U33 ( .CLK(arst_value_fifomodule42), .D(1'b0), .Q(read_ptr_ff_fifomodule42[0]) );
+	DFFX2 U34 ( .CLK(arst_value_fifomodule42), .D(1'b0), .Q(fifo_ff_fifomodule42[0]) );
+	DFFX2 U35 ( .CLK(arst_value_fifomodule42), .D(1'b0), .Q(write_ptr_ff_fifomodule42[1]) );
+	DFFX2 U36 ( .CLK(arst_value_fifomodule42), .D(1'b0), .Q(read_ptr_ff_fifomodule42[1]) );
+	DFFX2 U37 ( .CLK(arst_value_fifomodule42), .D(1'b0), .Q(fifo_ff_fifomodule42[1]) );
+
+	DFFX2 U38 ( .CLK(clk), .D(next_write_ptr_fifomodule42[0]), .Q(write_ptr_ff_fifomodule42[0]) );
+	DFFX2 U39 ( .CLK(clk), .D(next_write_ptr_fifomodule42[1]), .Q(write_ptr_ff_fifomodule42[1]) );
+	DFFX2 U40 ( .CLK(clk), .D(next_read_ptr_fifomodule42[0]), .Q(read_ptr_ff_fifomodule42[0]) );
+	DFFX2 U41 ( .CLK(clk), .D(next_read_ptr_fifomodule42[1]), .Q(read_ptr_ff_fifomodule42[1]) );
+	  
+
+	DFFX2 U42 ( .CLK(u7temp_fifomodule42), .D(from_input_req_in_jump_input_datapath4put_datapath4[110:77][0]), .Q(fifo_ff_fifomodule42[write_ptr_ff_fifomodule42[0]*8]) );
+	DFFX2 U43 ( .CLK(u7temp_fifomodule42), .D(from_input_req_in_jump_input_datapath4put_datapath4[110:77][1]), .Q(fifo_ff_fifomodule42[write_ptr_ff_fifomodule42[0]*8+1]) );
+	DFFX2 U44 ( .CLK(u7temp_fifomodule42), .D(from_input_req_in_jump_input_datapath4put_datapath4[110:77][2]), .Q(fifo_ff_fifomodule42[write_ptr_ff_fifomodule42[0]*8+2]) );
+	DFFX2 U45 ( .CLK(u7temp_fifomodule42), .D(from_input_req_in_jump_input_datapath4put_datapath4[110:77][3]), .Q(fifo_ff_fifomodule42[write_ptr_ff_fifomodule42[0]*8+3]) );
+	DFFX2 U46 ( .CLK(u7temp_fifomodule42), .D(from_input_req_in_jump_input_datapath4put_datapath4[110:77][4]), .Q(fifo_ff_fifomodule42[write_ptr_ff_fifomodule42[0]*8+4]) );
+	DFFX2 U47 ( .CLK(u7temp_fifomodule42), .D(from_input_req_in_jump_input_datapath4put_datapath4[110:77][5]), .Q(fifo_ff_fifomodule42[write_ptr_ff_fifomodule42[0]*8+5]) );
+	DFFX2 U48 ( .CLK(u7temp_fifomodule42), .D(from_input_req_in_jump_input_datapath4put_datapath4[110:77][6]), .Q(fifo_ff_fifomodule42[write_ptr_ff_fifomodule42[0]*8+6]) );
+	DFFX2 U49 ( .CLK(u7temp_fifomodule42), .D(from_input_req_in_jump_input_datapath4put_datapath4[110:77][7]), .Q(fifo_ff_fifomodule42[write_ptr_ff_fifomodule42[0]*8+7]) );
+
+    BUFX1 U00 ( .A(locked_by_route_ff_vc_buffer42), .Y(next_locked_vc_buffer42) );
+    BUFX1 U0(.A(flit42[0]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][0]));
+	BUFX1 U1(.A(flit42[1]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][1]));
+	BUFX1 U2(.A(flit42[2]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][2]));
+	BUFX1 U3(.A(flit42[3]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][3]));
+	BUFX1 U4(.A(flit42[4]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][4]));
+	BUFX1 U5(.A(flit42[5]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][5]));
+	BUFX1 U6(.A(flit42[6]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][6]));
+	BUFX1 U7(.A(flit42[7]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][7]));
+	BUFX1 U8(.A(flit42[8]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][8]));
+	BUFX1 U9(.A(flit42[9]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][9]));
+	BUFX1 U10(.A(flit42[10]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][10]));
+	BUFX1 U11(.A(flit42[11]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][11]));
+	BUFX1 U12(.A(flit42[12]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][12]));
+	BUFX1 U13(.A(flit42[13]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][13]));
+	BUFX1 U14(.A(flit42[14]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][14]));
+	BUFX1 U15(.A(flit42[15]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][15]));
+	BUFX1 U16(.A(flit42[16]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][16]));
+	BUFX1 U17(.A(flit42[17]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][17]));
+	BUFX1 U18(.A(flit42[18]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][18]));
+	BUFX1 U19(.A(flit42[19]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][19]));
+	BUFX1 U20(.A(flit42[20]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][20]));
+	BUFX1 U21(.A(flit42[21]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][21]));
+	BUFX1 U22(.A(flit42[22]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][22]));
+	BUFX1 U23(.A(flit42[23]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][23]));
+	BUFX1 U24(.A(flit42[24]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][24]));
+	BUFX1 U25(.A(flit42[25]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][25]));
+	BUFX1 U26(.A(flit42[26]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][26]));
+	BUFX1 U27(.A(flit42[27]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][27]));
+	BUFX1 U28(.A(flit42[28]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][28]));
+	BUFX1 U29(.A(flit42[29]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][29]));
+	BUFX1 U30(.A(flit42[30]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][30]));
+	BUFX1 U31(.A(flit42[31]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][31]));
+	BUFX1 U32(.A(flit42[32]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][32]));
+	BUFX1 U33(.A(flit42[33]), .Y(from_input_req_in_jump_input_datapath4put_datapath4[110:77][33]));
+    NOR2X1 U34 ( .IN1(flit42[33]), .IN2(flit42[32]), .QN(norres_vc_buffer42_vc_buffer2) );
+    OR4X1 U35 ( .IN1(flit42[29]), .IN2(flit42[28]), .IN3(flit42[27]), .IN4(flit42[26]), .Y(or1res_vc_buffer42) );
+    OR4X1 U35 ( .IN1(flit42[25]), .IN2(flit42[24]), .IN3(flit42[23]), .IN4(flit42[22]), .Y(or2res_vc_buffer42) );
+    OR2X1 U36 ( .A(or1res_vc_buffer42), .B(or2res_vc_buffer42), .Y(orres_vc_buffer42) );
+    AND3X1 U37 ( .IN1(from_input_req_in_jump_input_datapath4put_datapath4[74]), .IN2(norres_vc_buffer42_vc_buffer2), .IN3(orres_vc_buffer42), .Q(finres1_vc_buffer42) );
+    MUX21X1 U38 (.IN1(next_locked_vc_buffer42), .IN2(1'b1), .S(finres1_vc_buffer42), .Q(next_locked_vc_buffer42);
+    AND3X1 U39 ( .IN1(from_input_req_in_jump_input_datapath4put_datapath4[74]), .IN2(flit42[33]), .IN3(flit42[32]), .Q(andres1_vc_buffer42) );
+    MUX21X1 U40 (.IN1(next_locked_vc_buffer42), .IN2(1'b0), .S(andres1_vc_buffer42), .Q(next_locked_vc_buffer42);
+
+    INVX1 U41 ( .A(full_vc_buffer42), .Y(full_vc_buffer42_not2) );
+    INVX1 U42 ( .A(locked_by_route_ff_vc_buffer42), .Y(locked_by_route_ff_vc_buffer42_not2) );
+
+    MUX21X1 U43 (.IN1(1'b1), .IN2(locked_by_route_ff_vc_buffer42_not2), .S(norres_vc_buffer42_vc_buffer2), .Q(thirdand_vc_buffer42);
+    AND3X1 U44 ( .IN1(from_input_req_in_jump_input_datapath4put_datapath4[74]), .IN2(full_vc_buffer42_not2), .IN3(thirdand_vc_buffer42), .Q(write_flit42_vc_buffer24) );
+    AND2X1 U45 ( .IN1(full_vc_buffer42_not2), .IN2(norres_vc_buffer42_vc_buffer2), .Q(from_input_resp_input_datapath4[2]) );
+    INVX1 U46 ( .A(empty_vc_buffer42), .Y(to_output_req_in_jump_input_datapath4put_datapath4[74]) );
+    AND2X1 U47 ( .IN1(to_output_req_in_jump_input_datapath4put_datapath4[74]), .IN2(to_output_resp_input_datapath4[2]), .Q(read_flit42_vc_buffer24) );
+	BUFX1 U48(.A(to_output_req_in_jump_input_datapath4put_datapath4[76:75]), .Y(2'b10));
+
+	DFFX2 U49 ( .CLK(clk), .D(arst), .Q(arst_value) );
+    DFFX2 U50 ( .CLK(arst), .D(arst), .Q(arst_value) );
+    MUX21X1 U51 (.IN1(next_locked_vc_buffer42), .IN2(1'sb0), .S(arst_value), .Q(locked_by_route_ff_vc_buffer42);
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath4put_datapath4[77]), .Y(ext_req_v_i[184:148][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath4put_datapath4[78]), .Y(ext_req_v_i[184:148][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath4put_datapath4[79]), .Y(ext_req_v_i[184:148][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath4put_datapath4[80]), .Y(ext_req_v_i[184:148][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath4put_datapath4[81]), .Y(ext_req_v_i[184:148][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath4put_datapath4[82]), .Y(ext_req_v_i[184:148][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath4put_datapath4[83]), .Y(ext_req_v_i[184:148][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath4put_datapath4[84]), .Y(ext_req_v_i[184:148][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath4put_datapath4[85]), .Y(ext_req_v_i[184:148][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath4put_datapath4[86]), .Y(ext_req_v_i[184:148][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath4put_datapath4[87]), .Y(ext_req_v_i[184:148][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath4put_datapath4[88]), .Y(ext_req_v_i[184:148][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath4put_datapath4[89]), .Y(ext_req_v_i[184:148][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath4put_datapath4[90]), .Y(ext_req_v_i[184:148][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath4put_datapath4[91]), .Y(ext_req_v_i[184:148][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath4put_datapath4[92]), .Y(ext_req_v_i[184:148][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath4put_datapath4[93]), .Y(ext_req_v_i[184:148][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath4put_datapath4[94]), .Y(ext_req_v_i[184:148][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath4put_datapath4[95]), .Y(ext_req_v_i[184:148][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath4put_datapath4[96]), .Y(ext_req_v_i[184:148][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath4put_datapath4[97]), .Y(ext_req_v_i[184:148][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath4put_datapath4[98]), .Y(ext_req_v_i[184:148][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath4put_datapath4[99]), .Y(ext_req_v_i[184:148][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath4put_datapath4[100]), .Y(ext_req_v_i[184:148][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath4put_datapath4[101]), .Y(ext_req_v_i[184:148][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath4put_datapath4[102]), .Y(ext_req_v_i[184:148][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath4put_datapath4[103]), .Y(ext_req_v_i[184:148][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath4put_datapath4[104]), .Y(ext_req_v_i[184:148][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath4put_datapath4[105]), .Y(ext_req_v_i[184:148][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath4put_datapath4[106]), .Y(ext_req_v_i[184:148][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath4put_datapath4[107]), .Y(ext_req_v_i[184:148][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath4put_datapath4[108]), .Y(ext_req_v_i[184:148][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath4put_datapath4[109]), .Y(ext_req_v_i[184:148][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath4put_datapath4[110]), .Y(ext_req_v_i[184:148][36]));
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[184:148][1]), .IN2(i_input_datapath4[0]), .QN(xnor1resu_input_datapath4) );
+    XNOR2X1 U222 ( .IN1(ext_req_v_i[184:148][2]), .IN2(i_input_datapath4[1]), .QN(xnor2resu_input_datapath4) );
+    AND2X1 U128 ( .IN1(xnor1resu_input_datapath4), .IN2(xnor2resu_input_datapath4), .Q(and1resu_input_datapath4) );
+    AND3X1 U128 ( .IN1(and1resu_input_datapath4), .IN2(ext_req_v_i[184:148][0]), .IN2(ext_req_v_i[184:148][0]), .Q(cond1line_input_datapath4) );
+    MUX21X1 U0009 (.IN1(vc_ch_act_in_input_datapath4[0]), .IN2(i_input_datapath4[0]), .S(cond1line_input_datapath4), .Q(vc_ch_act_in_input_datapath4[0]));
+    MUX21X1 U0010 (.IN1(vc_ch_act_in_input_datapath4[1]), .IN2(i_input_datapath4[1]), .S(cond1line_input_datapath4), .Q(vc_ch_act_in_input_datapath4[1]));
+    MUX21X1 U0011 (.IN1(req_in_jump_input_datapath4), .IN2(1), .S(cond1line_input_datapath4), .Q(req_in_jump_input_datapath4));
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath4put_datapath4[40]), .Y(ext_req_v_i[184:148][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath4put_datapath4[41]), .Y(ext_req_v_i[184:148][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath4put_datapath4[42]), .Y(ext_req_v_i[184:148][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath4put_datapath4[43]), .Y(ext_req_v_i[184:148][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath4put_datapath4[44]), .Y(ext_req_v_i[184:148][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath4put_datapath4[45]), .Y(ext_req_v_i[184:148][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath4put_datapath4[46]), .Y(ext_req_v_i[184:148][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath4put_datapath4[47]), .Y(ext_req_v_i[184:148][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath4put_datapath4[48]), .Y(ext_req_v_i[184:148][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath4put_datapath4[49]), .Y(ext_req_v_i[184:148][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath4put_datapath4[50]), .Y(ext_req_v_i[184:148][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath4put_datapath4[51]), .Y(ext_req_v_i[184:148][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath4put_datapath4[52]), .Y(ext_req_v_i[184:148][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath4put_datapath4[53]), .Y(ext_req_v_i[184:148][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath4put_datapath4[54]), .Y(ext_req_v_i[184:148][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath4put_datapath4[55]), .Y(ext_req_v_i[184:148][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath4put_datapath4[56]), .Y(ext_req_v_i[184:148][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath4put_datapath4[57]), .Y(ext_req_v_i[184:148][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath4put_datapath4[58]), .Y(ext_req_v_i[184:148][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath4put_datapath4[59]), .Y(ext_req_v_i[184:148][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath4put_datapath4[60]), .Y(ext_req_v_i[184:148][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath4put_datapath4[61]), .Y(ext_req_v_i[184:148][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath4put_datapath4[62]), .Y(ext_req_v_i[184:148][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath4put_datapath4[63]), .Y(ext_req_v_i[184:148][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath4put_datapath4[64]), .Y(ext_req_v_i[184:148][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath4put_datapath4[65]), .Y(ext_req_v_i[184:148][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath4put_datapath4[66]), .Y(ext_req_v_i[184:148][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath4put_datapath4[67]), .Y(ext_req_v_i[184:148][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath4put_datapath4[68]), .Y(ext_req_v_i[184:148][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath4put_datapath4[69]), .Y(ext_req_v_i[184:148][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath4put_datapath4[70]), .Y(ext_req_v_i[184:148][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath4put_datapath4[71]), .Y(ext_req_v_i[184:148][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath4put_datapath4[72]), .Y(ext_req_v_i[184:148][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath4put_datapath4[73]), .Y(ext_req_v_i[184:148][36]));
+
+	BUFX1 U3(.A(from_input_req_in_jump_input_datapath4put_datapath4[3]), .Y(ext_req_v_i[184:148][3]));
+	BUFX1 U4(.A(from_input_req_in_jump_input_datapath4put_datapath4[4]), .Y(ext_req_v_i[184:148][4]));
+	BUFX1 U5(.A(from_input_req_in_jump_input_datapath4put_datapath4[5]), .Y(ext_req_v_i[184:148][5]));
+	BUFX1 U6(.A(from_input_req_in_jump_input_datapath4put_datapath4[6]), .Y(ext_req_v_i[184:148][6]));
+	BUFX1 U7(.A(from_input_req_in_jump_input_datapath4put_datapath4[7]), .Y(ext_req_v_i[184:148][7]));
+	BUFX1 U8(.A(from_input_req_in_jump_input_datapath4put_datapath4[8]), .Y(ext_req_v_i[184:148][8]));
+	BUFX1 U9(.A(from_input_req_in_jump_input_datapath4put_datapath4[9]), .Y(ext_req_v_i[184:148][9]));
+	BUFX1 U10(.A(from_input_req_in_jump_input_datapath4put_datapath4[10]), .Y(ext_req_v_i[184:148][10]));
+	BUFX1 U11(.A(from_input_req_in_jump_input_datapath4put_datapath4[11]), .Y(ext_req_v_i[184:148][11]));
+	BUFX1 U12(.A(from_input_req_in_jump_input_datapath4put_datapath4[12]), .Y(ext_req_v_i[184:148][12]));
+	BUFX1 U13(.A(from_input_req_in_jump_input_datapath4put_datapath4[13]), .Y(ext_req_v_i[184:148][13]));
+	BUFX1 U14(.A(from_input_req_in_jump_input_datapath4put_datapath4[14]), .Y(ext_req_v_i[184:148][14]));
+	BUFX1 U15(.A(from_input_req_in_jump_input_datapath4put_datapath4[15]), .Y(ext_req_v_i[184:148][15]));
+	BUFX1 U16(.A(from_input_req_in_jump_input_datapath4put_datapath4[16]), .Y(ext_req_v_i[184:148][16]));
+	BUFX1 U17(.A(from_input_req_in_jump_input_datapath4put_datapath4[17]), .Y(ext_req_v_i[184:148][17]));
+	BUFX1 U18(.A(from_input_req_in_jump_input_datapath4put_datapath4[18]), .Y(ext_req_v_i[184:148][18]));
+	BUFX1 U19(.A(from_input_req_in_jump_input_datapath4put_datapath4[19]), .Y(ext_req_v_i[184:148][19]));
+	BUFX1 U20(.A(from_input_req_in_jump_input_datapath4put_datapath4[20]), .Y(ext_req_v_i[184:148][20]));
+	BUFX1 U21(.A(from_input_req_in_jump_input_datapath4put_datapath4[21]), .Y(ext_req_v_i[184:148][21]));
+	BUFX1 U22(.A(from_input_req_in_jump_input_datapath4put_datapath4[22]), .Y(ext_req_v_i[184:148][22]));
+	BUFX1 U23(.A(from_input_req_in_jump_input_datapath4put_datapath4[23]), .Y(ext_req_v_i[184:148][23]));
+	BUFX1 U24(.A(from_input_req_in_jump_input_datapath4put_datapath4[24]), .Y(ext_req_v_i[184:148][24]));
+	BUFX1 U25(.A(from_input_req_in_jump_input_datapath4put_datapath4[25]), .Y(ext_req_v_i[184:148][25]));
+	BUFX1 U26(.A(from_input_req_in_jump_input_datapath4put_datapath4[26]), .Y(ext_req_v_i[184:148][26]));
+	BUFX1 U27(.A(from_input_req_in_jump_input_datapath4put_datapath4[27]), .Y(ext_req_v_i[184:148][27]));
+	BUFX1 U28(.A(from_input_req_in_jump_input_datapath4put_datapath4[28]), .Y(ext_req_v_i[184:148][28]));
+	BUFX1 U29(.A(from_input_req_in_jump_input_datapath4put_datapath4[29]), .Y(ext_req_v_i[184:148][29]));
+	BUFX1 U30(.A(from_input_req_in_jump_input_datapath4put_datapath4[30]), .Y(ext_req_v_i[184:148][30]));
+	BUFX1 U31(.A(from_input_req_in_jump_input_datapath4put_datapath4[31]), .Y(ext_req_v_i[184:148][31]));
+	BUFX1 U32(.A(from_input_req_in_jump_input_datapath4put_datapath4[32]), .Y(ext_req_v_i[184:148][32]));
+	BUFX1 U33(.A(from_input_req_in_jump_input_datapath4put_datapath4[33]), .Y(ext_req_v_i[184:148][33]));
+	BUFX1 U34(.A(from_input_req_in_jump_input_datapath4put_datapath4[34]), .Y(ext_req_v_i[184:148][34]));
+	BUFX1 U35(.A(from_input_req_in_jump_input_datapath4put_datapath4[35]), .Y(ext_req_v_i[184:148][35]));
+	BUFX1 U36(.A(from_input_req_in_jump_input_datapath4put_datapath4[36]), .Y(ext_req_v_i[184:148][36]));
+
+    MUX21X1 U0012 (.IN1(from_input_req_in_jump_input_datapath4put_datapath4[vc_ch_act_in_input_datapath4 * 37]), .IN2(ext_req_v_i[184:148][0]), .S(req_in_jump_input_datapath4), .Q(from_input_req_in_jump_input_datapath4put_datapath4[vc_ch_act_in_input_datapath4 * 37]));
+    MUX21X1 U0013 (.IN1(from_input_req_in_jump_input_datapath4put_datapath4[vc_ch_act_in_input_datapath4*37+2]), .IN2(vc_ch_act_in_input_datapath4[1]), .S(req_in_jump_input_datapath4), .Q(from_input_req_in_jump_input_datapath4put_datapath4[vc_ch_act_in_input_datapath4*37+2]));
+    MUX21X1 U0014 (.IN1(from_input_req_in_jump_input_datapath4put_datapath4[vc_ch_act_in_input_datapath4*37+1]), .IN2(vc_ch_act_in_input_datapath4[0]), .S(req_in_jump_input_datapath4), .Q(from_input_req_in_jump_input_datapath4put_datapath4[vc_ch_act_in_input_datapath4*37+1]));
+    MUX21X1 U0015 (.IN1(ext_resp_v_o[5:4][0]), .IN2(from_input_resp_input_datapath4[vc_ch_act_in_input_datapath4]), .S(req_in_jump_input_datapath4), .Q(ext_resp_v_o[5:4][0]));
+
+    INVX1 U041 ( .A(req_in_jump_input_datapath4), .Y(req_in_jump_input_datapath4_not) );
+    MUX21X1 U0016 (.IN1(ext_resp_v_o[5:4][0]), .IN2(1'sb1), .S(req_in_jump_input_datapath4_not), .Q(ext_resp_v_o[5:4][0]));
+    BUFX1 U34(.A(from_input_req_in_jump_input_datapath4put_datapath4[34]), .Y(ext_req_v_i[184:148][34]));
+
+    XOR2X1 U0222 ( .IN1(_sv2v_jump_input_datapath4[1]), .IN2(1'b1), .Q(xor1resu_input_datapath4) );
+    MUX21X1 U0017 (.IN1(_sv2v_jump_input_datapath4[0]), .IN2(1'b0), .S(xor1resu_input_datapath4), .Q(_sv2v_jump_input_datapath4[0]));
+    MUX21X1 U0018 (.IN1(_sv2v_jump_input_datapath4[1]), .IN2(1'b0), .S(xor1resu_input_datapath4), .Q(_sv2v_jump_input_datapath4[1]));
+    AND2X1 U38123 ( .IN1(xor1resu_input_datapath4), .IN2(to_output_req_in_jump_input_datapath4put_datapath4[j_input_datapath4*37]), .Q(and2resu_input_datapath4) );
+    MUX21X1 U0019 (.IN1(vc_ch_act_out_input_datapath4[0]), .IN2(j_input_datapath4[0]), .S(and2resu_input_datapath4), .Q(vc_ch_act_out_input_datapath4[0]));
+    MUX21X1 U0020 (.IN1(vc_ch_act_out_input_datapath4[1]), .IN2(j_input_datapath4[1]), .S(and2resu_input_datapath4), .Q(vc_ch_act_out_input_datapath4[1]));
+    MUX21X1 U0021 (.IN1(req_out_jump_input_datapath4), .IN2(1'b1), .S(and2resu_input_datapath4), .Q(req_out_jump_input_datapath4));
+    MUX21X1 U0022 (.IN1(_sv2v_jump_input_datapath4[0]), .IN2(1'b0), .S(and2resu_input_datapath4), .Q(_sv2v_jump_input_datapath4[0]));
+    MUX21X1 U0023 (.IN1(_sv2v_jump_input_datapath4[1]), .IN2(1'b1), .S(and2resu_input_datapath4), .Q(_sv2v_jump_input_datapath4[1]));
+    HADDX1 U00021 ( .A0(j_input_datapath4[0]), .B0(1'b1), .C1(j_input_datapath4[1]), .SO(j_input_datapath4[0]) );
+    HADDX1 U00022 ( .A0(j_input_datapath4[0]), .B0(1'b1), .C1(j_input_datapath4[1]), .SO(j_input_datapath4[0]) );
+    AND2X1 U38111 ( .IN1(xor1resu_input_datapath4), .IN2(to_output_req_in_jump_input_datapath4put_datapath4[j_input_datapath4*37]), .Q(and3resu) );
+    NAND2X1 U29311(.A(_sv2v_jump_input_datapath4[0]),.B(_sv2v_jump_input_datapath4[1]),.Y(nand1resu_input_datapath44));
+    MUX21X1 U00212 (.IN1(_sv2v_jump_input_datapath4[0]), .IN2(1'b0), .S(nand1resu_input_datapath44), .Q(_sv2v_jump_input_datapath4[0]));
+    MUX21X1 U00213 (.IN1(_sv2v_jump_input_datapath4[1]), .IN2(1'b0), .S(nand1resu_input_datapath44), .Q(_sv2v_jump_input_datapath4[1]));
+    XNOR2X1 U17581 (.IN1(_sv2v_jump_input_datapath4[0]), .IN2(_sv2v_jump_input_datapath4[1]), .Q(xnor23resu_input_datapath4) );
+    AND2X1 U38111 ( .IN1(xnor23resu_input_datapath4), .IN2(req_out_jump_input_datapath4), .Q(and4resu_input_datapath4) );
+
+    MUX21X1 U3(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+3]),.IN2(int_req_v[184:148][3]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+3]));
+	MUX21X1 U4(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+4]),.IN2(int_req_v[184:148][4]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+4]));
+	MUX21X1 U5(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+5]),.IN2(int_req_v[184:148][5]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+5]));
+	MUX21X1 U6(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+6]),.IN2(int_req_v[184:148][6]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+6]));
+	MUX21X1 U7(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+7]),.IN2(int_req_v[184:148][7]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+7]));
+	MUX21X1 U8(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+8]),.IN2(int_req_v[184:148][8]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+8]));
+	MUX21X1 U9(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+9]),.IN2(int_req_v[184:148][9]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+9]));
+	MUX21X1 U10(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+10]),.IN2(int_req_v[184:148][10]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+10]));
+	MUX21X1 U11(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+11]),.IN2(int_req_v[184:148][11]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+11]));
+	MUX21X1 U12(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+12]),.IN2(int_req_v[184:148][12]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+12]));
+	MUX21X1 U13(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+13]),.IN2(int_req_v[184:148][13]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+13]));
+	MUX21X1 U14(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+14]),.IN2(int_req_v[184:148][14]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+14]));
+	MUX21X1 U15(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+15]),.IN2(int_req_v[184:148][15]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+15]));
+	MUX21X1 U16(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+16]),.IN2(int_req_v[184:148][16]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+16]));
+	MUX21X1 U17(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+17]),.IN2(int_req_v[184:148][17]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+17]));
+	MUX21X1 U18(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+18]),.IN2(int_req_v[184:148][18]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+18]));
+	MUX21X1 U19(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+19]),.IN2(int_req_v[184:148][19]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+19]));
+	MUX21X1 U20(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+20]),.IN2(int_req_v[184:148][20]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+20]));
+	MUX21X1 U21(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+21]),.IN2(int_req_v[184:148][21]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+21]));
+	MUX21X1 U22(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+22]),.IN2(int_req_v[184:148][22]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+22]));
+	MUX21X1 U23(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+23]),.IN2(int_req_v[184:148][23]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+23]));
+	MUX21X1 U24(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+24]),.IN2(int_req_v[184:148][24]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+24]));
+	MUX21X1 U25(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+25]),.IN2(int_req_v[184:148][25]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+25]));
+	MUX21X1 U26(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+26]),.IN2(int_req_v[184:148][26]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+26]));
+	MUX21X1 U27(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+27]),.IN2(int_req_v[184:148][27]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+27]));
+	MUX21X1 U28(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+28]),.IN2(int_req_v[184:148][28]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+28]));
+	MUX21X1 U29(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+29]),.IN2(int_req_v[184:148][29]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+29]));
+	MUX21X1 U30(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+30]),.IN2(int_req_v[184:148][30]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+30]));
+	MUX21X1 U31(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+31]),.IN2(int_req_v[184:148][31]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+31]));
+	MUX21X1 U32(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+32]),.IN2(int_req_v[184:148][32]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+32]));
+	MUX21X1 U33(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+33]),.IN2(int_req_v[184:148][33]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+33]));
+	MUX21X1 U34(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+34]),.IN2(int_req_v[184:148][34]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+34]));
+	MUX21X1 U35(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+35]),.IN2(int_req_v[184:148][35]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+35]));
+	MUX21X1 U36(.IN1(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+36]),.IN2(int_req_v[184:148][36]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_ouot*37)+36]));
+
+	MUX21X1 U321111(.IN1(int_req_v[184:148][0]),.IN2(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_out_input_datapath4 * 37)]), .S(and4resu_input_datapath4), .Q(int_req_v[184:148][0]));
+	MUX21X1 U331112(.IN1(int_req_v[184:148][1]),.IN2(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_out_input_datapath4*37)+1]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_out_input_datapath4*37)+1]));
+	MUX21X1 U331122(.IN1(int_req_v[184:148][2]),.IN2(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_out_input_datapath4*37)+2]), .S(and4resu_input_datapath4), .Q(to_output_req_in_jump_input_datapath4put_datapath4[(vc_ch_act_out_input_datapath4*37)+2]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath4[vc_ch_act_out_input_datapath4]),.IN2(int_resp_v[5:4]), .S(and4resu_input_datapath4), .Q(to_output_resp_input_datapath4[vc_ch_act_out_input_datapath4]));
+	MUX21X1 U352221(.IN1(to_output_resp_input_datapath4[vc_ch_act_out_input_datapath4+1]),.IN2(int_resp_v[5:4]), .S(and4resu_input_datapath4), .Q(to_output_resp_input_datapath4[vc_ch_act_out_input_datapath4+1]));
+
 
 
 //output part	
@@ -3754,3 +6606,5 @@ module router_ravenoc (clk,arst,north_send,north_recv,south_send,south_recv,west
 	MUX21X1 U38(.IN1(int_resp_v[3]), .IN2(int_map_resp_v[18]), .S(int_route_v[10]) ,.Q(int_resp_v[3]));
 	MUX21X1 U39(.IN1(int_resp_v[3]), .IN2(int_map_resp_v[16]), .S(int_route_v[15]) ,.Q(int_resp_v[3]));
 	MUX21X1 U40(.IN1(int_resp_v[4]), .IN2(int_map_resp_v[17]), .S(int_route_v[15]) ,.Q(int_resp_v[4]));
+	
+endmodule 
