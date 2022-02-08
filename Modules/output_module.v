@@ -369,8 +369,8 @@ module output_module (clk,arst,fin_req_i,fin_resp_o,fout_req_o,fout_resp_i);
 
 
 
-	BUFX1 U4(.A(1'b0), .Y(_sv2v_jump_output_module[0]))
-	BUFX1 U4(.A(1'b0), .Y(_sv2v_jump_output_module[1]))
+	BUFX1 U4(.A(1'b0), .Y(_sv2v_jump_output_module[0]));
+	BUFX1 U4(.A(1'b0), .Y(_sv2v_jump_output_module[1]));
     AND2X1 U12483 ( .IN1(xor1resu1_output_module), .IN2(grant_im_output_module[i_output_module[1:0] * 4+:4]), .Q(and8resu1_output_module) );    
     MUX21X1 U3621(.IN1(vc_ch_act_out_output_module[0]), .IN2(i_output_module[1:0]), .S(and8resu1_output_module) ,.Q(vc_ch_act_out_output_module[0]);
 	MUX21X1 U3631(.IN1(vc_ch_act_out_output_module[1]), .IN2(i_output_module[1:0]), .S(and8resu1_output_module) ,.Q(vc_ch_act_out_output_module[1]);
