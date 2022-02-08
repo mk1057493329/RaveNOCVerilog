@@ -1,5 +1,8 @@
 module input_router (clk,arst,flit_input_router_req_i,router_port_o);
-
+    input clk;
+    input arst;
+    input wire [36:0] flit_req_i;
+    output [4:0] router_port_o;
 	wire [8:0] routing_table_ff_input_router;
 	wire [2:0] next_rt_input_router;
 	wire [33:0] flit_input_router;
