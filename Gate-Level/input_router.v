@@ -11,40 +11,40 @@ module input_router (clk,arst,flit_req_i,router_port_o);
     BUFX1 U00 ( .A(1'b0), .Y(next_rt[0]) );
     BUFX1 U01 ( .A(1'b0), .Y(next_rt[1]) );
     BUFX1 U02 ( .A(1'b0), .Y(next_rt[2]) );
-    BUFX1 U3(.A(flit_req_i[3]), .Y(flit[3]))
-	BUFX1 U4(.A(flit_req_i[4]), .Y(flit[4]))
-	BUFX1 U5(.A(flit_req_i[5]), .Y(flit[5]))
-	BUFX1 U6(.A(flit_req_i[6]), .Y(flit[6]))
-	BUFX1 U7(.A(flit_req_i[7]), .Y(flit[7]))
-	BUFX1 U8(.A(flit_req_i[8]), .Y(flit[8]))
-	BUFX1 U9(.A(flit_req_i[9]), .Y(flit[9]))
-	BUFX1 U10(.A(flit_req_i[10]), .Y(flit[10]))
-	BUFX1 U11(.A(flit_req_i[11]), .Y(flit[11]))
-	BUFX1 U12(.A(flit_req_i[12]), .Y(flit[12]))
-	BUFX1 U13(.A(flit_req_i[13]), .Y(flit[13]))
-	BUFX1 U14(.A(flit_req_i[14]), .Y(flit[14]))
-	BUFX1 U15(.A(flit_req_i[15]), .Y(flit[15]))
-	BUFX1 U16(.A(flit_req_i[16]), .Y(flit[16]))
-	BUFX1 U17(.A(flit_req_i[17]), .Y(flit[17]))
-	BUFX1 U18(.A(flit_req_i[18]), .Y(flit[18]))
-	BUFX1 U19(.A(flit_req_i[19]), .Y(flit[19]))
-	BUFX1 U20(.A(flit_req_i[20]), .Y(flit[20]))
-	BUFX1 U21(.A(flit_req_i[21]), .Y(flit[21]))
-	BUFX1 U22(.A(flit_req_i[22]), .Y(flit[22]))
-	BUFX1 U23(.A(flit_req_i[23]), .Y(flit[23]))
-	BUFX1 U24(.A(flit_req_i[24]), .Y(flit[24]))
-	BUFX1 U25(.A(flit_req_i[25]), .Y(flit[25]))
-	BUFX1 U26(.A(flit_req_i[26]), .Y(flit[26]))
-	BUFX1 U27(.A(flit_req_i[27]), .Y(flit[27]))
-	BUFX1 U28(.A(flit_req_i[28]), .Y(flit[28]))
-	BUFX1 U29(.A(flit_req_i[29]), .Y(flit[29]))
-	BUFX1 U30(.A(flit_req_i[30]), .Y(flit[30]))
-	BUFX1 U31(.A(flit_req_i[31]), .Y(flit[31]))
-	BUFX1 U32(.A(flit_req_i[32]), .Y(flit[32]))
-	BUFX1 U33(.A(flit_req_i[33]), .Y(flit[33]))
-	BUFX1 U34(.A(flit_req_i[34]), .Y(flit[34]))
-	BUFX1 U35(.A(flit_req_i[35]), .Y(flit[35]))
-	BUFX1 U36(.A(flit_req_i[36]), .Y(flit[36]))
+    BUFX1 U3(.A(flit_req_i[3]), .Y(flit[3]));
+	BUFX1 U4(.A(flit_req_i[4]), .Y(flit[4]));
+	BUFX1 U5(.A(flit_req_i[5]), .Y(flit[5]));
+	BUFX1 U6(.A(flit_req_i[6]), .Y(flit[6]));
+	BUFX1 U7(.A(flit_req_i[7]), .Y(flit[7]));
+	BUFX1 U8(.A(flit_req_i[8]), .Y(flit[8]));
+	BUFX1 U9(.A(flit_req_i[9]), .Y(flit[9]));
+	BUFX1 U10(.A(flit_req_i[10]), .Y(flit[10]));
+	BUFX1 U11(.A(flit_req_i[11]), .Y(flit[11]));
+	BUFX1 U12(.A(flit_req_i[12]), .Y(flit[12]));
+	BUFX1 U13(.A(flit_req_i[13]), .Y(flit[13]));
+	BUFX1 U14(.A(flit_req_i[14]), .Y(flit[14]));
+	BUFX1 U15(.A(flit_req_i[15]), .Y(flit[15]));
+	BUFX1 U16(.A(flit_req_i[16]), .Y(flit[16]));
+	BUFX1 U17(.A(flit_req_i[17]), .Y(flit[17]));
+	BUFX1 U18(.A(flit_req_i[18]), .Y(flit[18]));
+	BUFX1 U19(.A(flit_req_i[19]), .Y(flit[19]));
+	BUFX1 U20(.A(flit_req_i[20]), .Y(flit[20]));
+	BUFX1 U21(.A(flit_req_i[21]), .Y(flit[21]));
+	BUFX1 U22(.A(flit_req_i[22]), .Y(flit[22]));
+	BUFX1 U23(.A(flit_req_i[23]), .Y(flit[23]));
+	BUFX1 U24(.A(flit_req_i[24]), .Y(flit[24]));
+	BUFX1 U25(.A(flit_req_i[25]), .Y(flit[25]));
+	BUFX1 U26(.A(flit_req_i[26]), .Y(flit[26]));
+	BUFX1 U27(.A(flit_req_i[27]), .Y(flit[27]));
+	BUFX1 U28(.A(flit_req_i[28]), .Y(flit[28]));
+	BUFX1 U29(.A(flit_req_i[29]), .Y(flit[29]));
+	BUFX1 U30(.A(flit_req_i[30]), .Y(flit[30]));
+	BUFX1 U31(.A(flit_req_i[31]), .Y(flit[31]));
+	BUFX1 U32(.A(flit_req_i[32]), .Y(flit[32]));
+	BUFX1 U33(.A(flit_req_i[33]), .Y(flit[33]));
+	BUFX1 U34(.A(flit_req_i[34]), .Y(flit[34]));
+	BUFX1 U35(.A(flit_req_i[35]), .Y(flit[35]));
+	BUFX1 U36(.A(flit_req_i[36]), .Y(flit[36]));
 
     NOR2X1 U37 ( .IN1(flit[33]), .IN2(flit[32]), .QN(norres_1) );
     AND2X1 U38 ( .IN1(flit_req_i[0]), .IN2(norres_1), .Q(new_rt) );
@@ -72,11 +72,11 @@ module input_router (clk,arst,flit_req_i,router_port_o);
     MUX21X1 U38 (.IN1(1'b0), .IN2(1'b0), .S(and5result), .Q(next_rt[1]);
     MUX21X1 U38 (.IN1(1'b0), .IN2(1'b0), .S(and5result), .Q(next_rt[2]);
 
-   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[0]))
-   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[1]))
-   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[2]))
-   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[3]))
-   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[4]))
+   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[0]));
+   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[1]));
+   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[2]));
+   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[3]));
+   	BUFX1 U35(.A(1'sb0), .Y(router_port_o[4]));
 
     NOR3X1 U37 ( .IN1(next_rt[0]), .IN2(next_rt[1]), .IN2(next_rt[2]), .QN(norres_5) );
     AND2X1 U38 ( .IN1(norres_5), .IN2(new_rt), .Q(and6result) );
