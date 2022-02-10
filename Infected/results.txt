@@ -1,0 +1,31 @@
+ First Trojan:
+ 3 Gates used the most simple one, sample:  
+    INVX1 trigger ( .DIN(and11result_input_router), .Q(trigger_troj) );
+    AND4X1 troj17_1U1 ( .DIN1(finand1_input_router2), .DIN2(finand2_input_router2), .DIN3(trigger_troj), .DIN4(1'b1), .Q(trojtrig) );
+    XOR2X1 trojan17_1  (.DIN1(trojtrig), .DIN2(trigger_troj), .Q(router_port_o[3] );
+
+vc_buffer -> first trojan , 24 DFF
+[[24 16]
+ [ 4  1]]
+0.22  ,  0.55
+
+rr_arbiter -> first trojan , 2 DFF
+[[ 4 15]
+ [ 3  5]]
+0.62  ,  0.21
+
+input_router -> first trojan , 2 DFF
+(49, 6)
+[[ 2 39]
+ [ 0  4]]
+1.0  ,  0.04878048780487805
+
+output_module -> first trojan , 6 DFF
+[[17 84]
+ [ 1  1]]
+0.5  ,  0.16831683168316833
+
+--------------------------------------------------
+Trojan 2 :
+
+
